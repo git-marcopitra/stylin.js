@@ -4,7 +4,7 @@
   "description": "A inline styles react component definition lib",
   "main": "index.ts",
   "scripts": {
-    "test": "jest",
+    "test": "jest --passWithNoTests",
     "prepare": "husky install"
   },
   "repository": {
