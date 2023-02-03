@@ -1,0 +1,51 @@
+{
+  "name": "stylin",
+  "version": "0.0.1-alpha",
+  "description": "A inline styles react component definition lib",
+  "main": "index.ts",
+  "scripts": {
+    "test": "jest",
+    "prepare": "husky install"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/git-marcopitra/stylin.git"
+  },
+  "keywords": [
+    "inline-styles",
+    "style",
+    "react",
+    "stylin-component"
+  ],
+  "author": "git-marcopitra@github.com",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/git-marcopitra/stylin/issues"
+  },
+  "homepage": "https://github.com/git-marcopitra/stylin#readme",
+  "devDependencies": {
+    "@emotion/eslint-plugin": "^11.10.0",
+    "@types/react": "^18.0.27",
+    "@types/styled-system": "^5.1.16",
+    "@typescript-eslint/eslint-plugin": "^5.50.0",
+    "@typescript-eslint/parser": "^5.50.0",
+    "commitlint": "^17.4.2",
+    "commitlint-config-gitmoji": "^2.2.10",
+    "eslint": "^8.33.0",
+    "eslint-config-prettier": "^8.6.0",
+    "eslint-import-resolver-alias": "^1.1.2",
+    "eslint-plugin-import": "^2.27.5",
+    "eslint-plugin-jsx-a11y": "^6.7.1",
+    "eslint-plugin-prettier": "^4.2.1",
+    "eslint-plugin-react": "^7.32.2",
+    "eslint-plugin-simple-import-sort": "^10.0.0",
+    "husky": "^8.0.0",
+    "prettier": "^2.8.3",
+    "react": "^18.2.0"
+  },
+  "dependencies": {
+    "@emotion/react": "^11.10.5",
+    "@emotion/serialize": "^1.1.1",
+    "@emotion/styled": "^11.10.5"
+  }
+}
