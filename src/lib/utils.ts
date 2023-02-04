@@ -11,10 +11,11 @@ import {
 } from './stylin.types';
 
 export const getBreakpoint: TGetBreakpoint = (index, theme) => {
-  if (index < theme['breakpoints'].length - 1)
-    return theme['breakpoints'][index - 1];
+  const breakpoints = theme['breakpoints'] ?? ['36em', '48em', '62em', '75em'];
 
-  return theme['breakpoints'][theme['breakpoints'].length - 1];
+  if (index < breakpoints.length - 1) return breakpoints[index - 1];
+
+  return breakpoints.pop();
 };
 
 export const getStyles = (

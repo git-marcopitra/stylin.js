@@ -1,6 +1,6 @@
 {
   "name": "stylin.js",
-  "version": "0.1.0-alpha",
+  "version": "0.1.1-alpha",
   "description": "A inline styles react component definition lib",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -11,6 +11,10 @@
     "prepublish": "tsc",
     "format": "prettier --write **/*.ts",
     "lint": "eslint . --fix --ext ts"
+  },
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/stylin.js"
   },
   "repository": {
     "type": "git",
