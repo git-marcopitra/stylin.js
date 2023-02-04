@@ -4,8 +4,11 @@ import { StyledComponent } from '@emotion/styled';
 import { CSSProperties } from 'react';
 import { ResponsiveValue } from 'styled-system';
 
-import { IEmptyObj, Theme } from '../interface';
+import { IEmptyObj } from '../interface';
 import { CSSPseudoSelectors, StylinCustomPropertiesType } from './constants';
+
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+export type Theme = Record<string, any>;
 
 export type TStyleValue = ResponsiveValue<string | number>;
 
