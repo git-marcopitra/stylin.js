@@ -1,11 +1,15 @@
 {
-  "name": "stylin",
+  "name": "stylin.js",
   "version": "0.0.1-alpha",
   "description": "A inline styles react component definition lib",
   "main": "index.ts",
   "scripts": {
     "test": "jest --passWithNoTests",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "publish": "npm build && npm publish",
+    "format": "prettier --write **/*.ts",
+    "lint": "eslint . --fix --ext ts",
+    "build": "tsc"
   },
   "repository": {
     "type": "git",

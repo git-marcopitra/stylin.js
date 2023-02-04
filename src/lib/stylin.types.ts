@@ -3,8 +3,8 @@ import { CSSInterpolation } from '@emotion/serialize';
 import { StyledComponent } from '@emotion/styled';
 import { CSSProperties } from 'react';
 import { ResponsiveValue } from 'styled-system';
-import { IEmptyObj, Theme } from '../interface';
 
+import { IEmptyObj, Theme } from '../interface';
 import { CSSPseudoSelectors, StylinCustomPropertiesType } from './constants';
 
 export type TStyleValue = ResponsiveValue<string | number>;

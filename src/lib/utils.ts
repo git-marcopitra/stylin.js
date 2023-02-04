@@ -1,20 +1,20 @@
-import { filter, keys, toPairs } from "ramda";
+import { filter, keys, toPairs } from 'ramda';
 
-import { CSS_STYLING_MAP } from "./constants";
-import { CSSPseudoSelectors } from "./constants/css-pseudo-selectors";
+import { CSS_STYLING_MAP } from './constants';
+import { CSSPseudoSelectors } from './constants/css-pseudo-selectors';
 import {
-  TStyles,
   TGetBreakpoint,
   TPseudoKeys,
   TStyleKeys,
+  TStyles,
   TStyleValue,
-} from "./stylin.types";
+} from './stylin.types';
 
 export const getBreakpoint: TGetBreakpoint = (index, theme) => {
-  if (index < theme["breakpoints"].length - 1)
-    return theme["breakpoints"][index - 1];
-    
-  return theme["breakpoints"][theme["breakpoints"].length - 1];
+  if (index < theme['breakpoints'].length - 1)
+    return theme['breakpoints'][index - 1];
+
+  return theme['breakpoints'][theme['breakpoints'].length - 1];
 };
 
 export const getStyles = (
@@ -29,4 +29,4 @@ export const getPseudos = (
 
 export const isFunction = (functionToCheck: unknown): boolean =>
   !!functionToCheck &&
-  {}.toString.call(functionToCheck) === "[object Function]";
+  {}.toString.call(functionToCheck) === '[object Function]';

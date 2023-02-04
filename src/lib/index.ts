@@ -1,14 +1,14 @@
-import { SerializedStyles } from "@emotion/serialize";
-import styled from "@emotion/styled";
+import { SerializedStyles } from '@emotion/serialize';
+import styled from '@emotion/styled';
 
-import renderStyles from "./render-styles";
+import { IEmptyObj, Theme } from '../interface';
+import renderStyles from './render-styles';
 import {
   GenericWithTheme,
   TCreateStylinComponent,
   TStylinFn,
-} from "./stylin.types";
-import { isFunction } from "./utils";
-import { IEmptyObj, Theme } from "../interface";
+} from './stylin.types';
+import { isFunction } from './utils';
 
 const stylin =
   <T extends IEmptyObj>(
@@ -27,4 +27,4 @@ const stylin =
 
 export default stylin;
 
-export { default as variant } from "./render-variant";
+export { default as variant } from './render-variant';
