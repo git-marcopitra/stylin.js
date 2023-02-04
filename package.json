@@ -6,7 +6,7 @@
   "scripts": {
     "test": "jest --passWithNoTests",
     "prepare": "husky install",
-    "publish": "npm build && npm publish",
+    "publish": "npm run build && npm publish",
     "format": "prettier --write **/*.ts",
     "lint": "eslint . --fix --ext ts",
     "build": "tsc"
