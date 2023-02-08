@@ -22,7 +22,7 @@
   "plugins": ["simple-import-sort", "@emotion", "react", "@typescript-eslint"],
   "rules": {
     "react/prop-types": "off",
-    "react/react-in-jsx-scope": "off",
+    "react/jsx-uses-react": "error",
     "@typescript-eslint/no-unused-vars": ["error"],
     "@emotion/jsx-import": "error",
     "@emotion/pkg-renaming": "error",
