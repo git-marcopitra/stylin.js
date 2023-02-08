@@ -10,7 +10,7 @@ import {
   TypographyProps,
 } from 'styled-system';
 
-import stylin from '../../dist';
+import stylin from '../../src';
 
 interface ButtonProps
   extends FlexProps,
