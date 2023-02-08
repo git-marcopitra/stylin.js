@@ -2,15 +2,33 @@ import { SerializedStyles } from '@emotion/react';
 import { CSSInterpolation } from '@emotion/serialize';
 import { StyledComponent } from '@emotion/styled';
 import { CSSProperties } from 'react';
-import { ResponsiveValue } from 'styled-system';
 
 import { IEmptyObj } from '../interface';
-import { CSSPseudoSelectors, StylinCustomPropertiesType } from './constants';
+import { CSSPseudoSelectors } from './constants';
+
+export type MaybeArray<T> = ReadonlyArray<T> | T;
+
+export type StylinCustomPropertiesType =
+  | 'bg'
+  | 'm'
+  | 'mx'
+  | 'my'
+  | 'mt'
+  | 'mr'
+  | 'mb'
+  | 'ml'
+  | 'p'
+  | 'px'
+  | 'py'
+  | 'pt'
+  | 'pr'
+  | 'pb'
+  | 'pl';
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 export type Theme = Record<string, any>;
 
-export type TStyleValue = ResponsiveValue<string | number>;
+export type TStyleValue = MaybeArray<string | number>;
 
 type VariantKeys = Omit<
   Theme,
