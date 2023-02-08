@@ -1,13 +1,9 @@
 import { CSSProperties } from 'react';
-import { Theme } from 'styled-system';
 
 export const THEMED_VALUES_MAP: Partial<
   Record<
     keyof CSSProperties,
-    keyof Pick<
-      Theme,
-      'radii' | 'space' | 'colors' | 'fontSizes' | 'breakpoints'
-    >
+    'radii' | 'space' | 'colors' | 'fontSizes' | 'breakpoints'
   >
 > = {
   margin: 'space',
