@@ -1,21 +1,6 @@
 import type { CSSProperties } from 'react';
 
-export type StylinCustomPropertiesType =
-  | 'bg'
-  | 'm'
-  | 'mx'
-  | 'my'
-  | 'mt'
-  | 'mr'
-  | 'mb'
-  | 'ml'
-  | 'p'
-  | 'px'
-  | 'py'
-  | 'pt'
-  | 'pr'
-  | 'pb'
-  | 'pl';
+import { StylinCustomPropertiesType } from '../stylin.types';
 
 export const StylinCustomProperties = {
   bg: 'bg',
