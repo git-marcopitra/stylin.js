@@ -1,7 +1,10 @@
-import { CSSInterpolation } from '@emotion/serialize';
-
 import renderResponsiveStyle from './render-responsive-style';
-import { TRenderPseudoSelector, TStyleKeys, TStyleValue } from './stylin.types';
+import {
+  CSSInterpolation,
+  TRenderPseudoSelector,
+  TStyleKeys,
+  TStyleValue,
+} from './stylin.types';
 
 const renderPseudoSelector: TRenderPseudoSelector = (
   theme,

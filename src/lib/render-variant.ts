@@ -1,6 +1,4 @@
-import { SerializedStyles } from '@emotion/react';
-
-import { TRenderVariant } from './stylin.types';
+import type { SerializedStyles, TRenderVariant } from './stylin.types';
 
 const renderVariant: TRenderVariant =
   ({ scale, property }) =>

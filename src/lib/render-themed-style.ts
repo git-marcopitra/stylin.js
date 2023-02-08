@@ -1,5 +1,5 @@
 import { THEMED_VALUES_MAP } from './constants/themed-values';
-import { TRenderThemedStyle } from './stylin.types';
+import type { TRenderThemedStyle } from './stylin.types';
 
 const renderThemedStyle: TRenderThemedStyle = (theme, property, style) => {
   const themedValue = THEMED_VALUES_MAP[property];
