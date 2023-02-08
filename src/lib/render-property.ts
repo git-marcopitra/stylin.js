@@ -1,8 +1,6 @@
-import { CSSProperties } from 'react';
-
 import { CUSTOM_PROPERTY_MAP, StylinCustomProperties } from './constants';
 import renderThemedStyle from './render-themed-style';
-import { TRenderProperty } from './stylin.types';
+import { CSSProperties, TRenderProperty } from './stylin.types';
 
 const renderProperty: TRenderProperty = (theme, prop, value) => {
   if (StylinCustomProperties[prop])

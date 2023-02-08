@@ -1,6 +1,4 @@
-import type { CSSProperties } from 'react';
-
-import { StylinCustomPropertiesType } from '../stylin.types';
+import { CSSProperties, StylinCustomPropertiesType } from '../stylin.types';
 
 export const StylinCustomProperties = {
   bg: 'bg',

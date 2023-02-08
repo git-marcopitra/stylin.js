@@ -2,3 +2,4 @@ node_modules
 *-error.log
 tsconfig.tsbuildinfo
 dist
+.DS_Store/

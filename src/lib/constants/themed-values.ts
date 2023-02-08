@@ -1,4 +1,4 @@
-import { CSSProperties } from 'react';
+import { CSSProperties } from '../stylin.types';
 
 export const THEMED_VALUES_MAP: Partial<
   Record<

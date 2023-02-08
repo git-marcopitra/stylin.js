@@ -1,9 +1,13 @@
 import { css } from '@emotion/react';
-import { CSSInterpolation } from '@emotion/serialize';
 
 import renderPseudoSelector from './render-pseudo-selector';
 import renderResponsiveStyle from './render-responsive-style';
-import { TRenderStyles, TStyleKeys, TStyleValue } from './stylin.types';
+import {
+  CSSInterpolation,
+  TRenderStyles,
+  TStyleKeys,
+  TStyleValue,
+} from './stylin.types';
 import { getPseudos, getStyles } from './utils';
 
 const renderStyles: TRenderStyles = (props, theme) =>

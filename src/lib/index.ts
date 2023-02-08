@@ -1,10 +1,10 @@
-import { SerializedStyles } from '@emotion/serialize';
 import styled from '@emotion/styled';
 
 import { IEmptyObj, Theme } from '../interface';
 import renderStyles from './render-styles';
 import {
   GenericWithTheme,
+  SerializedStyles,
   TCreateStylinComponent,
   TStylinFn,
 } from './stylin.types';

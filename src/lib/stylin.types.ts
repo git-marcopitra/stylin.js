@@ -1,10 +1,51 @@
-import { SerializedStyles } from '@emotion/react';
-import { CSSInterpolation } from '@emotion/serialize';
 import { StyledComponent } from '@emotion/styled';
-import { CSSProperties } from 'react';
+import CSS from 'csstype';
 
 import { IEmptyObj } from '../interface';
 import { CSSPseudoSelectors } from './constants';
+
+export type ArrayCSSInterpolation = Array<CSSInterpolation>;
+
+export interface ComponentSelector {
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  __emotion_styles: any;
+}
+
+export type Keyframes = {
+  name: string;
+  styles: string;
+  anim: number;
+  toString: () => string;
+} & string;
+
+export type CSSPseudos = { [K in CSS.Pseudos]?: CSSObject };
+export type CSSProperties = CSS.PropertiesFallback<number | string>;
+export type CSSPropertiesWithMultiValues = {
+  [K in keyof CSSProperties]:
+    | CSSProperties[K]
+    | Array<Extract<CSSProperties[K], string>>;
+};
+export interface CSSObject
+  extends CSSPropertiesWithMultiValues,
+    CSSPseudos,
+    CSSOthersObject {}
+
+export interface CSSOthersObject {
+  [propertiesName: string]: CSSInterpolation;
+}
+
+export type InterpolationPrimitive =
+  | null
+  | undefined
+  | boolean
+  | number
+  | string
+  | ComponentSelector
+  | Keyframes
+  | SerializedStyles
+  | CSSObject;
+
+export type CSSInterpolation = InterpolationPrimitive | ArrayCSSInterpolation;
 
 export type MaybeArray<T> = ReadonlyArray<T> | T;
 
@@ -41,6 +82,13 @@ interface IVariantProperty {
 }
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 type TStylinElementProps = GenericWithTheme<Record<string, any>>;
+
+export interface SerializedStyles {
+  name: string;
+  styles: string;
+  map?: string;
+  next?: SerializedStyles;
+}
 
 export type TRenderVariant = (
   args: IVariantProperty
