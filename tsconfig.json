@@ -3,12 +3,14 @@
     "target": "ES6",
     "module": "CommonJS",
     "strict": true,
+    "jsx": "preserve",
+    "esModuleInterop": true,
     "removeComments": true,
     "noImplicitAny": true,
     "sourceMap": false,
     "outDir": "./dist/",
     "declaration": true
   },
-  "include": ["./src/**/*"],
+  "include": ["./src/**/*", "stories"],
   "exclude": ["node_modules", "**/*.spec.ts"]
 }

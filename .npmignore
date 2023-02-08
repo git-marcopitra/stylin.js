@@ -1,4 +1,12 @@
-src
+# folders
+src/
+.storybook/
+.husky/
+.vscode/
+examples/
+stories/
+
+# files
 tsconfig.json
 .eslintconfig
 .eslintrc
