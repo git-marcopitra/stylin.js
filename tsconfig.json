@@ -11,6 +11,6 @@
     "outDir": "./dist/",
     "declaration": true
   },
-  "include": ["./src/**/*", "stories"],
+  "include": ["./src/**/*"],
   "exclude": ["node_modules", "**/*.spec.ts"]
 }

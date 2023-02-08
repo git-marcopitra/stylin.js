@@ -2,3 +2,4 @@ node_modules
 commitlint.config.js
 tsconfig.json
 dist
+examples

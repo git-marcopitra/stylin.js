@@ -1,16 +1,21 @@
 # folders
-src/
-.storybook/
+.DS_Store/
+.github/
 .husky/
+.storybook/
 .vscode/
 examples/
+node_modules/
+src/
 stories/
+storybook-static/
 
 # files
-tsconfig.json
-.eslintconfig
+.eslintignore
 .eslintrc
+.prettierignore
 .prettierrc
 commitlint.config.js
-tsconfig.tsbuildinfo
+tsconfig.json
 yarn-error.log
+yarn.lock
