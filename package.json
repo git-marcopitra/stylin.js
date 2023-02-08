@@ -67,7 +67,6 @@
     "@emotion/serialize": "^1.1.1",
     "@emotion/styled": "^11.10.5",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "stylin": "^5.1.3"
+    "react-dom": "^18.2.0"
   }
 }
