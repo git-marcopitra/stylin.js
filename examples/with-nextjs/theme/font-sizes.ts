@@ -5,4 +5,4 @@ export const fontSizes = {
   L: '1.2rem',
   XL: '1.5rem',
   XXL: '2rem',
-}
+};

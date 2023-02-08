@@ -4,4 +4,4 @@ export const space = {
   M: '0.75rem',
   L: '1rem',
   XL: '1.5rem',
-}
+};
