@@ -1,15 +1,9 @@
-import React, {
-  ButtonHTMLAttributes,
-  CSSProperties,
-  FC,
-  PropsWithChildren,
-} from 'react';
+import React, { ButtonHTMLAttributes, FC, PropsWithChildren } from 'react';
 
-import stylin, { StylinCustomPropertiesType, variant } from '../../src';
+import stylin, { StylinComponentProps, variant } from '../../src';
 
 interface ButtonProps
-  extends CSSProperties,
-    Partial<Record<StylinCustomPropertiesType, string>>,
+  extends StylinComponentProps,
     Omit<ButtonHTMLAttributes<HTMLButtonElement>, 'color' | 'translate'> {
   variant?: 'default' | 'outline' | 'text' | 'custom';
   size?: 'sm' | 'md' | 'lg';

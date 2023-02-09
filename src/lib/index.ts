@@ -25,6 +25,5 @@ const stylin =
       ({ theme, ...props }) => renderStyles(props, theme as Theme)
     );
 
-export default stylin;
-
 export { default as variant } from './render-variant';
+export default stylin;

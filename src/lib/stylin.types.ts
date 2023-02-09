@@ -2,7 +2,6 @@ import { StyledComponent } from '@emotion/styled';
 import CSS from 'csstype';
 
 import { IEmptyObj } from '../interface';
-import { CSSPseudoSelectors } from './constants';
 
 export type ArrayCSSInterpolation = Array<CSSInterpolation>;
 
@@ -96,10 +95,11 @@ export type TRenderVariant = (
 
 export type TStyleKeys = keyof CSSProperties & StylinCustomPropertiesType;
 
-export type TPseudoKeys = keyof typeof CSSPseudoSelectors;
-
 export type TStyles = Record<TStyleKeys, TStyleValue>;
-export type TPseudos = Record<TPseudoKeys, TStyleValue>;
+export type TPseudos = Record<StylinSimplePseudos, TStyleValue>;
+
+export type TStyleEntries = ReadonlyArray<[TStyleKeys, TStyleValue]>;
+export type TPseudoEntries = ReadonlyArray<[StylinSimplePseudos, TStyleValue]>;
 
 export type RenderStylesProps = TStyles | TPseudos;
 
@@ -120,7 +120,7 @@ export type TRenderResponsiveStyles = (
 
 export type TRenderPseudoSelector = (
   theme: Theme,
-  selector: string,
+  selector: StylinSimplePseudos,
   styles: TStyles
 ) => {
   [selector: string]: CSSInterpolation;
@@ -143,3 +143,110 @@ export type TRenderThemedStyle = (
   property: keyof CSSProperties,
   style: string | number
 ) => string | number;
+
+export type StylinSimplePseudos =
+  | 'on-cue'
+  | 'on-cueRegion'
+  | 'on-khtmlAnyLink'
+  | 'on-mozAnyLink'
+  | 'on-mozFocusring'
+  | 'on-mozFullScreen'
+  | 'on-mozReadOnly'
+  | 'on-mozReadWrite'
+  | 'on-mozUiInvalid'
+  | 'on-mozUiValid'
+  | 'on-msFullscreen'
+  | 'on-webkitAnyLink'
+  | 'on-webkitFullScreen'
+  | 'on-mozPlaceholder'
+  | 'on-mozProgressBar'
+  | 'on-mozRangeProgress'
+  | 'on-mozRangeThumb'
+  | 'on-mozRangeTrack'
+  | 'on-mozSelection'
+  | 'on-msBackdrop'
+  | 'on-msBrowse'
+  | 'on-msCheck'
+  | 'on-msClear'
+  | 'on-msFill'
+  | 'on-msFillLower'
+  | 'on-msFillUpper'
+  | 'on-msInputPlaceholder'
+  | 'on-msReveal'
+  | 'on-msThumb'
+  | 'on-msTicksAfter'
+  | 'on-msTicksBefore'
+  | 'on-msTooltip'
+  | 'on-msTrack'
+  | 'on-msValue'
+  | 'on-webkitBackdrop'
+  | 'on-webkitInputPlaceholder'
+  | 'on-webkitProgressBar'
+  | 'on-webkitProgressInnerValue'
+  | 'on-webkitProgressValue'
+  | 'on-webkitSliderRunnableTrack'
+  | 'on-webkitSliderThumb'
+  | 'on-after'
+  | 'on-backdrop'
+  | 'on-before'
+  | 'on-firstLetter'
+  | 'on-firstLine'
+  | 'on-grammarError'
+  | 'on-marker'
+  | 'on-placeholder'
+  | 'on-selection'
+  | 'on-spellingError'
+  | 'on-targetText'
+  | 'on-active'
+  | 'on-anyLink'
+  | 'on-blank'
+  | 'on-checked'
+  | 'on-current'
+  | 'on-default'
+  | 'on-defined'
+  | 'on-disabled'
+  | 'on-empty'
+  | 'on-enabled'
+  | 'on-first'
+  | 'on-firstChild'
+  | 'on-firstOfType'
+  | 'on-focus'
+  | 'on-focusVisible'
+  | 'on-focusWithin'
+  | 'on-fullscreen'
+  | 'on-future'
+  | 'on-hover'
+  | 'on-inRange'
+  | 'on-indeterminate'
+  | 'on-invalid'
+  | 'on-lastChild'
+  | 'on-lastOfType'
+  | 'on-left'
+  | 'on-link'
+  | 'on-localLink'
+  | 'on-nthCol'
+  | 'on-nthLastCol'
+  | 'on-onlyChild'
+  | 'on-onlyOfType'
+  | 'on-optional'
+  | 'on-outOfRange'
+  | 'on-past'
+  | 'on-paused'
+  | 'on-pictureInPicture'
+  | 'on-placeholderShown'
+  | 'on-readOnly'
+  | 'on-readWrite'
+  | 'on-required'
+  | 'on-right'
+  | 'on-root'
+  | 'on-scope'
+  | 'on-target'
+  | 'on-targetWithin'
+  | 'on-userInvalid'
+  | 'on-userValid'
+  | 'on-valid'
+  | 'on-visited';
+
+export type StylinComponentProps = CSSProperties &
+  Partial<Record<StylinCustomPropertiesType, string>> &
+  Partial<Record<StylinSimplePseudos, CSSInterpolation>>;

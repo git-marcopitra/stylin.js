@@ -1938,7 +1938,7 @@ queue-microtask@^1.2.2:
   resolved "https://registry.yarnpkg.com/queue-microtask/-/queue-microtask-1.2.3.tgz#4929228bbc724dfac43e0efb058caf7b6cfb6243"
   integrity sha512-NuaNSa6flKT5JaSYQzJok04JzTL1CA6aGhv5rfLW3PgqA+M2ChpZQnAC8h8i4ZFkBS8X5RqkDBHA7r4hej3K9A==
 
-react-dom@18.2.0, react-dom@^18.2.0:
+react-dom@18.2.0:
   version "18.2.0"
   resolved "https://registry.yarnpkg.com/react-dom/-/react-dom-18.2.0.tgz#22aaf38708db2674ed9ada224ca4aa708d821e3d"
   integrity sha512-6IMTriUmvsjHUjNtEDudZfuDQUoWXVxKHhlEGSk81n4YFS+r/Kl99wXiwlVXtPBtJenozv2P+hxDsw9eA7Xo6g==
@@ -1951,7 +1951,7 @@ react-is@^16.13.1, react-is@^16.7.0:
   resolved "https://registry.yarnpkg.com/react-is/-/react-is-16.13.1.tgz#789729a4dc36de2999dc156dd6c1d9c18cea56a4"
   integrity sha512-24e6ynE2H+OKt4kqsOvNd8kBpV65zoxbA4BVsEOB3ARVWQki/DHzaUoC5KuON/BiccDaCCTZBuOcfZs70kR8bQ==
 
-react@18.2.0, react@^18.2.0:
+react@18.2.0:
   version "18.2.0"
   resolved "https://registry.yarnpkg.com/react/-/react-18.2.0.tgz#555bd98592883255fa00de14f1151a917b5d77d5"
   integrity sha512-/3IjMdb2L9QbBdWiW5e3P2/npwMBaU9mHCSCUzNln0ZCYbcfTsGbTJrU/kGemdH2IWmB2ioZ+zkxtmq6g09fGQ==
@@ -2151,16 +2151,13 @@ styled-jsx@5.1.1:
   dependencies:
     client-only "0.0.1"
 
-stylin.js@^0.1.2-alpha:
-  version "0.1.2-alpha"
-  resolved "https://registry.yarnpkg.com/stylin.js/-/stylin.js-0.1.2-alpha.tgz#f5c0daef039dc554adf5e5b1a6d7bedd2f6acf23"
-  integrity sha512-rtwEJXkUK0XJkvX0yGIWEGC+p3al78syhU3teGO5IEEF4jZ09DGH3kAgTmjj/uWOAdUkUAnWSu0I91x3hOFb3g==
+stylin.js@^0.2.0-alpha:
+  version "0.2.0-alpha"
+  resolved "https://registry.yarnpkg.com/stylin.js/-/stylin.js-0.2.0-alpha.tgz#7c259b49b3763a9781a4a0accd83f63772b76cc5"
+  integrity sha512-dkIyM+KB6M/s/XqD/YZKpAZwZRE1uzMzr3ciQIK+lYn7B+y2UZv3zA6vDzKTSsi6vUk1RblX108UfO5mDQXB2g==
   dependencies:
     "@emotion/react" "^11.10.5"
-    "@emotion/serialize" "^1.1.1"
     "@emotion/styled" "^11.10.5"
-    react "^18.2.0"
-    react-dom "^18.2.0"
 
 stylis@4.1.3:
   version "4.1.3"

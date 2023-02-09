@@ -8,7 +8,7 @@ const renderResponsiveStyle: TRenderResponsiveStyles = (theme, prop, value) => {
   if (!Array.isArray(value))
     return [renderProperty(theme, prop, value as string | number)];
 
-  return (value as Array<string | number>).map((style, index) => {
+  return (value as ReadonlyArray<string | number>).map((style, index) => {
     if (!style) return {};
 
     if (index == 0) return renderProperty(theme, prop, style);
