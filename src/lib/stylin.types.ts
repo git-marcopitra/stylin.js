@@ -1,8 +1,6 @@
 import { StyledComponent } from '@emotion/styled';
 import CSS from 'csstype';
 
-import { IEmptyObj } from '../interface';
-
 export type ArrayCSSInterpolation = Array<CSSInterpolation>;
 
 export interface ComponentSelector {
@@ -128,7 +126,7 @@ export type TRenderPseudoSelector = (
 
 export type TGetBreakpoint = (index: number, theme: Theme) => string;
 
-export type TCreateStylinComponent<T extends IEmptyObj> = (
+export type TCreateStylinComponent<T extends StylinComponentProps> = (
   ...styles: ReadonlyArray<SerializedStyles | TStylinFn<T>>
 ) => StyledComponent<T>;
 
