@@ -1,4 +1,3 @@
-
 # Stylin.js
 
 ![Stylin Logo](./public/logo.png)
@@ -124,7 +123,8 @@ const App = (Component) => (
 );
 ```
 
-**NOTE:** Remind this theme definition
+**NOTE 1:** These all keys are customizable and optional, you can change for any other key, as you prefer.
+**NOTE 2:** Remind this theme definition, you'll need for next points.
 
 ### Space
 
@@ -173,7 +173,7 @@ The `breakpoints` property works with all stylin props, and works with mobile-fi
 // upper 64em, it will be: mx="0.15rem" p="L"   gap="L"
 ```
 
-**NOTE:** By default the `breakpoints` list is `['36em', '48em', '62em', '75em']`
+**NOTE 3:** By default (if you prefer not passing breakpoints in your theme object) the `breakpoints` list is `['36em', '48em', '62em', '75em']`
 
 ### Radii
 
@@ -309,6 +309,33 @@ const Component: FC = () => (
     <StylinButton variant="secondary" ml="M">
   </>
 )
+```
+
+### Pseudo Selectors
+
+_**Stylin.js**_ provides all css pseudo selectors built-in on your component, using only the prefix `on-` for all selectors, see the code:
+
+```jsx
+<StylinDiv
+  bg="#ddd"
+  borderRadius="M"
+  border="1px solid"
+  borderColor="transparent"
+  transition="all 300ms ease-in-out"
+  on-hover={{     // :hover
+    background: '#bbb',
+    borderColor: 'primary',
+  }}
+  on-active={{    // :active
+    borderColor: 'secondary',
+  }}
+  on-disabled={{  // :disabled
+    cursor: 'not-allowed',
+    borderColor: 'disabled',
+  }}
+>
+  Hello World!
+</StylinDiv>
 ```
 
 ## Contributing
