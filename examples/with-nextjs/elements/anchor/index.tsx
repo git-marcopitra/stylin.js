@@ -6,10 +6,6 @@ export interface AnchorProps
     Partial<Record<StylinCustomPropertiesType, string>>,
     Omit<AnchorHTMLAttributes<HTMLAnchorElement>, 'color' | 'translate'> {}
 
-const Anchor: FC<AnchorProps> = (props) => {
-  const StylinAnchor = stylin('a')();
-
-  return <StylinAnchor {...props} />;
-};
+const Anchor: FC<AnchorProps> = stylin('a')();
 
 export default Anchor;

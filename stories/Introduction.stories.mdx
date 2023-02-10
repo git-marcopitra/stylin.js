@@ -1,211 +1,346 @@
 import { Meta } from '@storybook/addon-docs';
-import Code from './assets/code-brackets.svg';
-import Colors from './assets/colors.svg';
-import Comments from './assets/comments.svg';
-import Direction from './assets/direction.svg';
-import Flow from './assets/flow.svg';
-import Plugin from './assets/plugin.svg';
-import Repo from './assets/repo.svg';
-import StackAlt from './assets/stackalt.svg';
 
-<Meta title="Example/Introduction" />
+<Meta title="Example/Docs" />
 
-<style>
-  {`
-    .subheading {
-      --mediumdark: '#999999';
-      font-weight: 900;
-      font-size: 13px;
-      color: #999;
-      letter-spacing: 6px;
-      line-height: 24px;
-      text-transform: uppercase;
-      margin-bottom: 12px;
-      margin-top: 40px;
-    }
+# Stylin.js
 
-    .link-list {
-      display: grid;
-      grid-template-columns: 1fr;
-      grid-template-rows: 1fr 1fr;
-      row-gap: 10px;
-    }
+**React** in-component styling, Theme-Based, Suggestive, primitive CSS allowed.
 
-    @media (min-width: 620px) {
-      .link-list {
-        row-gap: 20px;
-        column-gap: 20px;
-        grid-template-columns: 1fr 1fr;
-      }
-    }
+## Installing
 
-    @media all and (-ms-high-contrast:none) {
-    .link-list {
-        display: -ms-grid;
-        -ms-grid-columns: 1fr 1fr;
-        -ms-grid-rows: 1fr 1fr;
-      }
-    }
+To install the package you must to have installed [node](https://nodejs.org/en/) and npm/yarn
 
-    .link-item {
-      display: block;
-      padding: 20px 30px 20px 15px;
-      border: 1px solid #00000010;
-      border-radius: 5px;
-      transition: background 150ms ease-out, border 150ms ease-out, transform 150ms ease-out;
-      color: #333333;
-      display: flex;
-      align-items: flex-start;
-    }
+```sh
+# npm
+npm install stylin.js
 
-    .link-item:hover {
-      border-color: #1EA7FD50;
-      transform: translate3d(0, -3px, 0);
-      box-shadow: rgba(0, 0, 0, 0.08) 0 3px 10px 0;
-    }
+# yarn
+yarn add stylin.js
+```
 
-    .link-item:active {
-      border-color: #1EA7FD;
-      transform: translate3d(0, 0, 0);
-    }
+## Getting Started
 
-    .link-item strong {
-      font-weight: 700;
-      display: block;
-      margin-bottom: 2px;
-    }
+It's too simple to use _StylinComponents_, see what I mean:
 
-    .link-item img {
-      height: 40px;
-      width: 40px;
-      margin-right: 15px;
-      flex: none;
-    }
+```jsx
+// Javascript
+import React from 'react';
+import stylin from 'stylin.js';
 
-    .link-item span {
-      font-size: 14px;
-      line-height: 20px;
-    }
+const StylinDiv = stylin('div')();
 
-    .tip {
-      display: inline-block;
-      border-radius: 1em;
-      font-size: 11px;
-      line-height: 12px;
-      font-weight: 700;
-      background: #E7FDD8;
-      color: #66BF3C;
-      padding: 4px 12px;
-      margin-right: 10px;
-      vertical-align: top;
-    }
-
-    .tip-wrapper {
-      font-size: 13px;
-      line-height: 20px;
-      margin-top: 40px;
-      margin-bottom: 40px;
-    }
-
-    .tip-wrapper code {
-      font-size: 12px;
-      display: inline-block;
-    }
-  `}
-</style>
-
-# Welcome to Storybook
-
-Storybook helps you build UI components in isolation from your app's business logic, data, and context.
-That makes it easy to develop hard-to-reach states. Save these UI states as **stories** to revisit during development, testing, or QA.
-
-Browse example stories now by navigating to them in the sidebar.
-View their code in the `stories` directory to learn how they work.
-We recommend building UIs with a [**component-driven**](https://componentdriven.org) process starting with atomic components and ending with pages.
-
-<div className="subheading">Configure</div>
-
-<div className="link-list">
-  <a
-    className="link-item"
-    href="https://storybook.js.org/docs/react/addons/addon-types"
-    target="_blank"
+const Home = () => (
+  <StylinDiv
+    // all your JSX Styles here
+    padding="2rem"
+    background="#f55"
+    borderRadius="1rem"
+    on-hover={{
+      textAlign: 'right',
+    }}
   >
-    <img src={Plugin} alt="plugin" />
-    <span>
-      <strong>Presets for popular tools</strong>
-      Easy setup for TypeScript, SCSS and more.
-    </span>
-  </a>
-  <a
-    className="link-item"
-    href="https://storybook.js.org/docs/react/configure/webpack"
-    target="_blank"
-  >
-    <img src={StackAlt} alt="Build" />
-    <span>
-      <strong>Build configuration</strong>
-      How to customize webpack and Babel
-    </span>
-  </a>
-  <a
-    className="link-item"
-    href="https://storybook.js.org/docs/react/configure/styling-and-css"
-    target="_blank"
-  >
-    <img src={Colors} alt="colors" />
-    <span>
-      <strong>Styling</strong>
-      How to load and configure CSS libraries
-    </span>
-  </a>
-  <a
-    className="link-item"
-    href="https://storybook.js.org/docs/react/get-started/setup#configure-storybook-for-your-stack"
-    target="_blank"
-  >
-    <img src={Flow} alt="flow" />
-    <span>
-      <strong>Data</strong>
-      Providers and mocking for data libraries
-    </span>
-  </a>
-</div>
+    Hello World
+  </StylinDiv>
+);
+```
 
-<div className="subheading">Learn</div>
+```tsx
+// Typescript
+import React, { FC, HTMLAttributes } from 'react';
+import stylin, { StylinComponentProps } from 'stylin.js';
 
-<div className="link-list">
-  <a className="link-item" href="https://storybook.js.org/docs" target="_blank">
-    <img src={Repo} alt="repo" />
-    <span>
-      <strong>Storybook documentation</strong>
-      Configure, customize, and extend
-    </span>
-  </a>
-  <a className="link-item" href="https://storybook.js.org/tutorials/" target="_blank">
-    <img src={Direction} alt="direction" />
-    <span>
-      <strong>In-depth guides</strong>
-      Best practices from leading teams
-    </span>
-  </a>
-  <a className="link-item" href="https://github.com/storybookjs/storybook" target="_blank">
-    <img src={Code} alt="code" />
-    <span>
-      <strong>GitHub project</strong>
-      View the source and add issues
-    </span>
-  </a>
-  <a className="link-item" href="https://discord.gg/storybook" target="_blank">
-    <img src={Comments} alt="comments" />
-    <span>
-      <strong>Discord chat</strong>
-      Chat with maintainers and the community
-    </span>
-  </a>
-</div>
+// There may be some duplicated props
+// You must omit the with the following line
+type StylinDivProps = Omit<
+  HTMLAttributes<HTMLDivElement>,
+  'color' | 'translate'
+> &
+  StylinComponentProps; // Stylin props
 
-<div className="tip-wrapper">
-  <span className="tip">Tip</span>Edit the Markdown in{' '}
-  <code>stories/Introduction.stories.mdx</code>
-</div>
+const StylinDiv = stylin<StylinDivProps>('div')();
+
+const Home: FC = () => (
+  <StylinDiv
+    // all your JSX Styles here
+    padding="2rem" // p="2rem" in alternative
+    background="#f55" // bg="#f55" in alternative
+    borderRadius="1rem"
+    on-hover={{
+      textAlign: 'right',
+    }}
+  >
+    Hello World!
+  </StylinDiv>
+);
+```
+
+## Theme-Based Props
+
+For Theme-Based props, you must to use the [emotion `ThemeProvider`](https://emotion.sh/docs/theming).
+
+Then, you must to add these following **default** properties to `theme` object, and you will use their keys into _StylinComponent_:
+
+- `space`: an **object** for spaces like _margins_, and _paddings_;
+- `breakpoints`: a **list** for responsiveness breakpoints;
+- `radii`: an **object** for border radius size/width;
+- `fontSizes`: an **object** for font sizes (as the name says);
+- `colors`: an **object** for color palette around the code;
+
+**Eg.:**
+
+```js
+import { ThemeProvider } from '@emotion/react';
+
+const theme = {
+  space: {
+    S: '0.5rem',
+    M: '1rem',
+    L: '2rem',
+  },
+  breakpoints: ['44em', '55em', '64em'],
+  radii: {
+    S: '0.5rem',
+    M: '0.75rem',
+    L: '1rem',
+  },
+  fontSizes: {
+    S: '0.9rem',
+    M: '1rem',
+    L: '1.3rem',
+    XL: '2rem',
+  },
+  colors: {
+    primary: '#f55',
+    secondary: '#55f',
+    disabled: '#aaa',
+  },
+};
+
+// Make sure that all StylinComponent be inside this ThemeProvider
+const App = (Component) => (
+  <ThemeProvider theme={theme}>
+    // rest of the code
+    <Component />
+  </ThemeProvider>
+);
+```
+
+**NOTE 1:** These all keys are customizable and optional, you can change for any other key, as you prefer.
+**NOTE 2:** Remind this theme definition, you'll need for next points.
+
+### Space
+
+The `space` property will work with these following attributes:
+
+- `gap`;
+- `rowGap`
+- `columnGap`;
+- `m`: (alternatively, `margin`);
+- `mt`: (alternatively, `marginTop`);
+- `mr`: (alternatively, `marginRight`);
+- `mb`: (alternatively, `marginBottom`);
+- `ml`: (alternatively, `marginLeft`);
+- `mx`: (alternatively, `marginLeft` + `marginRight`);
+- `my`: (alternatively, `marginTop` + `marginBottom`);
+- `p`: (alternatively, `padding`);
+- `pt`: (alternatively, `paddingTop`);
+- `pr`: (alternatively, `paddingRight`);
+- `pb`: (alternatively, `paddingBottom`);
+- `pb`: (alternatively, `paddingLeft`);
+- `px`: (alternatively, `paddingLeft` + `paddingRight`);
+- `py`: (alternatively, `paddingTop` + `paddingBottom`);
+
+**Eg.:**
+
+```jsx
+<StylinDiv m="L" p="M" mr="S">
+  Hello World!
+</StylinDiv>
+```
+
+### Breakpoints
+
+The `breakpoints` property works with all stylin props, and works with mobile-first philosophy, it means that, the first props will be for more smaller screens, see the code:
+
+```jsx
+// base case: breakpoints = ['44em', '55em', '64em']
+<StylinDiv mx={['M', 'S', '0.25rem', '0.15rem']} p="L" gap={['M', 'L']}>
+  Hello World!
+</StylinDiv>
+
+// Results based on screen width
+// under 44em, it will be: mx="M"       p="L"   gap="M"
+// under 55em, it will be: mx="S"       p="L"   gap="L"
+// under 64em, it will be: mx="0.25rem" p="L"   gap="L"
+// upper 64em, it will be: mx="0.15rem" p="L"   gap="L"
+```
+
+
+**NOTE 3:** By default (if you prefer not passing breakpoints in your theme object) the `breakpoints` list is `['36em', '48em', '62em', '75em']`
+
+### Radii
+
+The `radii` property is reserved to standardize the radius on your _StylinComponents_, it has a limited attributes to uses, check following list:
+
+- `borderRadius`;
+- `borderEndEndRadius`;
+- `borderTopLeftRadius`;
+- `borderTopRightRadius`;
+- `borderEndStartRadius`;
+- `borderStartEndRadius`;
+- `borderBottomLeftRadius`;
+- `borderStartStartRadius`;
+- `borderBottomRightRadius`.
+
+**Eg.:**
+
+```jsx
+<StylinDiv borderRadius="M" borderEndEndRadius="0">
+  Hello World!
+</StylinDiv>
+```
+
+### Font Sizes
+
+The `fontSizes` property is reserved to standardize the fontSizes, and works only with `fontSize` attribute.
+
+**Eg.:**
+
+```jsx
+<StylinP fontSize="XL">Hello World! (Heading)</StylinP>
+```
+
+### Colors
+
+The `colors` property define our theme color palette, and works with following attributes:
+
+- `color`;
+- `bg`: (alternatively, `background`);
+- `backgroundColor`;
+- `borderColor`;
+- `borderTopColor`;
+- `borderLeftColor`;
+- `borderBlockColor`;
+- `borderRightColor`;
+- `borderBottomColor`;
+- `borderInlineColor`;
+- `borderBlockEndColor`;
+- `borderInlineEndColor`;
+- `borderBlockStartColor`;
+- `borderInlineStartColor`;
+
+**Eg.:**
+
+```jsx
+<StylinDiv color="primary" bg="secondary">
+  Hello World!
+</StylinDiv>
+```
+
+## Advanced Topics
+
+### Variants
+
+Stylin.js also bring for you, a theme-based way to do variants of components. Pre-styling your component in variant property, grouping all those variants, and then export in the theme, see bellow:
+
+#### Theme definition
+
+```js
+const theme = {
+  ...baseTheme, // all base things above
+  buttons: {
+    primary: {
+      color: '#000',
+      fontWeight: 500,
+      backgroundColor: '#f55',
+    },
+    secondary: {
+      color: '#',
+      fontWeight: 500,
+      backgroundColor: '#f55',
+    },
+  },
+};
+```
+
+#### Component usage
+
+##### Javascript
+
+```jsx
+import React from 'react';
+import stylin, { variant } from 'stylin.js';
+
+const StylinButton = stylin('button')(
+  variant({
+    scale: 'buttons', // theme key
+    property: 'variant', // component attribute
+  }),
+  // you can add more than one types of variants
+);
+
+const Component = () => (
+  <>
+    <StylinButton variant="primary">
+    <StylinButton variant="secondary" ml="M">
+  </>
+)
+```
+
+##### Typescript
+
+```tsx
+import React, { FC, ButtonHTMLAttributes } from 'react';
+import stylin, { variant, StylinComponentProps } from 'stylin.js';
+
+interface StylinDivProps extends StylinComponentProps,
+  Omit<ButtonHTMLAttributes<HTMLButtonElement>, 'color' | 'translate'> {
+  variant: 'primary' | 'secondary'; // component attribute well typed
+}
+
+const StylinButton = stylin<StylinDivProps>('button')(
+  variant({
+    scale: 'buttons', // theme key
+    property: 'variant', // component attribute
+  }),
+  // you can add more than one types of variants
+);
+
+const Component: FC = () => (
+  <>
+    <StylinButton variant="primary">
+    <StylinButton variant="secondary" ml="M">
+  </>
+)
+```
+
+### Pseudo Selectors
+
+_**Stylin.js**_ provides all css pseudo selectors built-in on your component, using only the prefix `on-` for all selectors, see the code:
+
+```jsx
+<StylinDiv
+  bg="#ddd"
+  borderRadius="M"
+  border="1px solid"
+  borderColor="transparent"
+  transition="all 300ms ease-in-out"
+  on-hover={{     // :hover
+    background: '#bbb',
+    borderColor: 'primary',
+  }}
+  on-active={{    // :active
+    borderColor: 'secondary',
+  }}
+  on-disabled={{  // :disabled
+    cursor: 'not-allowed',
+    borderColor: 'disabled',
+  }}
+>
+  Hello World!
+</StylinDiv>
+```
+
+## Contributing
+
+We'll open soon the `CONTRIBUTING` file :(. By the way, be ready and [report issues here on Github](https://github.com/git-marcopitra/stylin.js/issues).
