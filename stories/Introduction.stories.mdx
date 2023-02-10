@@ -162,10 +162,10 @@ The `space` property will work with these following attributes:
 The `breakpoints` property works with all stylin props, and works with mobile-first philosophy, it means that, the first props will be for more smaller screens, see the code:
 
 ```jsx
-// base case: breadcrumbs = ['44em', '55em', '64em']
+// base case: breakpoints = ['44em', '55em', '64em']
 <StylinDiv mx={['M', 'S', '0.25rem', '0.15rem']} p="L" gap={['M', 'L']}>
   Hello World!
-</StyledDiv>
+</StylinDiv>
 
 // Results based on screen width
 // under 44em, it will be: mx="M"       p="L"   gap="M"
@@ -195,7 +195,7 @@ The `radii` property is reserved to standardize the radius on your _StylinCompon
 ```jsx
 <StylinDiv borderRadius="M" borderEndEndRadius="0">
   Hello World!
-</StyledDiv>
+</StylinDiv>
 ```
 
 ### Font Sizes
@@ -230,9 +230,9 @@ The `colors` property define our theme color palette, and works with following a
 **Eg.:**
 
 ```jsx
-<StyledDiv color="primary" bg="secondary">
+<StylinDiv color="primary" bg="secondary">
   Hello World!
-</StyledDiv>
+</StylinDiv>
 ```
 
 ## Advanced Topics
