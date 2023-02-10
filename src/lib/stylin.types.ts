@@ -44,6 +44,49 @@ export type InterpolationPrimitive =
 
 export type CSSInterpolation = InterpolationPrimitive | ArrayCSSInterpolation;
 
+export type ArrayCSSInterpolation = Array<CSSInterpolation>;
+
+export interface ComponentSelector {
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  __emotion_styles: any;
+}
+
+export type Keyframes = {
+  name: string;
+  styles: string;
+  anim: number;
+  toString: () => string;
+} & string;
+
+export type CSSPseudos = { [K in CSS.Pseudos]?: CSSObject };
+export type CSSProperties = CSS.PropertiesFallback<number | string>;
+export type CSSPropertiesWithMultiValues = {
+  [K in keyof CSSProperties]:
+    | CSSProperties[K]
+    | Array<Extract<CSSProperties[K], string>>;
+};
+export interface CSSObject
+  extends CSSPropertiesWithMultiValues,
+    CSSPseudos,
+    CSSOthersObject {}
+
+export interface CSSOthersObject {
+  [propertiesName: string]: CSSInterpolation;
+}
+
+export type InterpolationPrimitive =
+  | null
+  | undefined
+  | boolean
+  | number
+  | string
+  | ComponentSelector
+  | Keyframes
+  | SerializedStyles
+  | CSSObject;
+
+export type CSSInterpolation = InterpolationPrimitive | ArrayCSSInterpolation;
+
 export type MaybeArray<T> = ReadonlyArray<T> | T;
 
 export type StylinCustomPropertiesType =
