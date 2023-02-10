@@ -1,9 +1,9 @@
+import { CSSPseudoSelectors } from './constants';
 import renderResponsiveStyle from './render-responsive-style';
 import {
   CSSInterpolation,
   TRenderPseudoSelector,
-  TStyleKeys,
-  TStyleValue,
+  TStyleEntries,
 } from './stylin.types';
 
 const renderPseudoSelector: TRenderPseudoSelector = (
@@ -11,11 +11,13 @@ const renderPseudoSelector: TRenderPseudoSelector = (
   selector,
   styles
 ) => ({
-  [`:${selector}`]: Object.entries(styles).reduce(
-    (acc, [prop, value]) =>
-      acc.concat(
-        renderResponsiveStyle(theme, prop as TStyleKeys, value as TStyleValue)
-      ),
+  [CSSPseudoSelectors[selector]]: (
+    Object.values(styles) as unknown as TStyleEntries
+  ).reduce(
+    (acc, [prop, value]) => [
+      ...acc,
+      ...renderResponsiveStyle(theme, prop, value),
+    ],
     [] as Array<CSSInterpolation>
   ),
 });

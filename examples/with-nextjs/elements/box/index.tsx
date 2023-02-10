@@ -1,6 +1,5 @@
 import { CSSProperties, FC, HTMLAttributes } from 'react';
-import stylin from 'stylin.js';
-import { StylinCustomPropertiesType } from 'stylin.js/dist/lib/constants';
+import stylin, { StylinCustomPropertiesType } from 'stylin.js';
 
 export interface BoxProps
   extends CSSProperties,

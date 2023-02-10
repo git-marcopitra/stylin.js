@@ -6,6 +6,7 @@
 .vscode/
 examples/
 node_modules/
+public/
 src/
 stories/
 storybook-static/

@@ -1,17 +1,18 @@
 import styled from '@emotion/styled';
 
-import { IEmptyObj, Theme } from '../interface';
+import { Theme } from '../interface';
 import renderStyles from './render-styles';
 import {
   GenericWithTheme,
   SerializedStyles,
+  StylinComponentProps,
   TCreateStylinComponent,
   TStylinFn,
 } from './stylin.types';
 import { isFunction } from './utils';
 
 const stylin =
-  <T extends IEmptyObj>(
+  <T extends StylinComponentProps>(
     component: keyof JSX.IntrinsicElements
   ): TCreateStylinComponent<T> =>
   (...styles) =>
@@ -26,5 +27,3 @@ const stylin =
     );
 
 export default stylin;
-
-export { default as variant } from './render-variant';

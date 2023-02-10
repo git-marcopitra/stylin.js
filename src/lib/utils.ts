@@ -1,13 +1,10 @@
-import { filter, keys, toPairs } from 'ramda';
-
 import { CSS_STYLING_MAP } from './constants';
 import { CSSPseudoSelectors } from './constants/css-pseudo-selectors';
 import {
   TGetBreakpoint,
-  TPseudoKeys,
-  TStyleKeys,
+  TPseudoEntries,
+  TStyleEntries,
   TStyles,
-  TStyleValue,
 } from './stylin.types';
 
 export const getBreakpoint: TGetBreakpoint = (index, theme) => {
@@ -18,15 +15,15 @@ export const getBreakpoint: TGetBreakpoint = (index, theme) => {
   return breakpoints.pop();
 };
 
-export const getStyles = (
-  styles: TStyles
-): ReadonlyArray<[TStyleKeys, TStyleValue]> =>
-  filter((pair) => CSS_STYLING_MAP.includes(pair[0]), toPairs(styles));
+export const getStyles = (styles: TStyles): TStyleEntries =>
+  (Object.entries(styles) as unknown as TStyleEntries).filter((pair) =>
+    CSS_STYLING_MAP.includes(pair[0])
+  );
 
-export const getPseudos = (
-  styles: TStyles
-): ReadonlyArray<[TPseudoKeys, TStyles]> =>
-  filter((pair) => keys(CSSPseudoSelectors).includes(pair[0]), toPairs(styles));
+export const getPseudos = (styles: TStyles): TPseudoEntries =>
+  (Object.entries(styles) as unknown as TPseudoEntries).filter((pair) =>
+    Object.keys(CSSPseudoSelectors).includes(pair[0])
+  );
 
 export const isFunction = (functionToCheck: unknown): boolean =>
   !!functionToCheck &&

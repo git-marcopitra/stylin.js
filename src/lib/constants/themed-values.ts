@@ -6,6 +6,9 @@ export const THEMED_VALUES_MAP: Partial<
     'radii' | 'space' | 'colors' | 'fontSizes' | 'breakpoints'
   >
 > = {
+  gap: 'space',
+  rowGap: 'space',
+  columnGap: 'space',
   margin: 'space',
   marginTop: 'space',
   marginRight: 'space',
