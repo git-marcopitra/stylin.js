@@ -108,7 +108,7 @@ export default function Home() {
           </Box>
         </Box>
         <Typography fontFamily="ui-monospace, Menlo, Monaco, 'Cascadia Mono', 'Segoe UI Mono', 'Roboto Mono', 'Oxygen Mono', 'Ubuntu Monospace', 'Source Code Pro', 'Fira Mono', 'Droid Sans Mono', 'Courier New', monospace">
-          <Typography as="strong" hover={{ color: '#7CEECC' }}>
+          <Typography as="strong" on-hover={{ color: '#7CEECC' }}>
             Stylin
           </Typography>{' '}
           NextJS example

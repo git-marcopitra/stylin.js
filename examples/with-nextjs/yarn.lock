@@ -2151,10 +2151,10 @@ styled-jsx@5.1.1:
   dependencies:
     client-only "0.0.1"
 
-stylin.js@^0.2.0-alpha:
-  version "0.2.0-alpha"
-  resolved "https://registry.yarnpkg.com/stylin.js/-/stylin.js-0.2.0-alpha.tgz#7c259b49b3763a9781a4a0accd83f63772b76cc5"
-  integrity sha512-dkIyM+KB6M/s/XqD/YZKpAZwZRE1uzMzr3ciQIK+lYn7B+y2UZv3zA6vDzKTSsi6vUk1RblX108UfO5mDQXB2g==
+stylin.js@^0.3.0-alpha:
+  version "0.3.0-alpha"
+  resolved "https://registry.yarnpkg.com/stylin.js/-/stylin.js-0.3.0-alpha.tgz#339fa7a5937aeb6a9672133ff36cec589fc9d054"
+  integrity sha512-8r7HXhy/1H4scXTX/4FgDFMeGU8DjJqDkWrx7fnF+P9n9Gt7Ls0Rsgmi0EUSLPZLeZOv9aEuGfOBFEpiGgDfVQ==
   dependencies:
     "@emotion/react" "^11.10.5"
     "@emotion/styled" "^11.10.5"
