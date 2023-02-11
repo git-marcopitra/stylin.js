@@ -8,10 +8,11 @@
     "test": "jest --passWithNoTests",
     "prepare": "husky install",
     "publish": "npm publish",
-    "prepublish": "rimraf dist && tsc",
+    "prepublish": "yarn build",
     "format": "prettier --write **/*.ts",
     "lint": "eslint . --fix --ext ts",
     "storybook": "start-storybook -p 6006",
+    "build": "rimraf dist && tsc",
     "build:storybook": "rimraf storybook-static && build-storybook"
   },
   "publishConfig": {
@@ -31,9 +32,9 @@
   "author": "git-marcopitra@github.com",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/git-marcopitra/stylin/issues"
+    "url": "https://github.com/git-marcopitra/stylin.js/issues"
   },
-  "homepage": "https://github.com/git-marcopitra/stylin#readme",
+  "homepage": "https://git-marcopitra.github.io/stylin.js/",
   "devDependencies": {
     "@babel/core": "^7.20.12",
     "@emotion/eslint-plugin": "^11.10.0",
