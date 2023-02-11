@@ -1,4 +1,4 @@
 #!/usr/bin/env sh
 . "$(dirname -- "$0")/_/husky.sh"
 
-npm run format && npm run lint && npm test && yarn build:storybook && git commit -m ":memo: docs: update static docs" --no-verify
+npm run format && npm run lint && npm test && yarn build:storybook && git add storybook-static/* && git commit -m ":memo: docs: update static docs" --no-verify
