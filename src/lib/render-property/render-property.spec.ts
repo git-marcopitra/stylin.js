@@ -10,6 +10,7 @@ const renderPropertyTestTable: ReadonlyArray<
   ['px', 'M', { paddingLeft: 'M', paddingRight: 'M' }],
   ['padding', 'M', { padding: 'M' }],
   ['margin', '2rem', { margin: '2rem' }],
+  ['bg', 'primary', { background: 'primary' }],
 ];
 
 describe(renderProperty.name, () => {
