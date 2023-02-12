@@ -1,6 +1,9 @@
 import { CSSPropertiesKeys, StylinCustomPropertiesType } from '../stylin.types';
 
-export const StylinCustomProperties = {
+export const StylinCustomProperties: Record<
+  StylinCustomPropertiesType,
+  StylinCustomPropertiesType
+> = {
   bg: 'bg',
   m: 'm',
   mx: 'mx',
