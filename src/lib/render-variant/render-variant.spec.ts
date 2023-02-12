@@ -1,18 +1,6 @@
-import type { GenericWithTheme, Theme, TVariantStyleFn } from '../stylin.types';
+import { getRenderVariantTestTable } from '../../test-utils';
+import type { GenericWithTheme, TVariantStyleFn } from '../stylin.types';
 import renderVariant from '.';
-
-const getRenderVariantTestTable = (
-  theme: Theme,
-  scale: string,
-  property: string,
-  propsValue: ReadonlyArray<string>
-) =>
-  propsValue.map((prop) => [
-    prop,
-    property,
-    scale,
-    theme[scale]?.[prop] ?? {}, // accessing the theme and get the prop on that scale
-  ]);
 
 describe(renderVariant.name, () => {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any

@@ -1,4 +1,4 @@
-import { CSSProperties, StylinCustomPropertiesType } from '../stylin.types';
+import { CSSPropertiesKeys, StylinCustomPropertiesType } from '../stylin.types';
 
 export const StylinCustomProperties = {
   bg: 'bg',
@@ -20,7 +20,7 @@ export const StylinCustomProperties = {
 
 export const CUSTOM_PROPERTY_MAP: Record<
   StylinCustomPropertiesType,
-  ReadonlyArray<keyof CSSProperties>
+  ReadonlyArray<CSSPropertiesKeys>
 > = {
   bg: ['background'],
   m: ['margin'],

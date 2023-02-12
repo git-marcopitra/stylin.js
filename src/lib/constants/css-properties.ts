@@ -1,6 +1,6 @@
-import { CSSProperties } from 'react';
+import { CSSPropertiesKeys } from '../stylin.types';
 
-export const CSS_PROPERTIES_ARRAY: ReadonlyArray<keyof CSSProperties> = [
+export const CSS_PROPERTIES_ARRAY: ReadonlyArray<CSSPropertiesKeys> = [
   'alignContent',
   'alignItems',
   'alignSelf',

@@ -1,13 +1,13 @@
 import { CUSTOM_PROPERTY_MAP, StylinCustomProperties } from './constants';
 import renderThemedStyle from './render-themed-style';
-import { CSSProperties, TRenderProperty } from './stylin.types';
+import { CSSPropertiesKeys, TRenderProperty } from './stylin.types';
 
 const renderProperty: TRenderProperty = (theme, prop, value) => {
   if (StylinCustomProperties[prop])
     return (
-      CUSTOM_PROPERTY_MAP[StylinCustomProperties[prop]] as ReadonlyArray<
-        keyof CSSProperties
-      >
+      CUSTOM_PROPERTY_MAP[
+        StylinCustomProperties[prop]
+      ] as ReadonlyArray<CSSPropertiesKeys>
     ).reduce(
       (acc, property) => ({
         ...acc,

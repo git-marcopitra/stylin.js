@@ -1,14 +1,7 @@
+import { getBreakpointsTestTable } from '../../../test-utils';
 import { DEFAULT_BREAKPOINTS } from '../../constants/breakpoints';
 import { Theme } from '../../stylin.types';
 import { getBreakpoint } from '..';
-
-const getBreakpointsTestTable = (breakpoints: ReadonlyArray<string>) => [
-  [0, 'undefined'],
-  ...breakpoints.map((value, index) => [
-    index + 1, // start counting from second position, where we start using breakpoints
-    value,
-  ]),
-];
 
 describe(getBreakpoint.name, () => {
   const makeSut = (theme: Theme) => ({

@@ -17,8 +17,9 @@ export type Keyframes = {
 
 export type CSSPseudos = { [K in CSS.Pseudos]?: CSSObject };
 export type CSSProperties = CSS.PropertiesFallback<number | string>;
+export type CSSPropertiesKeys = keyof CSS.PropertiesFallback<number | string>;
 export type CSSPropertiesWithMultiValues = {
-  [K in keyof CSSProperties]:
+  [K in CSSPropertiesKeys]:
     | CSSProperties[K]
     | Array<Extract<CSSProperties[K], string>>;
 };
@@ -90,7 +91,7 @@ export type TVariantStyleFn = TStylinFn<Record<string, any>>;
 
 export type TRenderVariant = (args: IVariantProperty) => TVariantStyleFn;
 
-export type TStyleKeys = keyof CSSProperties & StylinCustomPropertiesType;
+export type TStyleKeys = CSSPropertiesKeys & StylinCustomPropertiesType;
 
 export type TStyles = Record<TStyleKeys, TStyleValue>;
 export type TPseudos = Record<StylinSimplePseudos, TStyles>;
@@ -139,7 +140,7 @@ export type TRenderProperty = (
 
 export type TRenderThemedStyle = (
   theme: Theme,
-  property: keyof CSSProperties,
+  property: CSSPropertiesKeys,
   style: string | number
 ) => string | number;
 

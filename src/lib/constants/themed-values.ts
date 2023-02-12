@@ -1,8 +1,8 @@
-import { CSSProperties } from '../stylin.types';
+import { CSSPropertiesKeys } from '../stylin.types';
 
 export const THEMED_VALUES_MAP: Partial<
   Record<
-    keyof CSSProperties,
+    CSSPropertiesKeys,
     'radii' | 'space' | 'colors' | 'fontSizes' | 'breakpoints'
   >
 > = {
