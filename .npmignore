@@ -12,10 +12,12 @@ stories/
 storybook-static/
 
 # files
+.babelrc
 .eslintignore
 .eslintrc
 .prettierignore
 .prettierrc
+jest.config.ts
 commitlint.config.js
 tsconfig.json
 yarn-error.log

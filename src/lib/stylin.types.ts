@@ -94,10 +94,10 @@ export type TRenderVariant = (
 export type TStyleKeys = keyof CSSProperties & StylinCustomPropertiesType;
 
 export type TStyles = Record<TStyleKeys, TStyleValue>;
-export type TPseudos = Record<StylinSimplePseudos, TStyleValue>;
+export type TPseudos = Record<StylinSimplePseudos, TStyles>;
 
 export type TStyleEntries = ReadonlyArray<[TStyleKeys, TStyleValue]>;
-export type TPseudoEntries = ReadonlyArray<[StylinSimplePseudos, TStyleValue]>;
+export type TPseudoEntries = ReadonlyArray<[StylinSimplePseudos, TStyles]>;
 
 export type RenderStylesProps = TStyles | TPseudos;
 
@@ -125,6 +125,8 @@ export type TRenderPseudoSelector = (
 };
 
 export type TGetBreakpoint = (index: number, theme: Theme) => string;
+
+export type TGetStyles = (styles: TStyles) => TStyleEntries;
 
 export type TCreateStylinComponent<T extends StylinComponentProps> = (
   ...styles: ReadonlyArray<SerializedStyles | TStylinFn<T>>
