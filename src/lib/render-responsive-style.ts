@@ -1,5 +1,5 @@
 import renderProperty from './render-property';
-import { TRenderResponsiveStyles } from './stylin.types';
+import { CSSInterpolation, TRenderResponsiveStyles } from './stylin.types';
 import { getBreakpoint } from './utils';
 
 const renderResponsiveStyle: TRenderResponsiveStyles = (theme, prop, value) => {
@@ -20,7 +20,7 @@ const renderResponsiveStyle: TRenderResponsiveStyles = (theme, prop, value) => {
         style
       ),
     };
-  }, []);
+  }) as Array<CSSInterpolation>;
 };
 
 export default renderResponsiveStyle;
