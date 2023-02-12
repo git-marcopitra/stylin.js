@@ -73,12 +73,10 @@ type VariantKeys = Omit<
   'radii' | 'space' | 'colors' | 'fontSizes' | 'breakpoints'
 >;
 
-interface IVariantProperty {
+export interface IVariantProperty {
   scale: keyof VariantKeys;
   property: string;
 }
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
-type TStylinElementProps = GenericWithTheme<Record<string, any>>;
 
 export interface SerializedStyles {
   name: string;
@@ -87,9 +85,10 @@ export interface SerializedStyles {
   next?: SerializedStyles;
 }
 
-export type TRenderVariant = (
-  args: IVariantProperty
-) => (props: TStylinElementProps) => SerializedStyles;
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+export type TVariantStyleFn = TStylinFn<Record<string, any>>;
+
+export type TRenderVariant = (args: IVariantProperty) => TVariantStyleFn;
 
 export type TStyleKeys = keyof CSSProperties & StylinCustomPropertiesType;
 
