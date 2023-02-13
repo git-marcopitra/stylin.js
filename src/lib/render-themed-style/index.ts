@@ -8,13 +8,13 @@ import type { TRenderThemedStyle } from '../stylin.types';
  * return the value itself.
  * @param {Theme} theme the declared theme
  * @param {CSSPropertiesKeys} property the css attribute
- * @param {string | number} style the value of the attribute
+ * @param {TStyleValue} style the value of the attribute
  * @returns {string | number} the value
  */
 const renderThemedStyle: TRenderThemedStyle = (theme, property, style) => {
   const themedValue = THEMED_VALUES_MAP[property];
 
-  if (themedValue) return theme[themedValue]?.[style] ?? style;
+  if (themedValue) return theme[themedValue]?.[style as string] ?? style;
 
   return style;
 };

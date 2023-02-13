@@ -114,7 +114,7 @@ export type TRenderResponsiveStyles = (
   theme: Theme,
   prop: TStyleKeys,
   value: TStyleValue
-) => CSSInterpolation;
+) => ArrayCSSInterpolation;
 
 export type TPseudoSelector = Record<string, ArrayCSSInterpolation>;
 

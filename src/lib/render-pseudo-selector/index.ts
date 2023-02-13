@@ -1,7 +1,7 @@
 import { CSSPseudoSelectors } from '../constants';
 import renderResponsiveStyle from '../render-responsive-style';
 import {
-  CSSInterpolation,
+  ArrayCSSInterpolation,
   TPseudoSelector,
   TRenderPseudoSelector,
   TStyleEntries,
@@ -26,7 +26,7 @@ const renderPseudoSelector: TRenderPseudoSelector = (theme, selector, styles) =>
         ...acc,
         ...renderResponsiveStyle(theme, prop, value),
       ],
-      [] as Array<CSSInterpolation>
+      [] as ArrayCSSInterpolation
     ),
   } as TPseudoSelector);
 
