@@ -1,4 +1,4 @@
-import { CSSPseudoSelectors } from '../constants';
+import { CSSPseudoSelectors } from '../../constants';
 import renderResponsiveStyle from '../render-responsive-style';
 import {
   ArrayCSSInterpolation,

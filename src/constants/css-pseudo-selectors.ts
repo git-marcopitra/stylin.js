@@ -1,6 +1,6 @@
 import type { SimplePseudos } from 'csstype';
 
-import { StylinSimplePseudos } from '../stylin.types';
+import { StylinSimplePseudos } from '../lib/stylin.types';
 
 export const CSSPseudoSelectors: Record<StylinSimplePseudos, SimplePseudos> = {
   'on-cue': '::cue',

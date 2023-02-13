@@ -1,4 +1,7 @@
-import { CSSPropertiesKeys, StylinCustomPropertiesType } from '../stylin.types';
+import {
+  CSSPropertiesKeys,
+  StylinCustomPropertiesType,
+} from '../lib/stylin.types';
 
 export const StylinCustomProperties: Record<
   StylinCustomPropertiesType,

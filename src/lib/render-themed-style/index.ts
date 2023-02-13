@@ -1,4 +1,4 @@
-import { THEMED_VALUES_MAP } from '../constants/themed-values';
+import { THEMED_VALUES_MAP } from '../../constants/themed-values';
 import type { TRenderThemedStyle } from '../stylin.types';
 
 /**

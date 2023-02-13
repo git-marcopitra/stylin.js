@@ -1,6 +1,6 @@
-import { CSS_STYLING_MAP } from '../constants';
-import { DEFAULT_BREAKPOINTS } from '../constants/breakpoints';
-import { CSSPseudoSelectors } from '../constants/css-pseudo-selectors';
+import { CSS_STYLING_MAP } from '../../constants';
+import { DEFAULT_BREAKPOINTS } from '../../constants/breakpoints';
+import { CSSPseudoSelectors } from '../../constants/css-pseudo-selectors';
 import {
   TGetBreakpoint,
   TGetStyles,

@@ -1,31 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1676286021522" clover="3.2.0">
-  <project timestamp="1676286021523" name="All files">
+<coverage generated="1676299691807" clover="3.2.0">
+  <project timestamp="1676299691807" name="All files">
     <metrics statements="48" coveredstatements="47" conditionals="24" coveredconditionals="21" methods="19" coveredmethods="19" elements="91" coveredelements="87" complexity="0" loc="48" ncloc="48" packages="8" files="13" classes="13"/>
-    <package name="lib.constants">
+    <package name="constants">
       <metrics statements="7" coveredstatements="7" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
-      <file name="breakpoints.ts" path="/Users/marcopitra/Documents/Projects/Owner/stylin.js/src/lib/constants/breakpoints.ts">
+      <file name="breakpoints.ts" path="/Users/marcopitra/Documents/Projects/Owner/stylin.js/src/constants/breakpoints.ts">
         <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
         <line num="1" count="6" type="stmt"/>
       </file>
-      <file name="css-custom-properties.ts" path="/Users/marcopitra/Documents/Projects/Owner/stylin.js/src/lib/constants/css-custom-properties.ts">
+      <file name="css-custom-properties.ts" path="/Users/marcopitra/Documents/Projects/Owner/stylin.js/src/constants/css-custom-properties.ts">
         <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
-        <line num="6" count="7" type="stmt"/>
-        <line num="27" count="7" type="stmt"/>
+        <line num="9" count="7" type="stmt"/>
+        <line num="30" count="7" type="stmt"/>
       </file>
-      <file name="css-properties.ts" path="/Users/marcopitra/Documents/Projects/Owner/stylin.js/src/lib/constants/css-properties.ts">
+      <file name="css-properties.ts" path="/Users/marcopitra/Documents/Projects/Owner/stylin.js/src/constants/css-properties.ts">
         <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
         <line num="3" count="7" type="stmt"/>
       </file>
-      <file name="css-pseudo-selectors.ts" path="/Users/marcopitra/Documents/Projects/Owner/stylin.js/src/lib/constants/css-pseudo-selectors.ts">
+      <file name="css-pseudo-selectors.ts" path="/Users/marcopitra/Documents/Projects/Owner/stylin.js/src/constants/css-pseudo-selectors.ts">
         <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
         <line num="5" count="7" type="stmt"/>
       </file>
-      <file name="index.ts" path="/Users/marcopitra/Documents/Projects/Owner/stylin.js/src/lib/constants/index.ts">
+      <file name="index.ts" path="/Users/marcopitra/Documents/Projects/Owner/stylin.js/src/constants/index.ts">
         <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
         <line num="4" count="7" type="stmt"/>
       </file>
-      <file name="themed-values.ts" path="/Users/marcopitra/Documents/Projects/Owner/stylin.js/src/lib/constants/themed-values.ts">
+      <file name="themed-values.ts" path="/Users/marcopitra/Documents/Projects/Owner/stylin.js/src/constants/themed-values.ts">
         <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
         <line num="8" count="4" type="stmt"/>
       </file>

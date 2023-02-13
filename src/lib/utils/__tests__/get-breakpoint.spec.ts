@@ -1,5 +1,5 @@
+import { DEFAULT_BREAKPOINTS } from '../../../constants/breakpoints';
 import { getBreakpointsTestTable } from '../../../test-utils';
-import { DEFAULT_BREAKPOINTS } from '../../constants/breakpoints';
 import { Theme } from '../../stylin.types';
 import { getBreakpoint } from '..';
 

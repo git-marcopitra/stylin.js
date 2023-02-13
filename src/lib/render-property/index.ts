@@ -1,4 +1,4 @@
-import { CUSTOM_PROPERTY_MAP, StylinCustomProperties } from '../constants';
+import { CUSTOM_PROPERTY_MAP, StylinCustomProperties } from '../../constants';
 import renderThemedStyle from '../render-themed-style';
 import {
   CSSInterpolation,

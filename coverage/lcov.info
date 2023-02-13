@@ -1,5 +1,5 @@
 TN:
-SF:src/lib/constants/breakpoints.ts
+SF:src/constants/breakpoints.ts
 FNF:0
 FNH:0
 DA:1,6
@@ -9,18 +9,18 @@ BRF:0
 BRH:0
 end_of_record
 TN:
-SF:src/lib/constants/css-custom-properties.ts
+SF:src/constants/css-custom-properties.ts
 FNF:0
 FNH:0
-DA:6,7
-DA:27,7
+DA:9,7
+DA:30,7
 LF:2
 LH:2
 BRF:0
 BRH:0
 end_of_record
 TN:
-SF:src/lib/constants/css-properties.ts
+SF:src/constants/css-properties.ts
 FNF:0
 FNH:0
 DA:3,7
@@ -30,7 +30,7 @@ BRF:0
 BRH:0
 end_of_record
 TN:
-SF:src/lib/constants/css-pseudo-selectors.ts
+SF:src/constants/css-pseudo-selectors.ts
 FNF:0
 FNH:0
 DA:5,7
@@ -40,7 +40,7 @@ BRF:0
 BRH:0
 end_of_record
 TN:
-SF:src/lib/constants/index.ts
+SF:src/constants/index.ts
 FNF:0
 FNH:0
 DA:4,7
@@ -50,7 +50,7 @@ BRF:0
 BRH:0
 end_of_record
 TN:
-SF:src/lib/constants/themed-values.ts
+SF:src/constants/themed-values.ts
 FNF:0
 FNH:0
 DA:8,4
