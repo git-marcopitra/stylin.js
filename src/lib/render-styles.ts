@@ -3,7 +3,8 @@ import { css } from '@emotion/react';
 import renderPseudoSelector from './render-pseudo-selector';
 import renderResponsiveStyle from './render-responsive-style';
 import {
-  CSSInterpolation,
+  ArrayCSSInterpolation,
+  TPseudoSelector,
   TRenderStyles,
   TStyleKeys,
   TStyleValue,
@@ -17,12 +18,12 @@ const renderStyles: TRenderStyles = (props, theme) =>
         acc.concat(
           renderResponsiveStyle(theme, prop as TStyleKeys, value as TStyleValue)
         ),
-      [] as Array<CSSInterpolation>
+      [] as ArrayCSSInterpolation
     ),
     ...getPseudos(props).reduce(
       (acc, [selector, pseudoStyles]) =>
         acc.concat(renderPseudoSelector(theme, selector, pseudoStyles!)),
-      [] as Array<Record<string, CSSInterpolation>>
+      [] as Array<TPseudoSelector>
     )
   );
 

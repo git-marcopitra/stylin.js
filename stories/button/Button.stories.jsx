@@ -77,7 +77,7 @@ Custom.args = {
   transition: 'all 300ms ease-in-out',
   backgroundImage:
     'radial-gradient(50% 365.89% at 39.33% 50%, #DE00F1 0%, #FF3535 100%)',
-  hover: {
+  'on-hover': {
     backgroundImage:
       'radial-gradient(50% 150% at 39.33% 50%, #DE00F1 0%, #FF3535 100%)',
   },

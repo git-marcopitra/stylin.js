@@ -114,15 +114,15 @@ export type TRenderResponsiveStyles = (
   theme: Theme,
   prop: TStyleKeys,
   value: TStyleValue
-) => Array<CSSInterpolation>;
+) => ArrayCSSInterpolation;
+
+export type TPseudoSelector = Record<string, ArrayCSSInterpolation>;
 
 export type TRenderPseudoSelector = (
   theme: Theme,
   selector: StylinSimplePseudos,
   styles: TStyles
-) => {
-  [selector: string]: CSSInterpolation;
-};
+) => TPseudoSelector;
 
 export type TGetBreakpoint = (index: number, theme: Theme) => string;
 
