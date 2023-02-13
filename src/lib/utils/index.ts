@@ -22,9 +22,7 @@ import {
 export const getBreakpoint: TGetBreakpoint = (index, theme) => {
   const breakpoints = theme['breakpoints'] ?? DEFAULT_BREAKPOINTS;
 
-  if (index <= breakpoints.length - 1) return breakpoints[index - 1];
-
-  return breakpoints.pop();
+  return breakpoints[index - 1];
 };
 
 /**

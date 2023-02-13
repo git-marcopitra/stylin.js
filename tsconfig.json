@@ -5,6 +5,7 @@
     "strict": true,
     "jsx": "preserve",
     "esModuleInterop": true,
+    "removeComments": false,
     "noImplicitAny": true,
     "sourceMap": false,
     "outDir": "./dist/",

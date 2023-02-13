@@ -13,7 +13,7 @@ import {
  * it is custom convert them to native one.
  * @param {Theme} theme the defined theme
  * @param {TStyleKeys} prop the property to render
- * @param {string | number} value the value of that property
+ * @param {TStyleValue} value the value of that property
  * @returns {CSSInterpolation} the target object ready to style
  */
 const renderProperty: TRenderProperty = (theme, prop, value) => {

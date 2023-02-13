@@ -114,7 +114,7 @@ export type TRenderResponsiveStyles = (
   theme: Theme,
   prop: TStyleKeys,
   value: TStyleValue
-) => ArrayCSSInterpolation;
+) => CSSInterpolation;
 
 export type TPseudoSelector = Record<string, ArrayCSSInterpolation>;
 
@@ -135,13 +135,13 @@ export type TCreateStylinComponent<T extends StylinComponentProps> = (
 export type TRenderProperty = (
   theme: Theme,
   prop: TStyleKeys,
-  value: string | number
+  value: TStyleValue
 ) => CSSInterpolation;
 
 export type TRenderThemedStyle = (
   theme: Theme,
   property: CSSPropertiesKeys,
-  style: string | number
+  style: TStyleValue
 ) => string | number;
 
 export type StylinSimplePseudos =
