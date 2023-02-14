@@ -1,12 +1,12 @@
 import styled from '@emotion/styled';
 
-import { Theme } from '../interface';
 import renderStyles from './render-styles';
 import {
   GenericWithTheme,
   SerializedStyles,
   StylinComponentProps,
   TCreateStylinComponent,
+  Theme,
   TStylinFn,
 } from './stylin.types';
 import { isFunction } from './utils';
