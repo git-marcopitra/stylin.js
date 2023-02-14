@@ -1,4 +1,4 @@
 #!/usr/bin/env sh
 . "$(dirname -- "$0")/_/husky.sh"
 
-yarn format && yarn lint && yarn build && yarn build:storybook && git add storybook-static/* && yarn test && git add coverage/*
+yarn format && yarn lint && yarn build && yarn build:storybook && git add storybook-static/* && yarn test:badges && git add README.md
