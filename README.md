@@ -11,9 +11,11 @@ To install the package you must to have installed [node](https://nodejs.org/en/)
 ```sh
 # npm
 npm install stylin.js
+npm install stylin.js@beta # for beta version
 
 # yarn
 yarn add stylin.js
+yarn add stylin.js@beta # for beta version
 ```
 
 ## Getting Started
