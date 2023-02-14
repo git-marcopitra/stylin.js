@@ -17,8 +17,9 @@ export type Keyframes = {
 
 export type CSSPseudos = { [K in CSS.Pseudos]?: CSSObject };
 export type CSSProperties = CSS.PropertiesFallback<number | string>;
+export type CSSPropertiesKeys = keyof CSS.PropertiesFallback<number | string>;
 export type CSSPropertiesWithMultiValues = {
-  [K in keyof CSSProperties]:
+  [K in CSSPropertiesKeys]:
     | CSSProperties[K]
     | Array<Extract<CSSProperties[K], string>>;
 };
@@ -73,12 +74,10 @@ type VariantKeys = Omit<
   'radii' | 'space' | 'colors' | 'fontSizes' | 'breakpoints'
 >;
 
-interface IVariantProperty {
+export interface IVariantProperty {
   scale: keyof VariantKeys;
   property: string;
 }
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
-type TStylinElementProps = GenericWithTheme<Record<string, any>>;
 
 export interface SerializedStyles {
   name: string;
@@ -87,17 +86,18 @@ export interface SerializedStyles {
   next?: SerializedStyles;
 }
 
-export type TRenderVariant = (
-  args: IVariantProperty
-) => (props: TStylinElementProps) => SerializedStyles;
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+export type TVariantStyleFn = TStylinFn<Record<string, any>>;
 
-export type TStyleKeys = keyof CSSProperties & StylinCustomPropertiesType;
+export type TRenderVariant = (args: IVariantProperty) => TVariantStyleFn;
+
+export type TStyleKeys = CSSPropertiesKeys & StylinCustomPropertiesType;
 
 export type TStyles = Record<TStyleKeys, TStyleValue>;
-export type TPseudos = Record<StylinSimplePseudos, TStyleValue>;
+export type TPseudos = Record<StylinSimplePseudos, TStyles>;
 
 export type TStyleEntries = ReadonlyArray<[TStyleKeys, TStyleValue]>;
-export type TPseudoEntries = ReadonlyArray<[StylinSimplePseudos, TStyleValue]>;
+export type TPseudoEntries = ReadonlyArray<[StylinSimplePseudos, TStyles]>;
 
 export type RenderStylesProps = TStyles | TPseudos;
 
@@ -114,17 +114,19 @@ export type TRenderResponsiveStyles = (
   theme: Theme,
   prop: TStyleKeys,
   value: TStyleValue
-) => Array<CSSInterpolation>;
+) => ArrayCSSInterpolation;
+
+export type TPseudoSelector = Record<string, ArrayCSSInterpolation>;
 
 export type TRenderPseudoSelector = (
   theme: Theme,
   selector: StylinSimplePseudos,
   styles: TStyles
-) => {
-  [selector: string]: CSSInterpolation;
-};
+) => TPseudoSelector;
 
 export type TGetBreakpoint = (index: number, theme: Theme) => string;
+
+export type TGetStyles = (styles: TStyles) => TStyleEntries;
 
 export type TCreateStylinComponent<T extends StylinComponentProps> = (
   ...styles: ReadonlyArray<SerializedStyles | TStylinFn<T>>
@@ -133,13 +135,13 @@ export type TCreateStylinComponent<T extends StylinComponentProps> = (
 export type TRenderProperty = (
   theme: Theme,
   prop: TStyleKeys,
-  value: string | number
+  value: TStyleValue
 ) => CSSInterpolation;
 
 export type TRenderThemedStyle = (
   theme: Theme,
-  property: keyof CSSProperties,
-  style: string | number
+  property: CSSPropertiesKeys,
+  style: TStyleValue
 ) => string | number;
 
 export type StylinSimplePseudos =
