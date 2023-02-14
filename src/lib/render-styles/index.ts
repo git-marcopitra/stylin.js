@@ -1,16 +1,24 @@
 import { css } from '@emotion/react';
 
-import renderPseudoSelector from './render-pseudo-selector';
-import renderResponsiveStyle from './render-responsive-style';
+import renderPseudoSelector from '../render-pseudo-selector';
+import renderResponsiveStyle from '../render-responsive-style';
 import {
   ArrayCSSInterpolation,
   TPseudoSelector,
   TRenderStyles,
   TStyleKeys,
   TStyleValue,
-} from './stylin.types';
-import { getPseudos, getStyles } from './utils';
+} from '../stylin.types';
+import { getPseudos, getStyles } from '../utils';
 
+/**
+ * @name RenderStylesProps
+ * @description
+ * This function render all style to a styled compatible called serializedStyles
+ * @param {RenderStylesProps} props the theme incoming props
+ * @param {Theme} theme the theme defined on provider
+ * @returns {SerializedStyles} the styled compatible style
+ */
 const renderStyles: TRenderStyles = (props, theme) =>
   css(
     ...getStyles(props).reduce(

@@ -3,7 +3,7 @@
 <html lang="en">
 
 <head>
-    <title>Code coverage report for lib/render-pseudo-selector/index.ts</title>
+    <title>Code coverage report for lib/render-styles/index.ts</title>
     <meta charset="utf-8" />
     <link rel="stylesheet" href="../../prettify.css" />
     <link rel="stylesheet" href="../../base.css" />
@@ -19,13 +19,13 @@
 <body>
 <div class='wrapper'>
     <div class='pad1'>
-        <h1><a href="../../index.html">All files</a> / <a href="index.html">lib/render-pseudo-selector</a> index.ts</h1>
+        <h1><a href="../../index.html">All files</a> / <a href="index.html">lib/render-styles</a> index.ts</h1>
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">100% </span>
+                <span class="strong">75% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>3/3</span>
+                <span class='fraction'>3/4</span>
             </div>
         
             
@@ -37,16 +37,16 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">100% </span>
+                <span class="strong">66.66% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>2/2</span>
+                <span class='fraction'>2/3</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">100% </span>
+                <span class="strong">75% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>3/3</span>
+                <span class='fraction'>3/4</span>
             </div>
         
             
@@ -61,7 +61,7 @@
             </div>
         </template>
     </div>
-    <div class='status-line high'></div>
+    <div class='status-line medium'></div>
     <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -96,7 +96,14 @@
 <a name='L31'></a><a href='#L31'>31</a>
 <a name='L32'></a><a href='#L32'>32</a>
 <a name='L33'></a><a href='#L33'>33</a>
-<a name='L34'></a><a href='#L34'>34</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L34'></a><a href='#L34'>34</a>
+<a name='L35'></a><a href='#L35'>35</a>
+<a name='L36'></a><a href='#L36'>36</a>
+<a name='L37'></a><a href='#L37'>37</a>
+<a name='L38'></a><a href='#L38'>38</a>
+<a name='L39'></a><a href='#L39'>39</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -116,52 +123,60 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { CSSPseudoSelectors } from '../../constants';
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { css } from '@emotion/react';
+&nbsp;
+import renderPseudoSelector from '../render-pseudo-selector';
 import renderResponsiveStyle from '../render-responsive-style';
 import {
   ArrayCSSInterpolation,
   TPseudoSelector,
-  TRenderPseudoSelector,
-  TStyleEntries,
+  TRenderStyles,
+  TStyleKeys,
+  TStyleValue,
 } from '../stylin.types';
+import { getPseudos, getStyles } from '../utils';
 &nbsp;
 /**
- * @name renderPseudoSelector
+ * @name RenderStylesProps
  * @description
- * This function convert stylin pseudo selector notation to css native pseudo
- * selector.
- * @param {Theme} theme the defined theme
- * @param {StylinSimplePseudos} selector the pseudo selector
- * @param {TStyles} styles the styles inside selector
- * @returns {TPseudoSelector} the pseudo selector with styles css compatible
+ * This function render all style to a styled compatible called serializedStyles
+ * @param {RenderStylesProps} props the theme incoming props
+ * @param {Theme} theme the theme defined on provider
+ * @returns {SerializedStyles} the styled compatible style
  */
-const renderPseudoSelector: TRenderPseudoSelector = (theme, selector, styles) =&gt;
-  ({
-    [CSSPseudoSelectors[selector]]: (
-      Object.entries(styles) as unknown as TStyleEntries
-    ).reduce(
-      (acc, [prop, value]) =&gt; [
-        ...acc,
-        ...renderResponsiveStyle(theme, prop, value),
-      ],
+const renderStyles: TRenderStyles = (props, theme) =&gt;
+  css(
+    ...getStyles(props).reduce(
+      (acc, [prop, value]) =&gt;
+        acc.concat(
+          renderResponsiveStyle(theme, prop as TStyleKeys, value as TStyleValue)
+        ),
       [] as ArrayCSSInterpolation
     ),
-  } as TPseudoSelector);
+    ...getPseudos(props).reduce(
+<span class="fstat-no" title="function not covered" >      (a</span>cc, [selector, pseudoStyles]) =&gt;
+<span class="cstat-no" title="statement not covered" >        acc.concat(renderPseudoSelector(theme, selector, pseudoStyles!)),</span>
+      [] as Array&lt;TPseudoSelector&gt;
+    )
+  );
 &nbsp;
-export default renderPseudoSelector;
+export default renderStyles;
 &nbsp;</pre></td></tr></table></pre>
 
                 <div class='push'></div><!-- for sticky footer -->
@@ -169,7 +184,7 @@ export default renderPseudoSelector;
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-02-14T00:23:24.843Z
+                at 2023-02-13T15:01:05.901Z
             </div>
         <script src="../../prettify.js"></script>
         <script>
