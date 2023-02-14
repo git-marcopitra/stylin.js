@@ -344,4 +344,4 @@ _**Stylin.js**_ provides all css pseudo selectors built-in on your component, us
 
 ## Contributing
 
-We'll open soon the `CONTRIBUTING` file :(. By the way, be ready and [report issues here on Github](https://github.com/git-marcopitra/stylin.js/issues).
+To contribute check the [CONTRIBUTING.md](/CONTRIBUTING.md).
