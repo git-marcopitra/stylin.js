@@ -2149,6 +2149,11 @@
     mkdirp "^1.0.4"
     rimraf "^3.0.2"
 
+"@olavoparno/jest-badges-readme@^1.5.1":
+  version "1.5.1"
+  resolved "https://registry.yarnpkg.com/@olavoparno/jest-badges-readme/-/jest-badges-readme-1.5.1.tgz#0ea187a1557ae597c55072716638c3d1dfba710b"
+  integrity sha512-7srGdj+rECGrWD5kfmS5suIUi+Ruh5X5zPdI1NWa39bKiq/0TNYG7yoWKty/IMk7WxI+G+tluhhmvgAR831eZQ==
+
 "@pmmmwh/react-refresh-webpack-plugin@^0.5.3":
   version "0.5.10"
   resolved "https://registry.yarnpkg.com/@pmmmwh/react-refresh-webpack-plugin/-/react-refresh-webpack-plugin-0.5.10.tgz#2eba163b8e7dbabb4ce3609ab5e32ab63dda3ef8"
