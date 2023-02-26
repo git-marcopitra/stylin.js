@@ -44,14 +44,10 @@ export default class Stylin {
     this.runStylin(element ?? document.body);
   }
 
-  stylinChildren(element: Element) {
-    [...element.children].forEach(this.runStylin);
-  }
-
   runStylin(element: Element): void {
     if (NON_STYLE_ELEMENTS.includes(element.localName)) return;
 
-    this.stylinChildren(element);
+    [...element.children].forEach(this.runStylin);
 
     const { useClassNameList, defClassName } = getControllerClassNames(element);
 
