@@ -1,7 +1,14 @@
 {
   "extends": "../../tsconfig.json",
   "compilerOptions": {
-    "outDir": "./dist/"
+    "outDir": "./dist/",
+    "baseUrl": "./src",
+    "paths": {
+      "@/constants": ["./constants/index.js"],
+      "@/lib": ["./lib/index.js"],
+      "@/lib/controllers": ["./lib/controllers.js"],
+      "@/lib/utils": ["./lib/utils.js"],
+    }
   },
   "include": ["./src/**/*"]
 }

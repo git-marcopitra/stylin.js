@@ -1,4 +1,5 @@
-import { STYLIN_CONTROLLERS } from '../constants';
+import { STYLIN_CONTROLLERS } from '@/constants';
+
 import {
   ControllerData,
   StylinControllers,

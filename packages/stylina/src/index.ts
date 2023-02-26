@@ -1,5 +1,4 @@
-import Stylin from './lib';
-export * from './lib/types';
+import Stylin from '@/lib';
 
 const stylin = new Stylin();
 stylin.init();

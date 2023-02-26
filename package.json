@@ -10,6 +10,7 @@
     "publish:canary": "lerna publish --canary",
     "test": "lerna run test",
     "graph": "npx nx graph",
+    "dev": "lerna run dev",
     "build": "lerna run build",
     "format": "prettier --write **/*.ts",
     "lint": "eslint . --fix --ext ts"

@@ -1,12 +1,13 @@
-import { NON_STYLE_ELEMENTS } from '../constants';
-import getControllerClassNames from './controllers';
-import { GetStyleArguments } from './types';
+import { NON_STYLE_ELEMENTS } from '@/constants';
+import getControllerClassNames from '@/lib/controllers';
 import {
   getStylinStyles,
   makeStyleId,
   parseStyle,
   removeAttributes,
-} from './utils';
+} from '@/lib/utils';
+
+import { GetStyleArguments } from './types';
 
 export default class Stylin {
   classes: Array<[string, string]>;
@@ -45,9 +46,13 @@ export default class Stylin {
   }
 
   runStylin(element: Element): void {
+    // eslint-disable-next-line @typescript-eslint/no-this-alias
+    const self = this;
     if (NON_STYLE_ELEMENTS.includes(element.localName)) return;
 
-    [...element.children].forEach(this.runStylin);
+    [...element.children].forEach(function (child) {
+      self.runStylin(child);
+    });
 
     const { useClassNameList, defClassName } = getControllerClassNames(element);
 
