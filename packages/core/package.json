@@ -39,5 +39,6 @@
   "dependencies": {
     "@emotion/react": "^11.10.5",
     "@emotion/styled": "^11.10.5"
-  }
+  },
+  "gitHead": "f739bbcc92abcc9084ff95bd1162d4061cc5afb4"
 }
