@@ -6,12 +6,12 @@
     "packages/*"
   ],
   "scripts": {
-    "version": "npx lerna version",
-    "publish": "npx lerna publish",
-    "publish:canary": "npx lerna publish --canary",
-    "test": "npx lerna run test",
+    "version": "lerna version",
+    "publish": "lerna publish",
+    "publish:canary": "lerna publish --canary",
+    "test": "lerna run test",
     "graph": "npx nx graph",
-    "build": "npx lerna run build",
+    "build": "lerna run build",
     "format": "prettier --write **/*.ts",
     "lint": "eslint . --fix --ext ts"
   },
