@@ -15,10 +15,6 @@
     "format": "prettier --write **/*.ts",
     "lint": "eslint . --fix --ext ts"
   },
-  "publishConfig": {
-    "access": "public",
-    "registry": "https://registry.npmjs.org/"
-  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/git-marcopitra/stylin.git"
