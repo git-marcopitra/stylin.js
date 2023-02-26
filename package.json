@@ -14,6 +14,15 @@
     "format": "prettier --write **/*.ts",
     "lint": "eslint . --fix --ext ts"
   },
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/git-marcopitra/stylin.git"
+  },
+  "homepage": "https://git-marcopitra.github.io/stylin.js/",
   "devDependencies": {
     "@babel/core": "^7.20.12",
     "@babel/preset-env": "^7.20.2",
@@ -52,8 +61,5 @@
     "react-dom": "^18.2.0",
     "rimraf": "^4.1.2",
     "ts-jest": "^29.0.5"
-  },
-  "dependencies": {
-    "husky-hooks": "^2.0.1"
   }
 }
