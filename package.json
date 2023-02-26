@@ -6,7 +6,7 @@
     "packages/*"
   ],
   "scripts": {
-    "preversion": "git add . && git commit -m 'chore(release): Publish' && git push",
+    "postversion": "git add . && git commit -m 'chore(release): Publish'",
     "version": "lerna version",
     "publish": "lerna publish",
     "publish:canary": "lerna publish --canary",
