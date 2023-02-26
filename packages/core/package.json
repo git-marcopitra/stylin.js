@@ -1,0 +1,42 @@
+{
+  "name": "@stylin.js/core",
+  "version": "0.0.0",
+  "description": "A inline styles statement lib",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "test": "jest --clearCache && jest",
+    "test:coverage": "rimraf coverage && yarn test --collectCoverage",
+    "test:badges": "yarn test:coverage && node_modules/.bin/jest-badges-readme --input './coverage' --output './badges'",
+    "prepublish": "yarn build",
+    "build": "rimraf dist && tsc"
+  },
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/git-marcopitra/stylin.git"
+  },
+  "keywords": [
+    "core",
+    "functions",
+    "makers",
+    "style",
+    "builtin",
+    "inline-styles",
+    "stylin-component",
+    "design-system"
+  ],
+  "author": "git-marcopitra@github.com",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/git-marcopitra/stylin.js/issues"
+  },
+  "homepage": "https://git-marcopitra.github.io/stylin.js/",
+  "dependencies": {
+    "@emotion/react": "^11.10.5",
+    "@emotion/styled": "^11.10.5"
+  }
+}
