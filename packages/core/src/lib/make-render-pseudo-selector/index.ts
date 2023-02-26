@@ -5,7 +5,7 @@ import {
   TRenderPseudoSelector,
   TRenderResponsiveStyles,
   TStyleEntries,
-} from '../stylin.types';
+} from '../types';
 
 /**
  * @name makeRenderPseudoSelector

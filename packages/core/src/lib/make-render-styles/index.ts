@@ -9,7 +9,7 @@ import {
   TRenderStyles,
   TStyleKeys,
   TStyleValue,
-} from '../stylin.types';
+} from '../types';
 import { getPseudos, getStyles } from '../utils';
 
 /**

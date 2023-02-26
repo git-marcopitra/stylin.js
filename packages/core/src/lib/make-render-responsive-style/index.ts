@@ -3,7 +3,7 @@ import {
   TRenderProperty,
   TRenderResponsiveStyles,
   TStyleValue,
-} from '../stylin.types';
+} from '../types';
 import { getBreakpoint } from '../utils';
 
 // TODO: update JSDocs

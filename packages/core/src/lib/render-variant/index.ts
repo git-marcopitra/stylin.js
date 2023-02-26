@@ -1,4 +1,4 @@
-import type { TRenderVariant } from '../stylin.types';
+import type { TRenderVariant } from '../types';
 
 /**
  * @name renderVariant

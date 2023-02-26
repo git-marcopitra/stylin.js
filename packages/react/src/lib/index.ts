@@ -1,5 +1,5 @@
 import styled from '@emotion/styled';
-import { isFunction } from '@stylin.js/core';
+import { utils } from '@stylin.js/core';
 
 import renderStyles from './render-styles';
 import {
@@ -19,7 +19,7 @@ const stylin =
     styled(component)(
       (props) =>
         styles.map((style) => {
-          if (isFunction(style))
+          if (utils.isFunction(style))
             (style as TStylinFn<T>)(props as GenericWithTheme<T>);
           return style as SerializedStyles;
         }),

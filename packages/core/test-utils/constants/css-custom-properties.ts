@@ -1,4 +1,4 @@
-import { CustomProperties, PropertyMap } from '../../src/lib/stylin.types';
+import { CustomProperties, PropertyMap } from '../../src/lib/types';
 
 export const STYLIN_PROPERTY_MAP: CustomProperties = {
   m: 'm',

@@ -1,4 +1,4 @@
-import { PseudoSelectors } from '../../src/lib/stylin.types';
+import { PseudoSelectors } from '../../src/lib/types';
 
 export const CSS_PSEUDO_SELECTORS: PseudoSelectors = {
   'on-cue': '::cue',

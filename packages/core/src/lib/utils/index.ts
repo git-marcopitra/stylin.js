@@ -5,7 +5,7 @@ import {
   TPseudoEntries,
   TStyleEntries,
   TStyles,
-} from '../stylin.types';
+} from '../types';
 
 /**
  * @name getBreakpoint

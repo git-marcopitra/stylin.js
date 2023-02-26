@@ -1,4 +1,4 @@
-import { ThemeValuesMap } from './../../src/lib/stylin.types';
+import { ThemeValuesMap } from '../../src/lib/types';
 
 export const THEMED_VALUES_MAP: ThemeValuesMap = {
   gap: 'space',

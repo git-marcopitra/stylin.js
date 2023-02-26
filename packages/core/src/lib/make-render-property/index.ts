@@ -4,8 +4,8 @@ import {
   StylinCustomPropertiesType,
   TRenderProperty,
   TRenderThemedStyle,
-} from '../stylin.types';
-import { PropertyMap } from '../stylin.types';
+} from '../types';
+import { PropertyMap } from '../types';
 
 /**
  * @name makeRenderProperty
