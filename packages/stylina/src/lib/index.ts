@@ -1,13 +1,12 @@
-import { NON_STYLE_ELEMENTS } from '@/constants';
-import getControllerClassNames from '@/lib/controllers';
+import { NON_STYLE_ELEMENTS } from '../constants/index.js';
+import getControllerClassNames from './controllers.js';
+import { GetStyleArguments } from './types';
 import {
   getStylinStyles,
   makeStyleId,
   parseStyle,
   removeAttributes,
-} from '@/lib/utils';
-
-import { GetStyleArguments } from './types';
+} from './utils.js';
 
 export default class Stylin {
   classes: Array<[string, string]>;
