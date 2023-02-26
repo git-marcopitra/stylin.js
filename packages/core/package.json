@@ -4,6 +4,7 @@
   "description": "A inline styles statement lib",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
+  "private": false,
   "scripts": {
     "test": "jest --clearCache && jest",
     "test:coverage": "rimraf coverage && yarn test --collectCoverage",

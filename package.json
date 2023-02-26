@@ -6,7 +6,7 @@
   ],
   "scripts": {
     "version": "npx lerna version",
-    "publish": "npx lerna publish",
+    "publish": "npx lerna publish --no-private",
     "publish:canary": "npx lerna publish --canary",
     "test": "npx lerna run test",
     "graph": "npx nx graph",
