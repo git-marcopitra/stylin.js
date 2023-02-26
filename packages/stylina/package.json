@@ -7,7 +7,8 @@
   "private": false,
   "scripts": {
     "dev": "tsc -w",
-    "build": "rimraf dist && tsc"
+    "build": "rimraf dist && tsc",
+    "prepublish": "yarn build"
   },
   "keywords": [
     "style",
