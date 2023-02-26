@@ -44,6 +44,10 @@ export default class Stylin {
     this.runStylin(element ?? document.body);
   }
 
+  stylinChildren(element: Element) {
+    [...element.children].forEach(this.runStylin);
+  }
+
   runStylin(element: Element): void {
     if (NON_STYLE_ELEMENTS.includes(element.localName)) return;
 
@@ -67,11 +71,6 @@ export default class Stylin {
 
     this.classes.push([classNameList.join(' '), styles]);
   }
-
-  stylinChildren(element: Element) {
-    [...element.children].forEach(this.runStylin);
-  }
-
   getStyle({ element, defClassName, useClassNameList }: GetStyleArguments) {
     const styles = getStylinStyles(element);
 
