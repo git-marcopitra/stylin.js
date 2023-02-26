@@ -7,7 +7,7 @@
   ],
   "scripts": {
     "version": "npx lerna version",
-    "publish": "npx lerna publish --no-private",
+    "publish": "npx lerna publish",
     "publish:canary": "npx lerna publish --canary",
     "test": "npx lerna run test",
     "graph": "npx nx graph",
@@ -15,6 +15,7 @@
     "format": "prettier --write **/*.ts",
     "lint": "eslint . --fix --ext ts"
   },
+  "sideEffects": false,
   "repository": {
     "type": "git",
     "url": "git+https://github.com/git-marcopitra/stylin.git"
