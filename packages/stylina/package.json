@@ -1,6 +1,6 @@
 {
   "name": "@stylin.js/stylina",
-  "version": "0.0.2-alpha.3",
+  "version": "0.0.2-alpha.4",
   "description": "A vanilla inline styles statement lib",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
