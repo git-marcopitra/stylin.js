@@ -10,11 +10,10 @@
   },
   "dependencies": {
     "@next/font": "13.1.6",
-    "@stylin.js/react": "^0.0.2-alpha.0",
+    "@stylin.js/react": "^0.0.2-alpha.2",
     "next": "13.1.6",
     "react": "18.2.0",
     "react-dom": "18.2.0"
-    
   },
   "devDependencies": {
     "@types/node": "18.13.0",

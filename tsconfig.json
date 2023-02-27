@@ -1,15 +1,13 @@
 {
   "compilerOptions": {
     "target": "ES6",
-    // "module": "CommonJS",
     "strict": true,
     "jsx": "preserve",
-    "moduleResolution": "node",
     "esModuleInterop": true,
     "removeComments": false,
     "noImplicitAny": true,
     "sourceMap": false,
-    "declaration": true
+    "declaration": true,
   },
   "exclude": ["**/node_modules/**", "**/*.spec.ts", "packages/**/test-utils"]
 }
