@@ -93,7 +93,8 @@ export default class Stylin {
 
       const generatedClassName = `.${styleId.join(`,\n.`)}`;
 
-      styleTagElement!.innerHTML += `${generatedClassName} {\n ${parsedStyles} }\n`;
+      if (parsedStyles)
+        styleTagElement!.innerHTML += `${generatedClassName} {\n ${parsedStyles} }\n`;
     }
 
     this.addNewClass(styleId, parsedStyles);

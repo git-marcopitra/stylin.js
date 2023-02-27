@@ -53,7 +53,7 @@ export const getStylinStyles = (element: Element): RawStyle => {
   const stylinAttributes = attributes
     .filter(
       ({ name }) =>
-        name.startsWith('in-') ||
+        name.startsWith('in-') &&
         !STYLIN_CONTROLLERS.includes(
           name.replace('in-', '') as StylinControllersKey
         )

@@ -3,5 +3,6 @@
     "csstype",
     "lcov",
     "stylina"
-  ]
+  ],
+  "liveServer.settings.port": 5501
 }
