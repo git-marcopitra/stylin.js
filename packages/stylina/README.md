@@ -1,6 +1,8 @@
 # Stylina
 
-A lightweight library for vanilla, to style builtin element using the prefix key `in-`
+![Stylin Logo](../../public/logo.png)
+
+A **stylin.js** lightweight library for vanilla, to style builtin element using the prefix key `in-`
 
 ## Get Started
 
@@ -11,11 +13,13 @@ You just need to add the cdn (`https://unpkg.com/@stylin.js/stylina@<version>`) 
   ...
   <body>
     ...
-    <script type="module" src="https://unpkg.com/@stylin.js/stylina@<version>"></script>
   </body>
+  <script
+    type="module"
+    src="https://unpkg.com/@stylin.js/stylina@<version>"
+  ></script>
 </html>
 ```
-
 
 ## Usage
 
@@ -60,6 +64,9 @@ You just need to add the cdn (`https://unpkg.com/@stylin.js/stylina@<version>`) 
     </div>
     <div in-use-class="circle,green-circle">green</div>
   </body>
-  <script src="https://unpkg.com/stylina<@version>"></script>
+  <script
+    type="module"
+    src="https://unpkg.com/@stylin.js/stylina@<version>"
+  ></script>
 </html>
 ```

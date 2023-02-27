@@ -6,5 +6,4 @@ The following table represents the secure versions
 
 | Version | Supported          | Tag   |
 | ------- | ------------------ |-------|
-| 0.4.x   | :white_check_mark: | beta  |
-| < 0.4.0 | :x:                | alpha |
+| >= 0.0.2.alpha.0 | :white_check_mark: | alpha |

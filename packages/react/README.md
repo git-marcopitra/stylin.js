@@ -1,33 +1,29 @@
-# Stylin
+# STYLIN.JS for React
 
-![Stylin Logo](./public/logo.png)
+![Stylin Logo](../../public/logo.png)
 
-![Statements](https://img.shields.io/badge/Coverage-94.54%25-brightgreen.svg "Make me better!") ![Branches](https://img.shields.io/badge/Coverage-87.5%25-yellow.svg "Make me better!") ![Functions](https://img.shields.io/badge/Coverage-100%25-brightgreen.svg "Make me better!") ![Lines](https://img.shields.io/badge/Coverage-97.91%25-brightgreen.svg "Make me better!")
-
-**React** in-component styling, Theme-Based, Suggestive, primitive CSS allowed.
+A **React** styling library with features like in-component styles, Theme-Based properties, suggestive, primitive CSS allowed.
 
 ## Installing
 
-To install the package you must to have installed [node](https://nodejs.org/en/) and npm/yarn
+To install the package you must have installed [node](https://nodejs.org/en/) and npm/yarn
 
 ```sh
 # npm
-npm install stylin.js
-npm install stylin.js@beta # for beta version
+npm install @stylin.js/react
 
 # yarn
-yarn add stylin.js
-yarn add stylin.js@beta # for beta version
+yarn add @stylin.js/react
 ```
 
 ## Getting Started
 
-It's too simple to use _StylinComponents_, see what I mean:
+It's too simple to use React _StylinComponents_, see what I mean:
 
 ```jsx
 // Javascript
+import stylin from '@stylin.js/react';
 import React from 'react';
-import stylin from 'stylin.js';
 
 const StylinDiv = stylin('div')();
 
@@ -48,8 +44,8 @@ const Home = () => (
 
 ```tsx
 // Typescript
+import stylin, { StylinComponentProps } from '@stylin.js/react';
 import React, { FC, HTMLAttributes } from 'react';
-import stylin, { StylinComponentProps } from 'stylin.js';
 
 // There may be some duplicated props
 // You must omit the with the following line
@@ -78,9 +74,9 @@ const Home: FC = () => (
 
 ## Theme-Based Props
 
-For Theme-Based props, you must to use the [emotion `ThemeProvider`](https://emotion.sh/docs/theming).
+For Theme-Based props, you must use the [emotion `ThemeProvider`](https://emotion.sh/docs/theming).
 
-Then, you must to add these following **default** properties to `theme` object, and you will use their keys into _StylinComponent_:
+Then, you must add these following **default** properties to `theme` object, and you will use their keys into _StylinComponent_:
 
 - `space`: an **object** for spaces like _margins_, and _paddings_;
 - `breakpoints`: a **list** for responsiveness breakpoints;
@@ -341,7 +337,3 @@ _**Stylin.js**_ provides all css pseudo selectors built-in on your component, us
   Hello World!
 </StylinDiv>
 ```
-
-## Contributing
-
-To contribute check the [CONTRIBUTING.md](/CONTRIBUTING.md).
