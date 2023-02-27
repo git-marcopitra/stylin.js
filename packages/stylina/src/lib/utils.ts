@@ -14,29 +14,30 @@ export const makeStyleId = ({
   defClassName,
   useClassNameList,
   reusableClass,
+  hasStyle,
 }: MakeStyleIdArguments): MakeStyleIdReturn => {
-  const styleId = `stylin-${crypto.randomUUID().split('-')[0]}`;
+  const styleId = hasStyle ? `stylin-${crypto.randomUUID().split('-')[0]}` : '';
 
   if (!defClassName && !useClassNameList.length && !reusableClass)
-    return [[styleId], []];
+    return [[styleId], [], []];
 
   if (!defClassName && useClassNameList.length && !reusableClass)
-    return [[...[useClassNameList.join('.')], styleId], []];
+    return [[styleId], [useClassNameList.join('.')], []];
 
   if (!defClassName && !useClassNameList.length && reusableClass)
-    return [[], reusableClass.split(' ')];
+    return [[], [], reusableClass.split(' ')];
 
   if (!defClassName && useClassNameList.length && reusableClass)
-    return [[useClassNameList.join('.')], reusableClass.split(' ')];
+    return [[], [useClassNameList.join('.')], reusableClass.split(' ')];
 
   if (defClassName && !useClassNameList.length && !reusableClass)
-    return [[defClassName], []];
+    return [[defClassName], [], []];
 
   const combinedList = [useClassNameList.join('.')].map(
     (useClassName) => `${defClassName}.${useClassName}`
   );
 
-  return [combinedList, []];
+  return [combinedList, [], []];
 };
 
 export const removeAttributes = ({

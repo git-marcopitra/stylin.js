@@ -8,10 +8,20 @@ export interface GetStyleArguments extends ControllerData {
 }
 
 export interface MakeStyleIdArguments extends ControllerData {
+  hasStyle: boolean;
   reusableClass?: string;
 }
+export interface RenderStylesArguments {
+  isDefine: boolean;
+  parsedStyles: string;
+  styleId: ReadonlyArray<string>;
+}
 
-export type MakeStyleIdReturn = [ReadonlyArray<string>, ReadonlyArray<string>];
+export type MakeStyleIdReturn = [
+  ReadonlyArray<string>,
+  ReadonlyArray<string>,
+  ReadonlyArray<string>
+];
 
 export interface RawStyleEntry {
   name: string;

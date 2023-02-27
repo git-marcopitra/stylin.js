@@ -1,6 +1,6 @@
 import { NON_STYLE_ELEMENTS } from '../constants/index.js';
 import getControllerClassNames from './controllers.js';
-import { GetStyleArguments } from './types';
+import { GetStyleArguments, RenderStylesArguments } from './types';
 import {
   getStylinStyles,
   makeStyleId,
@@ -42,6 +42,7 @@ export default class Stylin {
 
   init(element?: Element) {
     this.runStylin(element ?? document.body);
+    console.log('>> classes :: ', this.classes);
   }
 
   runStylin(element: Element): void {
@@ -63,14 +64,17 @@ export default class Stylin {
   }
 
   getReusableClassByStyle(styles: string) {
+    if (!styles) return;
+
     return this.classes.find(([, style]) => style === styles)?.[0];
   }
 
   addNewClass(classNameList: ReadonlyArray<string>, styles: string) {
-    if (!classNameList.length) return;
+    if (!classNameList.length || !styles) return;
 
     this.classes.push([classNameList.join(' '), styles]);
   }
+
   getStyle({ element, defClassName, useClassNameList }: GetStyleArguments) {
     const styles = getStylinStyles(element);
 
@@ -80,30 +84,54 @@ export default class Stylin {
 
     const reusableClass = this.getReusableClassByStyle(parsedStyles);
 
-    const [styleId, reusableClassList] = makeStyleId({
+    console.log('>> input ' + element.localName + ':: ', [
       defClassName,
       useClassNameList,
       reusableClass,
+      !!parsedStyles,
+    ]);
+
+    const [creatingClassList, usingClassList, reusingClassList] = makeStyleId({
+      defClassName,
+      useClassNameList,
+      reusableClass,
+      hasStyle: !!parsedStyles,
     });
 
-    if (styleId.length) {
-      const styleTagElement = defClassName
-        ? this.stylinCustomStyleElement
-        : this.stylinStyleElement;
+    console.log('>> output :: ', [
+      creatingClassList,
+      usingClassList,
+      reusingClassList,
+    ]);
 
-      const generatedClassName = `.${styleId.join(`,\n.`)}`;
+    this.renderStyle({
+      parsedStyles,
+      isDefine: !!defClassName,
+      styleId: creatingClassList,
+    });
 
-      if (parsedStyles)
-        styleTagElement!.innerHTML += `${generatedClassName} {\n ${parsedStyles} }\n`;
-    }
-
-    this.addNewClass(styleId, parsedStyles);
+    this.addNewClass(creatingClassList, parsedStyles);
 
     removeAttributes({
       element,
       attributes: styles.map(({ name }) => `in-${name}`),
     });
 
-    return [...styleId, ...reusableClassList].join(' ');
+    return creatingClassList
+      .concat(usingClassList, reusingClassList)
+      .join(' ')
+      .trim();
+  }
+
+  renderStyle({ styleId, isDefine, parsedStyles }: RenderStylesArguments) {
+    if (!styleId.length || !parsedStyles) return;
+
+    const styleTagElement = isDefine
+      ? this.stylinCustomStyleElement
+      : this.stylinStyleElement;
+
+    const generatedClassName = `.${styleId.join(`,\n.`)}`;
+
+    styleTagElement!.innerHTML += `${generatedClassName} {\n ${parsedStyles} }\n`;
   }
 }

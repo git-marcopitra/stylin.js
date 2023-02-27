@@ -1,3 +1,25 @@
+# Stylina
+
+A lightweight library for vanilla, to style builtin element using the prefix key `in-`
+
+## Get Started
+
+You just need to add the cdn (`https://unpkg.com/@stylin.js/stylina@<version>`) to your `script` tag with `type="module"`, make sure that you add the correct version as you want, [see our versions](https://www.npmjs.com/package/@stylin.js@stylina?activeTab=versions).
+
+```html
+<html lang="en">
+  ...
+  <body>
+    ...
+    <script type="module" src="https://unpkg.com/@stylin.js/stylina@<version>"></script>
+  </body>
+</html>
+```
+
+
+## Usage
+
+```html
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -37,28 +59,7 @@
       red
     </div>
     <div in-use-class="circle,green-circle">green</div>
-    <label for="name">Name</label>
-    <input
-      id="name"
-      in-border="none"
-      placeholder="Insira o nome"
-      in-def-class="input"
-    />
-    <label for="pass">Senha</label>
-    <input
-      id="pass"
-      in-color="red"
-      type="password"
-      placeholder="Insira a senha"
-      in-use-class="input"
-    />
-    <label for="confirmPass">Confirmar Senha</label>
-    <input
-      id="confirmPass"
-      type="password"
-      placeholder="Insira o nome"
-      in-use-class="input"
-    />
   </body>
-  <script type="module" src="../../dist/index.js"></script>
+  <script src="https://unpkg.com/stylina<@version>"></script>
 </html>
+```
