@@ -23,23 +23,84 @@ You just need to add the cdn (`https://unpkg.com/@stylin.js/stylina@<version>`) 
 
 ## Usage
 
+### CSS in-element
+
+You must use CSS Properties as HTML attributes by passing the prefix `in-` as mention above. See the following code:
+
 ```html
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Stylina</title>
-  </head>
+  ...
   <body>
     <h1 in-color="blue" in-background-color="red">
       hello <strong in-color="green">world</strong>
     </h1>
     <h2 in-color="blue" in-background-color="red">
-      hello <small in-color="green">world</small>
+      hi <small in-color="green">everyone</small>
     </h2>
-    <div in-background="green">green</div>
+  </body>
+  <script
+    type="module"
+    src="https://unpkg.com/@stylin.js/stylina@<version>"
+  ></script>
+</html>
+```
+
+### Define class
+
+You can group defined style in a class and name him as you which, using the attribute `in-def-class`, see the following example:
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+  ...
+  <body>
+    <h1 in-color="blue" in-background-color="red" in-def-class="my-heading">
+      hello <strong in-color="green" in-def-class="my-emphasis">world</strong>
+    </h1>
+    <h2 in-color="blue" in-background-color="red">
+      hi <small in-color="green">everyone</small>
+    </h2>
+  </body>
+  <script
+    type="module"
+    src="https://unpkg.com/@stylin.js/stylina@<version>"
+  ></script>
+</html>
+```
+
+### Use defined classes
+
+For sure, you can reuse your pre-defined style, see the example:
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+  ...
+  <body>
+    <h1 in-color="blue" in-background-color="red" in-def-class="my-heading">
+      hello <strong in-color="green" in-def-class="my-emphasis">world</strong>
+    </h1>
+    <h2 in-use-class="my-heading">
+      hi <small in-use-class="my-emphasis">everyone</small>
+    </h2>
+  </body>
+  <script
+    type="module"
+    src="https://unpkg.com/@stylin.js/stylina@<version>"
+  ></script>
+</html>
+```
+
+### Combined Styles and overwrite
+
+You can combine the `in-def-class` and `in-use-class`, to subscribe your styles, following example:
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+  ...
+  <body>
     <div
       in-use-class="circle"
       in-background="green"
@@ -70,3 +131,12 @@ You just need to add the cdn (`https://unpkg.com/@stylin.js/stylina@<version>`) 
   ></script>
 </html>
 ```
+
+#### Explanation
+
+1. On above example, in the 1st element we have `in-use-class="circle"` to declare that we will use this className;
+1. and then we have a style `in-background="green"`;
+1. following by `in-def-class="green-circle"` to declare that we are overwriting in class `.circle` a new style (`background: green`), in a combined class `.green-circle.circle`;
+1. In the 2nd element, we are name all the styles as `.circle`, using the attribute `in-def-class="circle"`;
+1. In the last element with `in-use-class="circle,green-circle"` we are use both of declared classes, `circle`
+(to use circle styles) and `green-circle` (to overwrite the circle background color).
