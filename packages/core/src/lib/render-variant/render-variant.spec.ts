@@ -1,5 +1,5 @@
 import { getRenderVariantTestTable } from '../../../test-utils';
-import type { GenericWithTheme, TVariantStyleFn } from '../stylin.types';
+import type { GenericWithTheme, TVariantStyleFn } from '../types';
 import renderVariant from '.';
 
 describe(renderVariant.name, () => {

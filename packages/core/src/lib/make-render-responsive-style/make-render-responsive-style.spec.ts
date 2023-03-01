@@ -1,5 +1,5 @@
 import { DEFAULT_BREAKPOINTS, renderPropertyTestFn } from '../../../test-utils';
-import { MaybeArray, Theme, TStyleKeys, TStyleValue } from '../stylin.types';
+import { MaybeArray, Theme, TStyleKeys, TStyleValue } from '../types';
 import makeRenderResponsiveStyle from '.';
 
 const renderResponsiveStyleTestTable: ReadonlyArray<

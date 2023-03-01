@@ -8,7 +8,7 @@ import {
   Theme,
   TPseudoSelector,
   TStyles,
-} from '../stylin.types';
+} from '../types';
 import makeRenderPseudoSelector from '.';
 
 const renderPseudoSelectorTestTable: ReadonlyArray<

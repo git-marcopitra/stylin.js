@@ -3,7 +3,7 @@ import {
   StylinCustomPropertiesType,
 } from '../lib/stylin.types';
 
-export const StylinCustomProperties: Record<
+export const STYLIN_CUSTOM_PROPERTIES: Record<
   StylinCustomPropertiesType,
   StylinCustomPropertiesType
 > = {

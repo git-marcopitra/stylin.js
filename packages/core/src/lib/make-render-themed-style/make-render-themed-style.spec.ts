@@ -1,4 +1,4 @@
-import { CSSPropertiesKeys, Theme } from '../stylin.types';
+import { CSSPropertiesKeys, Theme } from '../types';
 import { THEMED_VALUES_MAP } from './../../../test-utils/constants/themed-values';
 import renderThemedStyle from '.';
 

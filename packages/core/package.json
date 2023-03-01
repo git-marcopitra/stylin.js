@@ -10,6 +10,7 @@
     "test:coverage": "rimraf coverage && yarn test --collectCoverage",
     "test:badges": "yarn test:coverage && node_modules/.bin/jest-badges-readme --input './coverage' --output './badges'",
     "prepublish": "yarn build",
+    "dev": "tsc -w",
     "build": "rimraf dist && tsc"
   },
   "publishConfig": {
@@ -37,8 +38,7 @@
   },
   "homepage": "https://git-marcopitra.github.io/stylin.js/",
   "dependencies": {
-    "@emotion/react": "^11.10.5",
-    "@emotion/styled": "^11.10.5"
+    "@emotion/react": "^11.10.5"
   },
   "gitHead": "5fe2f399f74f2649325eb5460e58e577a82f2089"
 }

@@ -325,22 +325,22 @@
   resolved "https://registry.yarnpkg.com/@rushstack/eslint-patch/-/eslint-patch-1.2.0.tgz#8be36a1f66f3265389e90b5f9c9962146758f728"
   integrity sha512-sXo/qW2/pAcmT43VoRKOJbDOfV3cYpq3szSVfIThQXNt+E4DfKj361vaAt3c88U5tPUxzEswam7GW48PJqtKAg==
 
-"@stylin.js/core@^0.0.2-alpha.1":
-  version "0.0.2-alpha.1"
-  resolved "https://registry.yarnpkg.com/@stylin.js/core/-/core-0.0.2-alpha.1.tgz#f9a3f7c15b2905859d85b4219dc350fcdaccbdc4"
-  integrity sha512-zBlKqPHUtpYIbevGYZrZUBOahWiVa2nSSEovzK/zcdzY9O++sIOTY6iotD5UVfqUBUs9Q2OfAegVjmjDB3PaKg==
+"@stylin.js/core@^0.0.2-alpha.2":
+  version "0.0.2-alpha.2"
+  resolved "https://registry.yarnpkg.com/@stylin.js/core/-/core-0.0.2-alpha.2.tgz#9557697e80d0df4d44b6a9e4d7ace76972a3f08e"
+  integrity sha512-hu5TGk9bqdzvi1c+dZFgrO7fKd9gHeHu+7egGYS3c3X3HnXae4gwNka8h27gBifkuqHrPaKjae9fo69FlA891Q==
   dependencies:
     "@emotion/react" "^11.10.5"
     "@emotion/styled" "^11.10.5"
 
-"@stylin.js/react@^0.0.2-alpha.2":
-  version "0.0.2-alpha.2"
-  resolved "https://registry.yarnpkg.com/@stylin.js/react/-/react-0.0.2-alpha.2.tgz#935cf16fd6ad8c28da9dedb162dcea52788a5d25"
-  integrity sha512-+LY2XxOXwoHj/lmSS7keNO6fT3lFwT0lK+Y9sROPlbsqjLhr5pcfUp4+dvJ0M6kwGo/vbsHkkYVj6lyOHEP91g==
+"@stylin.js/react@*":
+  version "0.0.2-alpha.3"
+  resolved "https://registry.yarnpkg.com/@stylin.js/react/-/react-0.0.2-alpha.3.tgz#42defd294979a35d2f5a963ad095e55af1d4cfbf"
+  integrity sha512-ol3/E6Qs1+RWSMvuLK7H1wCJj+9Jffplga4PpMLD2872RYpS3/2ptSWAYWos4PkCBkLO64EfeWzm8O+X+JrMOw==
   dependencies:
     "@emotion/react" "^11.10.5"
     "@emotion/styled" "^11.10.5"
-    "@stylin.js/core" "^0.0.2-alpha.1"
+    "@stylin.js/core" "^0.0.2-alpha.2"
 
 "@swc/helpers@0.4.14":
   version "0.4.14"

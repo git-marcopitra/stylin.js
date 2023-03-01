@@ -1,5 +1,5 @@
 import { CSSProperties, FC, HTMLAttributes } from 'react';
-import stylin, { StylinCustomPropertiesType } from '@stylin.js/react';
+import stylin, { StylinCustomPropertiesType } from '../../../../dist';
 
 export interface TypographyProps
   extends CSSProperties,

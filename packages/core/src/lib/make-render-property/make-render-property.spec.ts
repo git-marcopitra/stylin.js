@@ -2,7 +2,7 @@ import {
   CUSTOM_PROPERTY_MAP,
   STYLIN_PROPERTY_MAP,
 } from '../../../test-utils/constants';
-import { TStyleKeys } from '../stylin.types';
+import { TStyleKeys } from '../types';
 import { renderThemedStyleTestFn } from './../../../test-utils/index';
 import makeRenderProperty from '.';
 

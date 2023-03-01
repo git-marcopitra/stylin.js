@@ -1,6 +1,6 @@
 import '@/styles/globals.css';
 
-import { ThemeProvider } from '@emotion/react';
+import { ThemeProvider } from '@stylin.js/react';
 import type { AppProps } from 'next/app';
 
 import theme from '@/theme';

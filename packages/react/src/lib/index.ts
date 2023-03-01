@@ -23,7 +23,11 @@ const stylin =
             (style as TStylinFn<T>)(props as GenericWithTheme<T>);
           return style as SerializedStyles;
         }),
-      ({ theme, ...props }) => renderStyles(props, theme as Theme)
+      ({ theme, ...props }) => {
+        console.log('>> theme :: ', theme);
+
+        return renderStyles(props, theme as Theme);
+      }
     );
 
 export default stylin;

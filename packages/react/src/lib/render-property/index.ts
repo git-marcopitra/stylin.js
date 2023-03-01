@@ -1,6 +1,6 @@
 import { makeRenderProperty } from '@stylin.js/core';
 
-import { CUSTOM_PROPERTY_MAP, StylinCustomProperties } from '../../constants';
+import { CUSTOM_PROPERTY_MAP, STYLIN_CUSTOM_PROPERTIES } from '../../constants';
 import renderThemedStyle from '../render-themed-style';
 import { TRenderProperty } from '../stylin.types';
 
@@ -16,7 +16,7 @@ import { TRenderProperty } from '../stylin.types';
  */
 const renderProperty: TRenderProperty = makeRenderProperty(
   CUSTOM_PROPERTY_MAP,
-  StylinCustomProperties,
+  STYLIN_CUSTOM_PROPERTIES,
   renderThemedStyle
 );
 

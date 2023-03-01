@@ -1,11 +1,6 @@
-import { CSSPropertiesKeys } from '../lib/stylin.types';
+import { ThemeValuesMap } from '@stylin.js/core';
 
-export const THEMED_VALUES_MAP: Partial<
-  Record<
-    CSSPropertiesKeys,
-    'radii' | 'space' | 'colors' | 'fontSizes' | 'breakpoints'
-  >
-> = {
+export const THEMED_VALUES_MAP: ThemeValuesMap = {
   gap: 'space',
   rowGap: 'space',
   columnGap: 'space',
