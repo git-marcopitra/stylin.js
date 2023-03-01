@@ -6,59 +6,68 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Stylina</title>
   </head>
-  <body>
-    <h1 in-color="blue" in-background-color="red">
-      hello <strong in-color="green">world</strong>
+  <body
+    in-margin="0"
+    in-padding="0"
+    in-color="white"
+    in-background="#282828"
+    in-font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif"
+  >
+    <h1 in-margin="2rem">
+      Hello
+      <code
+        in-color="#BBB"
+        in-padding="0.3rem"
+        in-def-class="code"
+        in-border-radius="0.7rem"
+        in-background-color="#222"
+        in-border="1px solid #666"
+        >@everyone</code
+      >
     </h1>
-    <h2 in-color="blue" in-background-color="red">
-      hello <small in-color="green">world</small>
-    </h2>
-    <div in-background="green">green</div>
+    <p in-margin-left="2rem" in-margin-bottom="5rem" in-color="#DDDs">
+      Do builtin styles with Stylina in
+      <a
+        in-use-class="code"
+        href="https://https://www.npmjs.com/package/@stylin.js/stylina"
+        >@stylin.js/stylin</a
+      >
+    </p>
     <div
-      in-use-class="circle"
-      in-background="green"
-      in-def-class="green-circle"
-    >
-      green
-    </div>
-    <div
-      in-def-class="circle"
-      in-width="4rem"
-      in-margin="1rem"
-      in-height="4rem"
-      in-color="white"
+      in-color="#BBB"
+      in-margin="2rem"
+      in-width="30rem"
       in-display="flex"
-      in-background="red"
-      in-font-weight="bold"
-      in-border-radius="50%"
-      in-align-items="center"
-      in-justify-content="center"
+      in-padding="3rem"
+      in-border-radius="1rem"
+      in-box-sizing="border-box"
+      in-background-color="#222"
+      in-border="1px solid #666"
+      in-justify-content="space-evenly"
     >
-      red
+      <div
+        in-use-class="circle"
+        in-background="#6f6"
+        in-def-class="green-circle"
+      ></div>
+      <div
+        in-margin="1rem"
+        in-width="5rem"
+        in-height="5rem"
+        in-color="white"
+        in-display="flex"
+        in-background="#f66"
+        in-font-weight="bold"
+        in-def-class="circle"
+        in-border-radius="50%"
+        in-align-items="center"
+        in-justify-content="center"
+      ></div>
+      <div in-use-class="circle,green-circle"></div>
     </div>
-    <div in-use-class="circle,green-circle">green</div>
-    <label for="name">Name</label>
-    <input
-      id="name"
-      in-border="none"
-      placeholder="Insira o nome"
-      in-def-class="input"
-    />
-    <label for="pass">Senha</label>
-    <input
-      id="pass"
-      in-color="red"
-      type="password"
-      placeholder="Insira a senha"
-      in-use-class="input"
-    />
-    <label for="confirmPass">Confirmar Senha</label>
-    <input
-      id="confirmPass"
-      type="password"
-      placeholder="Insira o nome"
-      in-use-class="input"
-    />
   </body>
-  <script type="module" src="../../dist/index.js"></script>
+  <script
+    type="module"
+    src="https://unpkg.com/@stylin.js/stylina@0.0.3-alpha.4"
+  ></script>
 </html>
