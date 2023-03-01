@@ -42,7 +42,6 @@ export default class Stylin {
 
   init(element?: Element) {
     this.runStylin(element ?? document.body);
-    console.log('>> classes :: ', this.classes);
   }
 
   runStylin(element: Element): void {
@@ -84,25 +83,12 @@ export default class Stylin {
 
     const reusableClass = this.getReusableClassByStyle(parsedStyles);
 
-    console.log('>> input ' + element.localName + ':: ', [
-      defClassName,
-      useClassNameList,
-      reusableClass,
-      !!parsedStyles,
-    ]);
-
     const [creatingClassList, usingClassList, reusingClassList] = makeStyleId({
       defClassName,
       useClassNameList,
       reusableClass,
       hasStyle: !!parsedStyles,
     });
-
-    console.log('>> output :: ', [
-      creatingClassList,
-      usingClassList,
-      reusingClassList,
-    ]);
 
     this.renderStyle({
       parsedStyles,
