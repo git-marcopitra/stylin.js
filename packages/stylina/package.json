@@ -1,0 +1,30 @@
+{
+  "name": "@stylin.js/stylina",
+  "version": "0.0.3-alpha.4",
+  "description": "A vanilla inline styles statement lib",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "private": false,
+  "scripts": {
+    "dev": "tsc -w",
+    "build": "rimraf dist && tsc",
+    "prepublish": "yarn build"
+  },
+  "keywords": [
+    "style",
+    "web",
+    "vanilla",
+    "builtin",
+    "inline-styles",
+    "reusable-styles",
+    "stylin-component",
+    "design-system"
+  ],
+  "author": "git-marcopitra@github.com",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/git-marcopitra/stylin.js/issues"
+  },
+  "homepage": "https://git-marcopitra.github.io/stylin.js/",
+  "gitHead": "5fe2f399f74f2649325eb5460e58e577a82f2089"
+}

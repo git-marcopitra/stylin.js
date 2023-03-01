@@ -1,0 +1,42 @@
+{
+  "name": "@stylin.js/react",
+  "version": "0.0.2-alpha.5",
+  "description": "A react component inline styles statement lib",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "private": false,
+  "scripts": {
+    "test": "jest --clearCache && jest",
+    "test:coverage": "rimraf coverage && yarn test --collectCoverage",
+    "test:badges": "yarn test:coverage && node_modules/.bin/jest-badges-readme --input './coverage' --output './badges'",
+    "storybook": "start-storybook -p 6006",
+    "dev": "tsc -w",
+    "build": "rimraf dist && tsc",
+    "build:storybook": "rimraf storybook-static && build-storybook"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/git-marcopitra/stylin.git"
+  },
+  "keywords": [
+    "style",
+    "react",
+    "builtin",
+    "inline-styles",
+    "react-component",
+    "stylin-component",
+    "design-system"
+  ],
+  "author": "git-marcopitra@github.com",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/git-marcopitra/stylin.js/issues"
+  },
+  "homepage": "https://git-marcopitra.github.io/stylin.js/",
+  "dependencies": {
+    "@emotion/react": "^11.10.5",
+    "@emotion/styled": "^11.10.5",
+    "@stylin.js/core": "*"
+  },
+  "gitHead": "5fe2f399f74f2649325eb5460e58e577a82f2089"
+}

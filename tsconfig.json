@@ -1,16 +1,13 @@
 {
   "compilerOptions": {
     "target": "ES6",
-    "module": "CommonJS",
     "strict": true,
     "jsx": "preserve",
     "esModuleInterop": true,
     "removeComments": false,
     "noImplicitAny": true,
     "sourceMap": false,
-    "outDir": "./dist/",
-    "declaration": true
+    "declaration": true,
   },
-  "include": ["./src/**/*"],
-  "exclude": ["node_modules", "**/*.spec.ts", "./src/test-utils"]
+  "exclude": ["**/node_modules/**", "**/*.spec.ts", "packages/**/test-utils"]
 }

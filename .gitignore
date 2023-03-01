@@ -1,6 +1,6 @@
-node_modules
-*-error.log
+*.log
 tsconfig.tsbuildinfo
 dist
 coverage
 .DS_Store/
+**/node_modules/**
