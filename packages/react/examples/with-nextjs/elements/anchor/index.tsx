@@ -1,5 +1,5 @@
 import { AnchorHTMLAttributes, CSSProperties, FC } from 'react';
-import stylin, { StylinCustomPropertiesType } from '../../../../dist';
+import stylin, { StylinCustomPropertiesType } from '@stylin.js/react';
 
 export interface AnchorProps
   extends CSSProperties,

@@ -7,7 +7,7 @@ import { Anchor, Box, Typography } from '@/elements';
 const DescriptionText: FC<PropsWithChildren> = ({ children }) => (
   <Typography
     m="0"
-    p="2rem"
+    p="L"
     borderRadius="L"
     border="1px solid"
     position="relative"
