@@ -1,10 +1,9 @@
-import { STYLIN_CONTROLLERS } from '../constants/index.js';
 import {
   MakeStyleIdArguments,
   MakeStyleIdReturn,
   RawStyle,
-  RemoveAttributesArgument,
-  StylinControllersKey,
+  StylinAttributesList,
+  StylinAttributesMap,
 } from './types';
 
 export const parseStyle = (styles: RawStyle): string =>
@@ -15,8 +14,10 @@ export const makeStyleId = ({
   useClassNameList,
   reusableClass,
   hasStyle,
+  hasPseudos,
 }: MakeStyleIdArguments): MakeStyleIdReturn => {
-  const styleId = hasStyle ? `stylin-${crypto.randomUUID().split('-')[0]}` : '';
+  const styleId =
+    hasStyle || hasPseudos ? `stylin-${crypto.randomUUID().split('-')[0]}` : '';
 
   if (!defClassName && !useClassNameList.length && !reusableClass)
     return [[styleId], [], []];
@@ -40,29 +41,67 @@ export const makeStyleId = ({
   return [combinedList, [], []];
 };
 
-export const removeAttributes = ({
-  attributes,
-  element,
-}: RemoveAttributesArgument): void =>
-  attributes.forEach((attribute) => element.removeAttribute(attribute));
+export const invalidStylinAttributes = (element: Element) => {
+  const attributes = new Array(...element.attributes);
 
-export const getStylinStyles = (element: Element): RawStyle => {
+  const stylinAttributes = attributes.filter(({ name }) =>
+    name.startsWith('in-')
+  );
+
+  if (!stylinAttributes.length) return;
+
+  stylinAttributes.forEach((attribute) =>
+    console.warn(
+      `Stylina: ${attribute.name} is not a valid attribute.`,
+      attribute
+    )
+  );
+};
+
+export const getParsedStylinAttributesMap = <T>(
+  element: Element,
+  attributeList: ReadonlyArray<T>
+): StylinAttributesMap => {
+  const attributes = new Array(...element.attributes);
+
+  if (!attributes.length) return {};
+
+  const parsedStylinAttributes = attributes.reduce((acc, { name, value }) => {
+    if (!attributeList.includes(name as T)) return acc;
+
+    element.removeAttribute(name);
+
+    return {
+      ...acc,
+      [name.replace('in-', '')]: value,
+    };
+  }, {});
+
+  return parsedStylinAttributes;
+};
+
+export const getParsedStylinAttributesList = <T>(
+  element: Element,
+  attributeList: ReadonlyArray<T>,
+  removeString = 'in-'
+): StylinAttributesList => {
   const attributes = new Array(...element.attributes);
 
   if (!attributes.length) return [];
 
-  const stylinAttributes = attributes
-    .filter(
-      ({ name }) =>
-        name.startsWith('in-') &&
-        !STYLIN_CONTROLLERS.includes(
-          name.replace('in-', '') as StylinControllersKey
-        )
-    )
-    .map(({ name, value }) => ({
-      value,
-      name: name.replace('in-', ''),
-    }));
+  const parsedStylinAttributes = attributes.reduce((acc, { name, value }) => {
+    if (!attributeList.includes(name as T)) return acc;
 
-  return stylinAttributes;
+    element.removeAttribute(name);
+
+    return [
+      ...acc,
+      {
+        value,
+        name: name.replace(removeString, ''),
+      },
+    ];
+  }, [] as StylinAttributesList);
+
+  return parsedStylinAttributes;
 };

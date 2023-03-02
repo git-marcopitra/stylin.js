@@ -9,12 +9,14 @@ export interface GetStyleArguments extends ControllerData {
 
 export interface MakeStyleIdArguments extends ControllerData {
   hasStyle: boolean;
+  hasPseudos: boolean;
   reusableClass?: string;
 }
 export interface RenderStylesArguments {
   isDefine: boolean;
   parsedStyles: string;
   styleId: ReadonlyArray<string>;
+  pseudos: ReadonlyArray<{ pseudo: string; parsedStyle: string }>;
 }
 
 export type MakeStyleIdReturn = [
@@ -38,3 +40,9 @@ export interface RemoveAttributesArgument {
 export type StylinControllersKey = 'def-class' | 'use-class';
 
 export type StylinControllers = Partial<Record<StylinControllersKey, string>>;
+export type StylinAttributesList = ReadonlyArray<{
+  name: string;
+  value: string;
+}>;
+
+export type StylinAttributesMap = Record<string, string>;
