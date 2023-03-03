@@ -128,7 +128,7 @@ export type TGetBreakpoint = (index: number, theme: Theme) => string;
 
 export type TGetStyles = (styles: TStyles) => TStyleEntries;
 
-export type TCreateStylinComponent<T extends StylinComponentProps> = (
+export type TCreateStylinComponent<T extends StylinComponentProps<unknown>> = (
   ...styles: ReadonlyArray<SerializedStyles | TStylinFn<T>>
 ) => StyledComponent<T>;
 
@@ -146,6 +146,7 @@ export type TRenderThemedStyle = (
 
 export type StylinSimplePseudos = string;
 
-export type StylinComponentProps = CSSProperties &
+export type StylinComponentProps<T> = T &
+  CSSProperties &
   Partial<Record<StylinCustomPropertiesType, string>> &
   Partial<Record<StylinSimplePseudos, CSSInterpolation>>;

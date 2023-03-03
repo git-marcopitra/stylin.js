@@ -12,7 +12,7 @@ import {
 } from './stylin.types';
 
 const stylin =
-  <T extends StylinComponentProps>(
+  <T extends StylinComponentProps<unknown>>(
     component: keyof JSX.IntrinsicElements
   ): TCreateStylinComponent<T> =>
   (...styles) =>
