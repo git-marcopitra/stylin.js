@@ -4,7 +4,8 @@ import {
   Theme,
   TPseudoSelector,
   TStyles,
-} from '../stylin.types';
+} from '@stylin.js/core';
+
 import renderPseudoSelector from '.';
 
 const renderPseudoSelectorTestTable: ReadonlyArray<

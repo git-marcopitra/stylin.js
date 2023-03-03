@@ -1,4 +1,3 @@
-import { StyledComponent } from '@emotion/styled';
 import CSS, { SimplePseudos } from 'csstype';
 
 export type ArrayCSSInterpolation = Array<CSSInterpolation>;
@@ -135,10 +134,6 @@ export type TGetStyles = (
   cssPropertiesList: ReadonlyArray<string>
 ) => TStyleEntries;
 
-export type TCreateStylinComponent<T extends StylinComponentProps> = (
-  ...styles: ReadonlyArray<SerializedStyles | TStylinFn<T>>
-) => StyledComponent<T>;
-
 export type TRenderProperty = (
   theme: Theme,
   prop: TStyleKeys,
@@ -152,10 +147,6 @@ export type TRenderThemedStyle = (
 ) => string | number;
 
 export type StylinSimplePseudos = string;
-
-export type StylinComponentProps = CSSProperties &
-  Partial<Record<StylinCustomPropertiesType, string>> &
-  Partial<Record<StylinSimplePseudos, CSSInterpolation>>;
 
 export type PropertyMap = Record<
   StylinCustomPropertiesType,

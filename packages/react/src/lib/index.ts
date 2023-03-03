@@ -1,22 +1,22 @@
 import styled from '@emotion/styled';
-import { utils } from '@stylin.js/core';
-
-import renderStyles from './render-styles';
 import {
   GenericWithTheme,
   SerializedStyles,
-  StylinComponentProps,
-  TCreateStylinComponent,
   Theme,
   TStylinFn,
-} from './stylin.types';
+  utils,
+} from '@stylin.js/core';
+import { AriaAttributes } from 'react';
+
+import renderStyles from './render-styles';
+import { StylinComponent, TCreateStylinComponent } from './stylin.types';
 
 const stylin =
-  <T extends StylinComponentProps<unknown>>(
+  <T extends AriaAttributes>(
     component: keyof JSX.IntrinsicElements
   ): TCreateStylinComponent<T> =>
   (...styles) =>
-    styled(component)(
+    styled(component)<T>(
       (props) =>
         styles.map((style) => {
           if (utils.isFunction(style))
@@ -24,6 +24,6 @@ const stylin =
           return style as SerializedStyles;
         }),
       ({ theme, ...props }) => renderStyles(props, theme as Theme)
-    );
+    ) as StylinComponent<T>;
 
 export default stylin;

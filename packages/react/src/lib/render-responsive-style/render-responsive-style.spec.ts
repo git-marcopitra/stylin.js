@@ -1,4 +1,5 @@
-import { MaybeArray, Theme, TStyleKeys, TStyleValue } from '../stylin.types';
+import { MaybeArray, Theme, TStyleKeys, TStyleValue } from '@stylin.js/core';
+
 import renderResponsiveStyle from '.';
 
 const renderResponsiveStyleTestTable: ReadonlyArray<

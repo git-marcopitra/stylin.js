@@ -1,7 +1,6 @@
-import { makeRenderThemeStyle } from '@stylin.js/core';
+import { makeRenderThemeStyle, TRenderThemedStyle } from '@stylin.js/core';
 
 import { THEMED_VALUES_MAP } from '../../constants/themed-values';
-import type { TRenderThemedStyle } from '../stylin.types';
 
 /**
  * @name renderThemedStyle

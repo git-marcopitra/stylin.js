@@ -1,6 +1,5 @@
+import { StylinSimplePseudos } from '@stylin.js/core';
 import type { SimplePseudos } from 'csstype';
-
-import { StylinSimplePseudos } from '../lib/stylin.types';
 
 export const CSS_PSEUDO_SELECTORS: Record<StylinSimplePseudos, SimplePseudos> =
   {

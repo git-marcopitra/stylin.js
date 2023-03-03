@@ -1,8 +1,10 @@
-import { makeRenderResponsiveStyle } from '@stylin.js/core';
+import {
+  makeRenderResponsiveStyle,
+  TRenderResponsiveStyles,
+} from '@stylin.js/core';
 
 import { DEFAULT_BREAKPOINTS } from '../../constants/breakpoints';
 import renderProperty from '../render-property';
-import { TRenderResponsiveStyles } from '../stylin.types';
 
 /**
  * @name renderResponsiveStyle
