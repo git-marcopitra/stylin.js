@@ -6,7 +6,7 @@ A **stylin.js** lightweight library for vanilla, to style builtin element using 
 
 ## Get Started
 
-You just need to add the cdn (`https://unpkg.com/@stylin.js/stylina@<version>`) to your `script` tag with `type="module"`, make sure that you add the correct version as you want, [see our versions](https://www.npmjs.com/package/@stylin.js@stylina?activeTab=versions).
+You just need to add the cdn (`https://unpkg.com/@stylin.js/stylina@<version>/dist/autorun.js`) to your `script` tag with `type="module"`, make sure that you add the correct version as you want, [see our versions](https://www.npmjs.com/package/@stylin.js@stylina?activeTab=versions).
 
 ```html
 <html lang="en">
@@ -16,7 +16,7 @@ You just need to add the cdn (`https://unpkg.com/@stylin.js/stylina@<version>`) 
   </body>
   <script
     type="module"
-    src="https://unpkg.com/@stylin.js/stylina@<version>"
+    src="https://unpkg.com/@stylin.js/stylina@<version>/dist/autorun.js"
   ></script>
 </html>
 ```
@@ -41,7 +41,7 @@ You must use CSS Properties as HTML attributes by passing the prefix `in-` as me
   </body>
   <script
     type="module"
-    src="https://unpkg.com/@stylin.js/stylina@<version>"
+    src="https://unpkg.com/@stylin.js/stylina@<version>/dist/autorun.js"
   ></script>
 </html>
 ```
@@ -64,7 +64,7 @@ You can group defined style in a class and name him as you which, using the attr
   </body>
   <script
     type="module"
-    src="https://unpkg.com/@stylin.js/stylina@<version>"
+    src="https://unpkg.com/@stylin.js/stylina@<version>/dist/autorun.js"
   ></script>
 </html>
 ```
@@ -87,7 +87,7 @@ For sure, you can reuse your pre-defined style, see the example:
   </body>
   <script
     type="module"
-    src="https://unpkg.com/@stylin.js/stylina@<version>"
+    src="https://unpkg.com/@stylin.js/stylina@<version>/dist/autorun.js"
   ></script>
 </html>
 ```
@@ -127,7 +127,7 @@ You can combine the `in-def-class` and `in-use-class`, to subscribe your styles,
   </body>
   <script
     type="module"
-    src="https://unpkg.com/@stylin.js/stylina@<version>"
+    src="https://unpkg.com/@stylin.js/stylina@<version>/dist/autorun.js"
   ></script>
 </html>
 ```
