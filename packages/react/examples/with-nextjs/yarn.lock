@@ -326,16 +326,16 @@
   integrity sha512-sXo/qW2/pAcmT43VoRKOJbDOfV3cYpq3szSVfIThQXNt+E4DfKj361vaAt3c88U5tPUxzEswam7GW48PJqtKAg==
 
 "@stylin.js/core@*":
-  version "0.0.2-alpha.4"
-  resolved "https://registry.yarnpkg.com/@stylin.js/core/-/core-0.0.2-alpha.4.tgz#a98f25bb6990a33cbe015970faf60ed92068f019"
-  integrity sha512-9MMu0G9zzVbuRKb3N8gEu5vKdkPrEF9zqOIhsjM3t5w21yOaZbyMSKDdtuYsCK9Vw/GF3Y+MlDbdaFbA0wK8Gw==
+  version "0.0.2-alpha.5"
+  resolved "https://registry.yarnpkg.com/@stylin.js/core/-/core-0.0.2-alpha.5.tgz#f365818581ab515d7daba8c0a7e7ff96036ebde9"
+  integrity sha512-Qeu96AtpFSwvAVHu5oqRspf6qYc3MbdqAn8apNbK+cdDnM7yiElpbVE6DW6mcK9UnL8qlZNgbUdRbw17QrJ6CQ==
   dependencies:
     "@emotion/react" "^11.10.5"
 
 "@stylin.js/react@*":
-  version "0.0.2-alpha.7"
-  resolved "https://registry.yarnpkg.com/@stylin.js/react/-/react-0.0.2-alpha.7.tgz#9cbeaad41f6349b91330b5086e9965d22804835c"
-  integrity sha512-NVcmUTTdG6M09jZ4iWFOR2JMa5W1krpgi9xHHZoLS2uSdKEtxq9zZgeZ4rAucMf6DeX5mCajqAienjnvfgqqgQ==
+  version "0.0.2-alpha.8"
+  resolved "https://registry.yarnpkg.com/@stylin.js/react/-/react-0.0.2-alpha.8.tgz#6ee5d60c9ebe5da19a9ebe1296ebf0d0090895a5"
+  integrity sha512-5UGDmp68UZ6SYvT+zjUSkRhUqB1X2gDBVZA9GubQNsZrwtQtT6awRd+ljHIixghgtIzDguEWlXm15N0OIsPhmA==
   dependencies:
     "@emotion/react" "^11.10.5"
     "@emotion/styled" "^11.10.5"

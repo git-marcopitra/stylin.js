@@ -1,3 +1,4 @@
+import { Interpolation } from '@emotion/react';
 import CSS, { SimplePseudos } from 'csstype';
 
 export type ArrayCSSInterpolation = Array<CSSInterpolation>;
@@ -102,7 +103,9 @@ export type RenderStylesProps = TStyles | TPseudos;
 
 export type GenericWithTheme<T> = T & { theme: Theme };
 
-export type TStylinFn<T> = (props: GenericWithTheme<T>) => SerializedStyles;
+export type TStylinFn<T> = (
+  props: T & { theme?: Theme }
+) => Interpolation<GenericWithTheme<T>>;
 
 export type TRenderStyles = (
   props: RenderStylesProps,
@@ -146,14 +149,14 @@ export type TRenderThemedStyle = (
   style: TStyleValue
 ) => string | number;
 
-export type StylinSimplePseudos = string;
+export type StylinSimplePseudos<Pseudos extends string = string> = Pseudos;
 
 export type PropertyMap = Record<
   StylinCustomPropertiesType,
   ReadonlyArray<CSSPropertiesKeys>
 >;
 
-export type PseudoSelectors = Record<string, SimplePseudos>;
+export type PseudoSelectors = Record<StylinSimplePseudos, SimplePseudos>;
 
 export type CustomProperties = Record<
   StylinCustomPropertiesType,

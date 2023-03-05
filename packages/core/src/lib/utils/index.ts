@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/ban-types */
 import {
   PseudoSelectors,
   TGetBreakpoint,
@@ -5,6 +6,7 @@ import {
   TPseudoEntries,
   TStyleEntries,
   TStyles,
+  TStylinFn,
 } from '../types';
 
 /**
@@ -68,6 +70,8 @@ export const getPseudos = (
  * @param {unknown} functionToCheck the argument that we want to verify
  * @returns {boolean} the result of the validation
  */
-export const isFunction = (functionToCheck: unknown): boolean =>
+export const isFunction = <T extends {}>(
+  functionToCheck: unknown
+): functionToCheck is TStylinFn<T> =>
   !!functionToCheck &&
   {}.toString.call(functionToCheck) === '[object Function]';

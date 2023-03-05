@@ -19,13 +19,16 @@
     "url": "git+https://github.com/git-marcopitra/stylin.git"
   },
   "keywords": [
+    "css",
+    "css-in-jsx",
     "style",
     "react",
     "builtin",
     "inline-styles",
     "react-component",
     "stylin-component",
-    "design-system"
+    "design-system",
+    "front-end"
   ],
   "author": "git-marcopitra@github.com",
   "license": "ISC",

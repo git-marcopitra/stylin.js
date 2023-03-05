@@ -11,14 +11,15 @@
     "prepublish": "yarn build"
   },
   "keywords": [
+    "css",
+    "css-in-html",
     "style",
     "web",
     "vanilla",
     "builtin",
     "inline-styles",
     "reusable-styles",
-    "stylin-component",
-    "design-system"
+    "front-end"
   ],
   "author": "git-marcopitra@github.com",
   "license": "ISC",

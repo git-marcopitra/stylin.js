@@ -1,23 +1,42 @@
-import { StyledComponent } from '@emotion/styled';
+/* eslint-disable @typescript-eslint/ban-types */
 import {
-  CSSInterpolation,
+  ArrayInterpolation,
+  Interpolation,
+  StyledComponent,
+} from '@emotion/styled';
+import {
   CSSProperties,
-  SerializedStyles,
   StylinCustomPropertiesType,
-  StylinSimplePseudos,
+  Theme,
   TStylinFn,
 } from '@stylin.js/core';
-import type { AriaAttributes } from 'react';
 
-export type StylinComponentProps = CSSProperties &
-  Partial<Record<StylinCustomPropertiesType, string>> &
-  Partial<Record<StylinSimplePseudos, CSSInterpolation>>;
+import { CSS_PSEUDO_SELECTORS } from '../constants';
 
-export type StylinComponent<T extends AriaAttributes> = StyledComponent<
-  T,
-  StylinComponentProps
+type StylinPseudoKeys = keyof typeof CSS_PSEUDO_SELECTORS;
+
+export type StylinComponentProps = Partial<
+  CSSProperties &
+    Record<StylinCustomPropertiesType, string> &
+    Record<
+      StylinPseudoKeys,
+      Interpolation<
+        CSSProperties & Partial<Record<StylinCustomPropertiesType, string>>
+      >
+    >
 >;
 
-export type TCreateStylinComponent<T extends AriaAttributes> = (
-  ...styles: ReadonlyArray<SerializedStyles | TStylinFn<T>>
-) => StylinComponent<T>;
+type StylinComponentPropsWithOptionalTheme = StylinComponentProps & {
+  theme?: Theme;
+};
+
+export type CreateStylinArguments = ReadonlyArray<
+  | TStylinFn<StylinComponentPropsWithOptionalTheme>
+  | Interpolation<StylinComponentPropsWithOptionalTheme>
+  | ArrayInterpolation<StylinComponentPropsWithOptionalTheme>
+>;
+
+export type StylinComponent<StylinProps extends {}> = StyledComponent<
+  StylinComponentProps,
+  StylinProps
+>;

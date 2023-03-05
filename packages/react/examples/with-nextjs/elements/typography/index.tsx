@@ -1,10 +1,9 @@
-import type { FC, HTMLAttributes, PropsWithChildren } from 'react';
-import stylin, { StylinComponentProps } from '@stylin.js/react';
+import type { AriaAttributes, FC, PropsWithChildren } from 'react';
+import stylin from '@stylin.js/react';
 
-export interface TypographyProps extends
-  StylinComponentProps<Omit<HTMLAttributes<HTMLParagraphElement>, 'color' | 'translate'>> {
+export type TypographyProps = PropsWithChildren<AriaAttributes & {
   as?: keyof JSX.IntrinsicElements;
-};
+}>;
 
 const Typography: FC<TypographyProps> = ({ as, ...props }) => {
   const StylinTypography = stylin<TypographyProps>(as || 'p')();
