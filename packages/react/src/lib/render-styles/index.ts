@@ -1,4 +1,9 @@
-import { makeRenderStyles, TRenderStyles } from '../../../../core/dist';
+import {
+  makeRenderStyles,
+  PseudoSelectors,
+  TRenderStyles,
+} from '@stylin.js/core';
+
 import { CSS_PSEUDO_SELECTORS, CSS_STYLING_MAP } from '../../constants';
 import renderPseudoSelector from '../render-pseudo-selector';
 import renderResponsiveStyle from '../render-responsive-style';
@@ -13,7 +18,7 @@ import renderResponsiveStyle from '../render-responsive-style';
  */
 const renderStyles: TRenderStyles = makeRenderStyles(
   CSS_STYLING_MAP,
-  CSS_PSEUDO_SELECTORS,
+  CSS_PSEUDO_SELECTORS as PseudoSelectors,
   renderResponsiveStyle,
   renderPseudoSelector
 );
