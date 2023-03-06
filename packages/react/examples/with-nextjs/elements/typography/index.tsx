@@ -1,15 +1,12 @@
-import { CSSProperties, FC, HTMLAttributes } from 'react';
-import stylin, { StylinCustomPropertiesType } from '@stylin.js/react';
+import type { FC, HTMLAttributes, PropsWithChildren } from 'react';
+import stylin, { StylinComponentProps } from '@stylin.js/react';
 
-export interface TypographyProps
-  extends CSSProperties,
-    Partial<Record<StylinCustomPropertiesType, string>>,
-    Omit<HTMLAttributes<HTMLParagraphElement>, 'color' | 'translate'> {
+export interface TypographyProps extends Omit<HTMLAttributes<HTMLParagraphElement>, 'color' | 'translate'> {
   as?: keyof JSX.IntrinsicElements;
 }
 
-const Typography: FC<TypographyProps> = ({ as, ...props }) => {
-  const StylinTypography = stylin(as || 'p')();
+const Typography: FC<PropsWithChildren<TypographyProps & StylinComponentProps>> = ({ as, ...props }) => {
+  const StylinTypography = stylin<TypographyProps>(as || 'p')();
 
   return <StylinTypography {...props} />;
 };

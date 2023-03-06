@@ -1,4 +1,5 @@
-import { CSSPropertiesKeys, Theme } from '../stylin.types';
+import { CSSPropertiesKeys, Theme } from '@stylin.js/core';
+
 import renderThemedStyle from '.';
 
 const renderThemedStyleTestTable: ReadonlyArray<

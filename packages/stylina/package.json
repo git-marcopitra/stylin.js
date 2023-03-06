@@ -1,6 +1,6 @@
 {
   "name": "@stylin.js/stylina",
-  "version": "0.0.3-alpha.4",
+  "version": "0.0.3-alpha.8",
   "description": "A vanilla inline styles statement lib",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -11,14 +11,15 @@
     "prepublish": "yarn build"
   },
   "keywords": [
+    "css",
+    "css-in-html",
     "style",
     "web",
     "vanilla",
     "builtin",
     "inline-styles",
     "reusable-styles",
-    "stylin-component",
-    "design-system"
+    "front-end"
   ],
   "author": "git-marcopitra@github.com",
   "license": "ISC",

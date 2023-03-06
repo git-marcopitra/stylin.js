@@ -1,29 +1,21 @@
+/* eslint-disable @typescript-eslint/ban-types */
 import styled from '@emotion/styled';
-import { utils } from '@stylin.js/core';
 
+import { utils } from '../../../core/dist';
 import renderStyles from './render-styles';
 import {
-  GenericWithTheme,
-  SerializedStyles,
+  CreateStylinArguments,
+  StylinComponent,
   StylinComponentProps,
-  TCreateStylinComponent,
-  Theme,
-  TStylinFn,
 } from './stylin.types';
 
 const stylin =
-  <T extends StylinComponentProps>(
-    component: keyof JSX.IntrinsicElements
-  ): TCreateStylinComponent<T> =>
-  (...styles) =>
-    styled(component)(
+  <StylinProps extends {}>(component: keyof JSX.IntrinsicElements) =>
+  (...styles: CreateStylinArguments) =>
+    styled(component)<StylinProps & StylinComponentProps>(
       (props) =>
-        styles.map((style) => {
-          if (utils.isFunction(style))
-            (style as TStylinFn<T>)(props as GenericWithTheme<T>);
-          return style as SerializedStyles;
-        }),
-      ({ theme, ...props }) => renderStyles(props, theme as Theme)
-    );
+        styles.map((style) => (utils.isFunction(style) ? style(props) : style)),
+      ({ theme, ...props }) => renderStyles(props, theme)
+    ) as StylinComponent<StylinProps>;
 
 export default stylin;

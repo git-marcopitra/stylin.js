@@ -1,8 +1,11 @@
-import { makeRenderPseudoSelector } from '@stylin.js/core';
+import {
+  makeRenderPseudoSelector,
+  PseudoSelectors,
+  TRenderPseudoSelector,
+} from '@stylin.js/core';
 
 import { CSS_PSEUDO_SELECTORS } from '../../constants';
 import renderResponsiveStyle from '../render-responsive-style';
-import { TRenderPseudoSelector } from '../stylin.types';
 
 /**
  * @name renderPseudoSelector
@@ -15,7 +18,7 @@ import { TRenderPseudoSelector } from '../stylin.types';
  * @returns {TPseudoSelector} the pseudo selector with styles css compatible
  */
 const renderPseudoSelector: TRenderPseudoSelector = makeRenderPseudoSelector(
-  CSS_PSEUDO_SELECTORS,
+  CSS_PSEUDO_SELECTORS as PseudoSelectors,
   renderResponsiveStyle
 );
 

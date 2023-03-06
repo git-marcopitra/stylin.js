@@ -25,7 +25,7 @@
         >@everyone</code
       >
     </h1>
-    <p in-margin-left="2rem" in-margin-bottom="5rem" in-color="#DDDs">
+    <p in-margin-left="2rem" in-margin-bottom="5rem" in-color="#DDD">
       Do builtin styles with Stylina in
       <a
         in-use-class="code"
@@ -49,6 +49,7 @@
         in-use-class="circle"
         in-background="#6f6"
         in-def-class="green-circle"
+        in-on-hover="box-shadow: 0 0 1rem #6f68"
       ></div>
       <div
         in-margin="1rem"
@@ -61,13 +62,21 @@
         in-def-class="circle"
         in-border-radius="50%"
         in-align-items="center"
+        in-marco-pitra="darkskin"
         in-justify-content="center"
+        in-transition-duration="300ms"
+        in-transition-timing-function=" ease-in-out"
+        in-transition-property="transform, box-shadow, background"
+        in-on-hover="transform: translateY(-0.2rem); box-shadow: 0 0 1rem #f668"
       ></div>
-      <div in-use-class="circle,green-circle"></div>
+      <div
+        in-use-class="circle,green-circle"
+        in-on-hover="box-shadow: 0 0 1rem #FA28!important; background: #FA2;"
+      ></div>
     </div>
   </body>
   <script
     type="module"
-    src="https://unpkg.com/@stylin.js/stylina@0.0.3-alpha.4"
+    src="https://unpkg.com/@stylin.js/stylina@0.0.3-alpha.8/dist/autorun.js"
   ></script>
 </html>

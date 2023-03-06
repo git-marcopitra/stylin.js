@@ -4,21 +4,22 @@ import {
   Theme,
   TPseudoSelector,
   TStyles,
-} from '../stylin.types';
+} from '@stylin.js/core';
+
 import renderPseudoSelector from '.';
 
 const renderPseudoSelectorTestTable: ReadonlyArray<
   [StylinSimplePseudos, TStyles, TPseudoSelector]
 > = [
   [
-    'on-hover',
+    'nHover',
     { bg: 'blue' },
     {
       ':hover': [{ background: 'blue' } as CSSInterpolation],
     },
   ],
   [
-    'on-active',
+    'nActive',
     { mx: 'L' },
     {
       ':active': [

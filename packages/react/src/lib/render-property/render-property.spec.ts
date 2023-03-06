@@ -1,4 +1,5 @@
-import { TStyleKeys } from '../stylin.types';
+import { TStyleKeys } from '@stylin.js/core';
+
 import renderProperty from '.';
 
 const renderPropertyTestTable: ReadonlyArray<

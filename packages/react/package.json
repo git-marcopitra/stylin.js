@@ -1,6 +1,6 @@
 {
   "name": "@stylin.js/react",
-  "version": "0.0.2-alpha.5",
+  "version": "0.0.2-alpha.10",
   "description": "A react component inline styles statement lib",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -19,13 +19,16 @@
     "url": "git+https://github.com/git-marcopitra/stylin.git"
   },
   "keywords": [
+    "css",
+    "css-in-jsx",
     "style",
     "react",
     "builtin",
     "inline-styles",
     "react-component",
     "stylin-component",
-    "design-system"
+    "design-system",
+    "front-end"
   ],
   "author": "git-marcopitra@github.com",
   "license": "ISC",

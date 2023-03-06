@@ -13,7 +13,7 @@ import type { TRenderVariant } from '../types';
  */
 const renderVariant: TRenderVariant =
   ({ scale, property }) =>
-  ({ theme, ...props }) =>
+  ({ theme = {}, ...props }) =>
     theme[scale]?.[props[property]] ?? {};
 
 export default renderVariant;

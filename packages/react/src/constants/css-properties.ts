@@ -1,4 +1,4 @@
-import { CSSPropertiesKeys } from '../lib/stylin.types';
+import { CSSPropertiesKeys } from '@stylin.js/core';
 
 export const CSS_PROPERTIES_ARRAY: ReadonlyArray<CSSPropertiesKeys> = [
   'alignContent',

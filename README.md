@@ -14,7 +14,7 @@ Stylin.js is an style ecosystem to provide the most easy and productive way to s
 
 ### Installing: @stylin.js/stylina
 
-You just need to add the cdn (`https://unpkg.com/@stylin.js/stylina@<version>`) to your `script` tag with `type="module"`
+You just need to add the cdn (`https://unpkg.com/@stylin.js/stylina@<version>/dist/autorun.js`) to your `script` tag with `type="module"`
 
 ### Usage: @stylin.js/stylina
 
@@ -29,7 +29,7 @@ You just need to add the cdn (`https://unpkg.com/@stylin.js/stylina@<version>`) 
   </body>
   <script
     type="module"
-    src="https://unpkg.com/@stylin.js/stylina@<version>"
+    src="https://unpkg.com/@stylin.js/stylina@<version>/dist/autorun.js"
   ></script>
 </html>
 ```
