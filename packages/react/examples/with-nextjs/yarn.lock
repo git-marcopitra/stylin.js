@@ -332,10 +332,10 @@
   dependencies:
     "@emotion/react" "^11.10.5"
 
-"@stylin.js/react@*":
-  version "0.0.2-alpha.9"
-  resolved "https://registry.yarnpkg.com/@stylin.js/react/-/react-0.0.2-alpha.9.tgz#f2b8916ac61116f6ade38f83b6cba5f88cfcd7c4"
-  integrity sha512-5m4jvl5+5Sv9MO/txgY34+md/uHEU7xKXBh2+S6eYc4tSJxEIOCjiYGHhPbOj7ZtDrCpvnkBjdh6EKxrYyUKtQ==
+"@stylin.js/react@latest":
+  version "0.0.2-alpha.10"
+  resolved "https://registry.yarnpkg.com/@stylin.js/react/-/react-0.0.2-alpha.10.tgz#5dcb7cd4965c25ce6a474d526cebb17d3caf75d4"
+  integrity sha512-5IYedETZrvXmu3d5CwQ7FTgRO/0sTdpPDAp5AJYOt3cJ66ozkB6jHhiKQnefNr3CWg53XzCKqXZAcldYTvddFQ==
   dependencies:
     "@emotion/react" "^11.10.5"
     "@emotion/styled" "^11.10.5"
