@@ -3,7 +3,11 @@ import styled from '@emotion/styled';
 
 import { utils } from '../../../core/dist';
 import renderStyles from './render-styles';
-import { CreateStylinArguments, StylinComponentProps } from './stylin.types';
+import {
+  CreateStylinArguments,
+  StylinComponent,
+  StylinComponentProps,
+} from './stylin.types';
 
 const stylin =
   <StylinProps extends {}>(component: keyof JSX.IntrinsicElements) =>
@@ -12,6 +16,6 @@ const stylin =
       (props) =>
         styles.map((style) => (utils.isFunction(style) ? style(props) : style)),
       ({ theme, ...props }) => renderStyles(props, theme)
-    );
+    ) as StylinComponent<StylinProps>;
 
 export default stylin;

@@ -1,12 +1,12 @@
-import { CSSProperties, FC, HTMLAttributes } from 'react';
-import stylin, { StylinComponentProps, StylinCustomPropertiesType } from '@stylin.js/react';
+import { FC, HTMLAttributes, PropsWithChildren } from 'react';
+import stylin, { StylinComponentProps } from '@stylin.js/react';
 
 export interface BoxProps
-  extends StylinComponentProps<Omit<HTMLAttributes<HTMLDivElement>, 'color' | 'translate'>> {
+  extends Omit<HTMLAttributes<HTMLDivElement>, 'color' | 'translate'> {
   as?: keyof JSX.IntrinsicElements;
 }
 
-const Box: FC<BoxProps> = ({ as, ...props }) => {
+const Box: FC<PropsWithChildren<BoxProps & StylinComponentProps>> = ({ as, ...props }) => {
   const StylinBox = stylin(as || 'div')();
 
   return <StylinBox {...props} />;
