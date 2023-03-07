@@ -6,8 +6,17 @@ import {
   StylinAttributesMap,
 } from './types';
 
-export const parseStyle = (styles: RawStyle): string =>
-  styles.reduce((acc, { name, value }) => `${acc}\t${name}: ${value};\n`, '');
+const stringArrayEquals = (
+  first: ReadonlyArray<string>,
+  second: ReadonlyArray<string>
+) => first.every((value, index) => second[index] == value);
+
+export const rawStyleArrayEquals = (first: RawStyle, second: RawStyle) =>
+  first.every(
+    ({ value, name }, index) =>
+      stringArrayEquals(second[index].value, value) &&
+      second[index].name == name
+  );
 
 export const makeStyleId = ({
   defClassName,

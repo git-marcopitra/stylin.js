@@ -8,4 +8,5 @@ export const STYLIN_CONTROLLERS: ReadonlyArray<`in-${StylinControllersKey}`> = [
 ];
 
 export { CSS_PROPERTIES } from './css-properties.js';
+export * from './css-responsiveness.js';
 export { CSS_PSEUDO_SELECTORS } from './pseudo-selectors.js';

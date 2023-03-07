@@ -12,11 +12,17 @@ export interface MakeStyleIdArguments extends ControllerData {
   hasPseudos: boolean;
   reusableClass?: string;
 }
+
+export type PseudoSelectors = ReadonlyArray<{
+  pseudo: string;
+  parsedStyles: RawStyle;
+}>;
+
 export interface RenderStylesArguments {
   isDefine: boolean;
-  parsedStyles: string;
+  styles: RawStyle;
   styleId: ReadonlyArray<string>;
-  pseudos: ReadonlyArray<{ pseudo: string; parsedStyle: string }>;
+  pseudos: PseudoSelectors;
 }
 
 export type MakeStyleIdReturn = [
@@ -27,7 +33,7 @@ export type MakeStyleIdReturn = [
 
 export interface RawStyleEntry {
   name: string;
-  value: string;
+  value: ReadonlyArray<string>;
 }
 
 export type RawStyle = ReadonlyArray<RawStyleEntry>;

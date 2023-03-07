@@ -1,6 +1,6 @@
 {
   "name": "@stylin.js/react",
-  "version": "0.0.2-alpha.10",
+  "version": "0.0.2-alpha.12",
   "description": "A react component inline styles statement lib",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -39,7 +39,7 @@
   "dependencies": {
     "@emotion/react": "^11.10.5",
     "@emotion/styled": "^11.10.5",
-    "@stylin.js/core": "*"
+    "@stylin.js/core": "latest"
   },
   "gitHead": "5fe2f399f74f2649325eb5460e58e577a82f2089"
 }

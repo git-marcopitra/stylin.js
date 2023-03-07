@@ -1,12 +1,17 @@
 import { NON_STYLE_ELEMENTS } from '../constants/index.js';
 import getControllerClassNames from './controllers/index.js';
 import getStylinPseudos from './pseudo-selectors/index.js';
+import renderResponsiveStyle from './responsiveness/index.js';
 import getStyleProperties from './style-properties/index.js';
-import { GetStyleArguments, RenderStylesArguments } from './types';
-import { invalidStylinAttributes, makeStyleId, parseStyle } from './utils.js';
+import { GetStyleArguments, RawStyle, RenderStylesArguments } from './types';
+import {
+  invalidStylinAttributes,
+  makeStyleId,
+  rawStyleArrayEquals,
+} from './utils.js';
 
 export default class Stylin {
-  classes: Array<[string, string]>;
+  classes: Array<[string, RawStyle]>;
   stylinStyleElement: Element | null;
   stylinCustomStyleElement: Element | null;
 
@@ -36,70 +41,80 @@ export default class Stylin {
     );
   }
 
+  observer(element: Element, mutationObserver: MutationObserver) {
+    const config = { attributes: true, childList: true, subtree: true };
+
+    mutationObserver.observe(element, config);
+  }
+
   init(element?: Element) {
-    this.runStylin(element ?? document.body);
+    const target = element ?? document.body;
+    this.runStylin(target);
+
+    const runStylin = this.runStylin.bind(this);
+
+    const observer = new MutationObserver(() => runStylin(target));
+    this.observer(target, observer);
   }
 
   runStylin(element: Element): void {
-    // eslint-disable-next-line @typescript-eslint/no-this-alias
-    const self = this;
+    const runStylin = this.runStylin.bind(this);
+
     if (NON_STYLE_ELEMENTS.includes(element.localName)) return;
 
     const { useClassNameList, defClassName } = getControllerClassNames(element);
 
     const styleId = this.getStyle({ element, defClassName, useClassNameList });
 
-    if (!styleId) return;
-
-    const space = element.className ? ' ' : '';
-
-    element.className += space + styleId.replace(/\./g, ' ');
+    if (styleId) {
+      const space = element.className ? ' ' : '';
+      element.className += space + styleId.replace(/\./g, ' ');
+    }
 
     invalidStylinAttributes(element);
 
-    [...element.children].forEach(function (child) {
-      self.runStylin(child);
-    });
+    [...element.children].forEach(runStylin);
   }
 
-  getReusableClassByStyle(styles: string) {
-    if (!styles) return;
+  getReusableClassByStyle(styles: RawStyle) {
+    if (!styles.length) return;
 
-    return this.classes.find(([, style]) => style === styles)?.[0];
+    return this.classes.find(([, style]) =>
+      rawStyleArrayEquals(style, styles)
+    )?.[0];
   }
 
-  addNewClass(classNameList: ReadonlyArray<string>, styles: string) {
-    if (!classNameList.length || !styles) return;
+  addNewClass(classNameList: ReadonlyArray<string>, styles: RawStyle) {
+    if (!classNameList.length || !styles.length) return;
 
     this.classes.push([classNameList.join(' '), styles]);
   }
 
   getStyle({ element, defClassName, useClassNameList }: GetStyleArguments) {
     const styles = getStyleProperties(element);
+
     const pseudos = getStylinPseudos(element);
 
     if (!styles.length && !useClassNameList.length) return;
 
-    const parsedStyles = parseStyle(styles);
-
-    const reusableClass = this.getReusableClassByStyle(parsedStyles);
+    const reusableClass = this.getReusableClassByStyle(styles);
 
     const [creatingClassList, usingClassList, reusingClassList] = makeStyleId({
       defClassName,
       useClassNameList,
       reusableClass,
-      hasStyle: !!parsedStyles,
+      hasStyle: !!styles.length,
       hasPseudos: !!pseudos.length,
     });
 
     this.renderStyle({
-      parsedStyles,
+      styles,
       isDefine: !!defClassName,
       styleId: creatingClassList,
       pseudos,
     });
 
-    this.addNewClass(creatingClassList, parsedStyles);
+    this.addNewClass(creatingClassList, styles);
 
     return creatingClassList
       .concat(usingClassList, reusingClassList)
@@ -107,31 +122,32 @@ export default class Stylin {
       .trim();
   }
 
-  renderStyle({
-    styleId,
-    isDefine,
-    parsedStyles,
-    pseudos,
-  }: RenderStylesArguments) {
+  renderStyle({ styleId, isDefine, styles, pseudos }: RenderStylesArguments) {
     if (!styleId.length) return;
 
     const styleTagElement = isDefine
       ? this.stylinCustomStyleElement
       : this.stylinStyleElement;
 
-    if (parsedStyles) {
+    if (styles.length) {
       const generatedSimpleClassName = `.${styleId.join(`,\n.`)}`;
 
-      styleTagElement!.innerHTML += `${generatedSimpleClassName} {\n ${parsedStyles} }\n`;
+      styleTagElement!.innerHTML += renderResponsiveStyle(
+        generatedSimpleClassName,
+        styles
+      );
     }
 
     if (pseudos.length) {
-      pseudos.forEach(({ pseudo, parsedStyle }) => {
+      pseudos.forEach(({ pseudo, parsedStyles }) => {
         const generatedPseudosClassName = `.${styleId
           .map((id) => id + pseudo)
           .join(`,\n.`)}`;
 
-        styleTagElement!.innerHTML += `${generatedPseudosClassName} {\n ${parsedStyle} }\n`;
+        styleTagElement!.innerHTML += renderResponsiveStyle(
+          generatedPseudosClassName,
+          parsedStyles
+        );
       });
     }
   }
