@@ -67,8 +67,13 @@ export default class Stylin {
     const styleId = this.getStyle({ element, defClassName, useClassNameList });
 
     if (styleId) {
-      const space = element.className ? ' ' : '';
-      element.className += space + styleId.replace(/\./g, ' ');
+      const newClassName = Array.from(
+        new Set(element.className.split(' ').concat(styleId.split('.')))
+      )
+        .join(' ')
+        .trim();
+
+      element.className = newClassName;
     }
 
     invalidStylinAttributes(element);
