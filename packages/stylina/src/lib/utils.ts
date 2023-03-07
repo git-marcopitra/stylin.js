@@ -9,9 +9,12 @@ import {
 const stringArrayEquals = (
   first: ReadonlyArray<string>,
   second: ReadonlyArray<string>
-) => first.every((value, index) => second[index] == value);
+) =>
+  first.length == second.length &&
+  first.every((value, index) => second[index] == value);
 
 export const rawStyleArrayEquals = (first: RawStyle, second: RawStyle) =>
+  first.length == second.length &&
   first.every(
     ({ value, name }, index) =>
       stringArrayEquals(second[index].value, value) &&
