@@ -139,4 +139,53 @@ You can combine the `in-def-class` and `in-use-class`, to subscribe your styles,
 1. following by `in-def-class="green-circle"` to declare that we are overwriting in class `.circle` a new style (`background: green`), in a combined class `.green-circle.circle`;
 1. In the 2nd element, we are name all the styles as `.circle`, using the attribute `in-def-class="circle"`;
 1. In the last element with `in-use-class="circle,green-circle"` we are use both of declared classes, `circle`
-(to use circle styles) and `green-circle` (to overwrite the circle background color).
+   (to use circle styles) and `green-circle` (to overwrite the circle background color).
+
+## Advanced Topics
+
+### Pseudo Selectors
+
+For pseudo selector after `in-` you must add `on-` following by the pseudo selector name, for example:
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+  ...
+  <body>
+    <h1 in-color="green" in-on-hover="color: red">hello world</h1>
+  </body>
+  <script
+    type="module"
+    src="https://unpkg.com/@stylin.js/stylina@<version>/dist/autorun.js"
+  ></script>
+</html>
+```
+
+### Responsiveness
+
+For responsiveness you just must add the `<` symbol between styles breakpoints
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+  ...
+  <body>
+    <h1 in-color="green < blue < red < yellow" in-on-hover="color: red < black < gray < cyan" >
+      hello world
+    </h1>
+  </body>
+  <script
+    type="module"
+    src="https://unpkg.com/@stylin.js/stylina@<version>/dist/autorun.js"
+  ></script>
+</html>
+```
+
+**Note:** For breakpoints we are using mobile first [bootstrap breakpoints](https://getbootstrap.com/docs/5.0/layout/breakpoints/#available-breakpoints), where:
+
+- 1st style is for xs;
+- 2nd style for sm;
+- 3rd style for md;
+- 4th style for lg;
+- 5th style for xl;
+- and 6th for xxl.

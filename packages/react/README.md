@@ -44,7 +44,7 @@ const Home = () => (
 
 ```tsx
 // Typescript
-import stylin, { StylinComponentProps } from '@stylin.js/react';
+import stylin from '@stylin.js/react';
 import React, { FC, HTMLAttributes } from 'react';
 
 // There may be some duplicated props
@@ -52,8 +52,7 @@ import React, { FC, HTMLAttributes } from 'react';
 type StylinDivProps = Omit<
   HTMLAttributes<HTMLDivElement>,
   'color' | 'translate'
-> &
-  StylinComponentProps; // Stylin props
+>; // Stylin props
 
 const StylinDiv = stylin<StylinDivProps>('div')();
 
@@ -288,10 +287,9 @@ const Component = () => (
 
 ```tsx
 import React, { FC, ButtonHTMLAttributes } from 'react';
-import stylin, { variant, StylinComponentProps } from 'stylin.js';
+import stylin, { variant } from 'stylin.js';
 
-interface StylinDivProps extends StylinComponentProps,
-  Omit<ButtonHTMLAttributes<HTMLButtonElement>, 'color' | 'translate'> {
+interface StylinDivProps extends Omit<ButtonHTMLAttributes<HTMLButtonElement>, 'color' | 'translate'> {
   variant: 'primary' | 'secondary'; // component attribute well typed
 }
 
@@ -322,14 +320,17 @@ _**Stylin.js**_ provides all css pseudo selectors built-in on your component, us
   border="1px solid"
   borderColor="transparent"
   transition="all 300ms ease-in-out"
-  on-hover={{     // :hover
+  nHover={{
+    // &:hover
     background: '#bbb',
     borderColor: 'primary',
   }}
-  on-active={{    // :active
+  nActive={{
+    // &:active
     borderColor: 'secondary',
   }}
-  on-disabled={{  // :disabled
+  nDisabled={{
+    // &:disabled
     cursor: 'not-allowed',
     borderColor: 'disabled',
   }}
