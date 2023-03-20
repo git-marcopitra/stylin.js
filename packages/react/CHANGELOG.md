@@ -9,3 +9,9 @@
 - Support for responsiveness
 - Support for variants
 - Support for PseudoSelectors
+
+## 1.0.1 - Types fixes
+
+### 1.0.1 - Fixes
+
+- Improve Responsive Styles types
