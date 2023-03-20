@@ -1,4 +1,6 @@
-import { CSSPropertiesKeys, StylinCustomPropertiesType } from '@stylin.js/core';
+import { StylinCustomPropertiesType } from '@stylin.js/core';
+
+import { StylinPropertyMap } from '../lib/stylin.types';
 
 export const STYLIN_CUSTOM_PROPERTIES: Record<
   StylinCustomPropertiesType,
@@ -21,10 +23,7 @@ export const STYLIN_CUSTOM_PROPERTIES: Record<
   pl: 'pl',
 };
 
-export const CUSTOM_PROPERTY_MAP: Record<
-  StylinCustomPropertiesType,
-  ReadonlyArray<CSSPropertiesKeys>
-> = {
+export const CUSTOM_PROPERTY_MAP: StylinPropertyMap = {
   bg: ['background'],
   m: ['margin'],
   my: ['marginTop', 'marginBottom'],

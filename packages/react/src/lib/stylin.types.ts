@@ -6,6 +6,8 @@ import {
 } from '@emotion/styled';
 import {
   CSSProperties,
+  CSSPropertiesKeys,
+  MaybeArray,
   StylinCustomPropertiesType,
   Theme,
   TStylinFn,
@@ -15,9 +17,35 @@ import { CSS_PSEUDO_SELECTORS } from '../constants';
 
 type StylinPseudoKeys = keyof typeof CSS_PSEUDO_SELECTORS;
 
+export type StylinPropertyMap = Record<
+  StylinCustomPropertiesType,
+  ReadonlyArray<CSSPropertiesKeys>
+>;
+
+export type CSSMaybeArrayProperties = {
+  [key in keyof CSSProperties]: MaybeArray<CSSProperties[key]>;
+};
+
+export interface StylinProperties extends CSSMaybeArrayProperties {
+  bg: MaybeArray<CSSProperties['background']>;
+  m: MaybeArray<CSSProperties['margin']>;
+  my: MaybeArray<CSSProperties['margin']>;
+  mx: MaybeArray<CSSProperties['margin']>;
+  mt: MaybeArray<CSSProperties['margin']>;
+  mr: MaybeArray<CSSProperties['margin']>;
+  mb: MaybeArray<CSSProperties['margin']>;
+  ml: MaybeArray<CSSProperties['margin']>;
+  p: MaybeArray<CSSProperties['padding']>;
+  px: MaybeArray<CSSProperties['padding']>;
+  py: MaybeArray<CSSProperties['padding']>;
+  pt: MaybeArray<CSSProperties['padding']>;
+  pr: MaybeArray<CSSProperties['padding']>;
+  pb: MaybeArray<CSSProperties['padding']>;
+  pl: MaybeArray<CSSProperties['padding']>;
+}
+
 export type StylinComponentProps = Partial<
-  CSSProperties &
-    Record<StylinCustomPropertiesType, string> &
+  StylinProperties &
     Record<
       StylinPseudoKeys,
       Interpolation<
