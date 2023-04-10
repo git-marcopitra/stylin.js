@@ -48,7 +48,7 @@ import stylin from '@stylin.js/react';
 import React, { FC, HTMLAttributes } from 'react';
 
 // There may be some duplicated props
-// You must omit the with the following line
+// You must omit them with the following line
 type StylinDivProps = Omit<
   HTMLAttributes<HTMLDivElement>,
   'color' | 'translate'
