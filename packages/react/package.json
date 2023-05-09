@@ -37,11 +37,11 @@
   },
   "homepage": "https://git-marcopitra.github.io/stylin.js/",
   "dependencies": {
+    "@emotion/styled": "^11.10.5",
     "@stylin.js/core": "latest"
   },
   "peerDependencies": {
-    "@emotion/react": "^11.x",
-    "@emotion/styled": "^11.x"
+    "@emotion/react": "^11.x"
   },
   "gitHead": "5fe2f399f74f2649325eb5460e58e577a82f2089"
 }
