@@ -9,3 +9,9 @@
 - Support for responsiveness
 - Support for variants
 - Support for PseudoSelectors
+
+## 1.0.1 - Pin Emotion as peer dependencies
+
+### 1.0.1 - Update
+
+- Pin `@emotion/react` as peerDependency

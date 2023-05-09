@@ -15,3 +15,9 @@
 ### 1.0.1 - Fixes
 
 - Improve Responsive Styles types
+
+## 1.0.2 - Pin Emotion as peer dependencies
+
+### 1.0.2 - Update
+
+- Pin `@emotion/react` as peerDependency
