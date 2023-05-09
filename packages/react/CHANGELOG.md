@@ -21,3 +21,9 @@
 ### 1.0.2 - Update
 
 - Pin `@emotion/react` as peerDependency
+
+## 1.0.3 - Export Emotion theme context
+
+### 1.0.3 - Update
+
+- Export `@emotion/react` theme context to use as `@stylin.js/react` context
