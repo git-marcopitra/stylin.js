@@ -1,6 +1,6 @@
 {
   "name": "@stylin.js/core",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A inline styles statement lib",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
