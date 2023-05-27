@@ -311,7 +311,7 @@ const Component: FC = () => (
 
 ### Pseudo Selectors
 
-_**Stylin.js**_ provides all css pseudo selectors built-in on your component, using only the prefix `on-` for all selectors, see the code:
+_**Stylin.js**_ provides all css pseudo selectors built-in on your component, using only the prefix `n` for all selectors, see the code:
 
 ```jsx
 <StylinDiv
