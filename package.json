@@ -1,11 +1,12 @@
 {
   "name": "root",
-  "private": false,
+  "private": true,
   "version": "0.0.0",
   "workspaces": [
     "packages/*"
   ],
   "scripts": {
+    "bootstrap": "npx lerna bootstrap",
     "prepublish": "yarn test && yarn build",
     "publish": "lerna publish",
     "publish:canary": "lerna publish --canary",
