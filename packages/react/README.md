@@ -48,7 +48,7 @@ import stylin from '@stylin.js/react';
 import React, { FC, HTMLAttributes } from 'react';
 
 // There may be some duplicated props
-// You must omit the with the following line
+// You must omit them with the following line
 type StylinDivProps = Omit<
   HTMLAttributes<HTMLDivElement>,
   'color' | 'translate'
@@ -311,7 +311,7 @@ const Component: FC = () => (
 
 ### Pseudo Selectors
 
-_**Stylin.js**_ provides all css pseudo selectors built-in on your component, using only the prefix `on-` for all selectors, see the code:
+_**Stylin.js**_ provides all css pseudo selectors built-in on your component, using only the prefix `n` for all selectors, see the code:
 
 ```jsx
 <StylinDiv
