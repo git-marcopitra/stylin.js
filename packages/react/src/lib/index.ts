@@ -1,21 +1,24 @@
-/* eslint-disable @typescript-eslint/ban-types */
-import styled from '@emotion/styled';
-
-import { utils } from '../../../core/dist';
-import renderStyles from './render-styles';
 import {
-  CreateStylinArguments,
-  StylinComponent,
-  StylinComponentProps,
-} from './stylin.types';
+  Attributes,
+  Component,
+  createElement,
+  FC,
+  PropsWithChildren,
+} from 'react';
 
 const stylin =
-  <StylinProps extends {}>(component: keyof JSX.IntrinsicElements) =>
-  (...styles: CreateStylinArguments) =>
-    styled(component)<StylinProps & StylinComponentProps>(
-      (props) =>
-        styles.map((style) => (utils.isFunction(style) ? style(props) : style)),
-      ({ theme, ...props }) => renderStyles(props, theme)
-    ) as StylinComponent<StylinProps>;
+  <ComponentProps extends Attributes | null | undefined>(
+    component: Component | keyof JSX.IntrinsicElements
+  ): FC<PropsWithChildren<ComponentProps>> =>
+  (props) => {
+    const { children = null, ...restProps } = props ?? { children: null };
+
+    const stylinComponent =
+      typeof component === 'string'
+        ? createElement(component, restProps, children)
+        : null;
+
+    return stylinComponent;
+  };
 
 export default stylin;

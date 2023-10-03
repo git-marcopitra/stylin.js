@@ -1,4 +1,4 @@
-import type { Theme } from '../src/lib/stylin.types';
+import { Theme } from '@stylin.js/core';
 
 export const getBreakpointsTestTable = (breakpoints: ReadonlyArray<string>) => [
   [0, 'undefined'],
