@@ -5,7 +5,9 @@ const getControllerClassNames = (element: Element): ControllerData => {
   const controllers = getStylinControllers(element);
 
   const defClassName = controllers['def-class'] ?? '';
-  const useClassNameList = [...new Set(controllers['use-class']?.split(','))];
+  const useClassNameList = Array.from(
+    new Set(controllers['use-class']?.split(','))
+  );
 
   const controllerClassNames = { useClassNameList, defClassName };
 
