@@ -24,7 +24,7 @@ export default class Stylin {
   }
 
   setup() {
-    const id = crypto.randomUUID().split('-')[0];
+    const id = self.crypto.randomUUID().split('-')[0];
 
     const stylinId = `stylin-${id}`;
     const stylinCustomId = `stylin-${id}__custom`;
@@ -78,7 +78,7 @@ export default class Stylin {
 
     invalidStylinAttributes(element);
 
-    [...element.children].forEach(runStylin);
+    Array.from(element.children).forEach(runStylin);
   }
 
   getReusableClassByStyle(styles: RawStyle) {

@@ -54,7 +54,7 @@ export const makeStyleId = ({
 };
 
 export const invalidStylinAttributes = (element: Element) => {
-  const attributes = new Array(...element.attributes);
+  const attributes = Array.from(element.attributes);
 
   const stylinAttributes = attributes.filter(({ name }) =>
     name.startsWith('in-')
@@ -74,7 +74,7 @@ export const getParsedStylinAttributesMap = <T>(
   element: Element,
   attributeList: ReadonlyArray<T>
 ): StylinAttributesMap => {
-  const attributes = new Array(...element.attributes);
+  const attributes = Array.from(element.attributes);
 
   if (!attributes.length) return {};
 
@@ -97,7 +97,7 @@ export const getParsedStylinAttributesList = <T>(
   attributeList: ReadonlyArray<T>,
   removeString = 'in-'
 ): StylinAttributesList => {
-  const attributes = new Array(...element.attributes);
+  const attributes = Array.from(element.attributes);
 
   if (!attributes.length) return [];
 
