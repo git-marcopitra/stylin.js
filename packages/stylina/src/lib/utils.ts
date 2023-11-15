@@ -117,3 +117,14 @@ export const getParsedStylinAttributesList = <T>(
 
   return parsedStylinAttributes;
 };
+
+export const generateUniqueKey = (length = 8) =>
+  Array.from({ length }, () => {
+    const position = ~~(Math.random() * 61);
+
+    if (position >= 58) return position - 51;
+
+    if (position > 25 && position < 33) return position - 25;
+
+    return String.fromCharCode(position + 65);
+  }).join('');

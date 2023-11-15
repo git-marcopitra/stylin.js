@@ -5,6 +5,7 @@ import renderResponsiveStyle from './responsiveness/index.js';
 import getStyleProperties from './style-properties/index.js';
 import { GetStyleArguments, RawStyle, RenderStylesArguments } from './types';
 import {
+  generateUniqueKey,
   invalidStylinAttributes,
   makeStyleId,
   rawStyleArrayEquals,
@@ -24,7 +25,7 @@ export default class Stylin {
   }
 
   setup() {
-    const id = self.crypto.randomUUID().split('-')[0];
+    const id = generateUniqueKey();
 
     const stylinId = `stylin-${id}`;
     const stylinCustomId = `stylin-${id}__custom`;
