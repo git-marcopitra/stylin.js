@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Stylina</title>
+    <title>Stylina - HTMX</title>
   </head>
   <body
     in-margin="0"
@@ -74,9 +74,63 @@
         in-on-hover="box-shadow: 0 0 1rem #FA28!important; background: #FA2 < #222;"
       ></div>
     </div>
+    <div in-padding="2rem" in-display="flex" in-flex-direction="column" in-gap="2rem">
+      <input
+        name="name"
+        type="search"
+        placeholder="Search for the name"
+        in-all="unset"
+        in-padding="1rem"
+        in-border-bottom="1px solid #bbb"
+        hx-get="https://651c8b8235bd4107e372f08f.mockapi.io/api/v1/property"
+        hx-trigger="keyup changed delay:500ms"
+        hx-target="#search-results"
+      />
+      <table in-border-radius="0.5rem" in-border="1px solid #bbb" in-overflow="hidden" in-border-collapse="collapse">
+        <thead in-background="#666">
+          <tr>
+            <th in-padding="1rem">Avatar</th>
+            <th in-padding="1rem">Name</th>
+            <th in-padding="1rem">id</th>
+          </tr>
+        </thead>
+        <tbody id="search-results"></tbody>
+      </table>
+    </div>
     <script
       type="module"
-      src="https://unpkg.com/@stylin.js/stylina@0.1.2-alpha.0"
+      src="https://unpkg.com/@stylin.js/stylina@0.0.3-alpha.13"
     ></script>
+    <script
+      src="https://unpkg.com/htmx.org@1.9.6"
+      integrity="sha384-FhXw7b6AlE/jyjlZH5iHa/tTe9EpJ1Y55RjcgPbjeWMskSxZt1v9qkxLJWNJaGni"
+      crossorigin="anonymous"
+    ></script>
+    <script>
+      htmx.on('htmx:afterRequest', (evt) => {
+        const searchResultsElement = document.querySelector('#search-results');
+
+        const searchResults = JSON.parse(searchResultsElement.innerHTML);
+
+        searchResultsElement.innerHTML = searchResults
+          .map(
+            ({ name, avatar, id }) =>
+              `<tr in-border-bottom="1px solid #bbb" in-border-radius="0.5rem">
+                <td in-padding="1rem" in-text-align="center">
+                  <img
+                    alt="${name}"
+                    src="${avatar}"
+                    in-width="2.5rem"
+                    in-height="2  .5rem"
+                    in-border-radius="50%"
+                  />
+                </td>
+                <td in-text-align="center">${name}</td>
+                <td in-text-align="center">${id}</td>
+              </tr>`
+          )
+          .join('\n');
+      });
+    </script>
   </body>
 </html>

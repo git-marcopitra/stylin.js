@@ -28,8 +28,7 @@ export const makeStyleId = ({
   hasStyle,
   hasPseudos,
 }: MakeStyleIdArguments): MakeStyleIdReturn => {
-  const styleId =
-    hasStyle || hasPseudos ? `stylin-${crypto.randomUUID().split('-')[0]}` : '';
+  const styleId = hasStyle || hasPseudos ? `stylin-${generateUniqueKey()}` : '';
 
   if (!defClassName && !useClassNameList.length && !reusableClass)
     return [[styleId], [], []];
@@ -54,7 +53,7 @@ export const makeStyleId = ({
 };
 
 export const invalidStylinAttributes = (element: Element) => {
-  const attributes = new Array(...element.attributes);
+  const attributes = Array.from(element.attributes);
 
   const stylinAttributes = attributes.filter(({ name }) =>
     name.startsWith('in-')
@@ -74,7 +73,7 @@ export const getParsedStylinAttributesMap = <T>(
   element: Element,
   attributeList: ReadonlyArray<T>
 ): StylinAttributesMap => {
-  const attributes = new Array(...element.attributes);
+  const attributes = Array.from(element.attributes);
 
   if (!attributes.length) return {};
 
@@ -97,7 +96,7 @@ export const getParsedStylinAttributesList = <T>(
   attributeList: ReadonlyArray<T>,
   removeString = 'in-'
 ): StylinAttributesList => {
-  const attributes = new Array(...element.attributes);
+  const attributes = Array.from(element.attributes);
 
   if (!attributes.length) return [];
 
@@ -116,4 +115,28 @@ export const getParsedStylinAttributesList = <T>(
   }, [] as StylinAttributesList);
 
   return parsedStylinAttributes;
+};
+
+export const generateUniqueKey = (length = 8) => {
+  const positions = Array.from({ length }, () => {
+    const position = ~~(Math.random() * 61);
+
+    return position;
+  });
+
+  console.log('>> positions :: ', positions);
+
+  const result = positions
+    .map((position) => {
+      if (position >= 58) return position - 51;
+
+      if (position > 25 && position < 33) return position - 25;
+
+      return String.fromCharCode(position + 65);
+    })
+    .join('');
+
+  console.log('>> result :: ', result);
+
+  return result;
 };
