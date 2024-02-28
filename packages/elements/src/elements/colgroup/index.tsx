@@ -12,7 +12,7 @@ export const stylinColgroup = <T extends Record<string, unknown>>(
 
 const ColgroupElement = stylinColgroup();
 
-export const Colgroup = forwardRef<PropsWithChildren<ColgroupProps>>(
+export const Colgroup = forwardRef<ColgroupElementProps, PropsWithChildren<ColgroupProps>>(
   (props, ref) => <ColgroupElement {...props} ref={ref} />
 );
 

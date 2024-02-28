@@ -12,7 +12,7 @@ export const stylinHgroup = <T extends Record<string, unknown>>(
 
 const HgroupElement = stylinHgroup();
 
-export const Hgroup = forwardRef<PropsWithChildren<HgroupProps>>(
+export const Hgroup = forwardRef<HgroupElementProps, PropsWithChildren<HgroupProps>>(
   (props, ref) => <HgroupElement {...props} ref={ref} />
 );
 

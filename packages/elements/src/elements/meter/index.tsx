@@ -12,7 +12,7 @@ export const stylinMeter = <T extends Record<string, unknown>>(
 
 const MeterElement = stylinMeter();
 
-export const Meter = forwardRef<PropsWithChildren<MeterProps>>((props, ref) => (
+export const Meter = forwardRef<MeterElementProps, PropsWithChildren<MeterProps>>((props, ref) => (
   <MeterElement {...props} ref={ref} />
 ));
 

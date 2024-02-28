@@ -12,7 +12,7 @@ export const stylinBdi = <T extends Record<string, unknown>>(
 
 const BdiElement = stylinBdi();
 
-export const Bdi = forwardRef<PropsWithChildren<BdiProps>>((props, ref) => (
+export const Bdi = forwardRef<BdiElementProps, PropsWithChildren<BdiProps>>((props, ref) => (
   <BdiElement {...props} ref={ref} />
 ));
 

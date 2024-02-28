@@ -9,7 +9,7 @@ export const stylinI = <T extends Record<string, unknown>>(
 
 const IElement = stylinI();
 
-export const I = forwardRef<PropsWithChildren<IProps>>((props, ref) => (
+export const I = forwardRef<IElementProps, PropsWithChildren<IProps>>((props, ref) => (
   <IElement {...props} ref={ref} />
 ));
 

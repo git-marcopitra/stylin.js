@@ -12,7 +12,7 @@ export const stylinForm = <T extends Record<string, unknown>>(
 
 const FormElement = stylinForm();
 
-export const Form = forwardRef<PropsWithChildren<FormProps>>((props, ref) => (
+export const Form = forwardRef<FormElementProps, PropsWithChildren<FormProps>>((props, ref) => (
   <FormElement {...props} ref={ref} />
 ));
 

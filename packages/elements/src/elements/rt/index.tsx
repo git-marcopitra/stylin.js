@@ -10,7 +10,7 @@ export const stylinRt = <T extends Record<string, unknown>>(
 
 const RtElement = stylinRt();
 
-export const Rt = forwardRef<PropsWithChildren<RtProps>>((props, ref) => (
+export const Rt = forwardRef<RtElementProps, PropsWithChildren<RtProps>>((props, ref) => (
   <RtElement {...props} ref={ref} />
 ));
 

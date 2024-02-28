@@ -12,7 +12,7 @@ export const stylinAddress = <T extends Record<string, unknown>>(
 
 const AddressElement = stylinAddress();
 
-export const Address = forwardRef<PropsWithChildren<AddressProps>>(
+export const Address = forwardRef<AddressElementProps, PropsWithChildren<AddressProps>>(
   (props, ref) => <AddressElement {...props} ref={ref} />
 );
 

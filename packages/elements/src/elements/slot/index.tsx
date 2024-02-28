@@ -12,7 +12,7 @@ export const stylinSlot = <T extends Record<string, unknown>>(
 
 const SlotElement = stylinSlot();
 
-export const Slot = forwardRef<PropsWithChildren<SlotProps>>((props, ref) => (
+export const Slot = forwardRef<SlotElementProps, PropsWithChildren<SlotProps>>((props, ref) => (
   <SlotElement {...props} ref={ref} />
 ));
 

@@ -9,9 +9,9 @@ export const stylinA = <T extends Record<string, unknown>>(
 
 const AElement = stylinA();
 
-export const A = forwardRef<PropsWithChildren<AProps>>((props, ref) => (
-  <AElement {...props} ref={ref} />
-));
+export const A = forwardRef<AElementProps, PropsWithChildren<AProps>>(
+  (props, ref) => <AElement {...props} ref={ref} />
+);
 
 A.displayName = 'A';
 

@@ -12,7 +12,7 @@ export const stylinVideo = <T extends Record<string, unknown>>(
 
 const VideoElement = stylinVideo();
 
-export const Video = forwardRef<PropsWithChildren<VideoProps>>((props, ref) => (
+export const Video = forwardRef<VideoElementProps, PropsWithChildren<VideoProps>>((props, ref) => (
   <VideoElement {...props} ref={ref} />
 ));
 

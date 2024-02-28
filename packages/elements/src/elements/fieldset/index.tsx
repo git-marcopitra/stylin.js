@@ -12,7 +12,7 @@ export const stylinFieldset = <T extends Record<string, unknown>>(
 
 const FieldsetElement = stylinFieldset();
 
-export const Fieldset = forwardRef<PropsWithChildren<FieldsetProps>>(
+export const Fieldset = forwardRef<FieldsetElementProps, PropsWithChildren<FieldsetProps>>(
   (props, ref) => <FieldsetElement {...props} ref={ref} />
 );
 

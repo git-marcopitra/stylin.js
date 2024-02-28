@@ -12,7 +12,7 @@ export const stylinLabel = <T extends Record<string, unknown>>(
 
 const LabelElement = stylinLabel();
 
-export const Label = forwardRef<PropsWithChildren<LabelProps>>((props, ref) => (
+export const Label = forwardRef<LabelElementProps, PropsWithChildren<LabelProps>>((props, ref) => (
   <LabelElement {...props} ref={ref} />
 ));
 

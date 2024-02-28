@@ -1,5 +1,5 @@
 import stylin, { CreateStylinArguments } from '@stylin.js/react';
-import { forwardRef, PropsWithChildren, RefAttributes } from 'react';
+import { forwardRef, RefAttributes } from 'react';
 
 import { IframeElementProps, IframeProps } from './iframe.types';
 
@@ -12,7 +12,7 @@ export const stylinIframe = <T extends Record<string, unknown>>(
 
 const IframeElement = stylinIframe();
 
-export const Iframe = forwardRef<PropsWithChildren<IframeProps>>(
+export const Iframe = forwardRef<IframeElementProps, IframeProps>(
   (props, ref) => <IframeElement {...props} ref={ref} />
 );
 

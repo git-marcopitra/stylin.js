@@ -12,7 +12,7 @@ export const stylinTextarea = <T extends Record<string, unknown>>(
 
 const TextareaElement = stylinTextarea();
 
-export const Textarea = forwardRef<PropsWithChildren<TextareaProps>>(
+export const Textarea = forwardRef<TextareaElementProps, PropsWithChildren<TextareaProps>>(
   (props, ref) => <TextareaElement {...props} ref={ref} />
 );
 

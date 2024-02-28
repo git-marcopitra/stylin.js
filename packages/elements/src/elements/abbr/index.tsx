@@ -12,7 +12,7 @@ export const stylinAbbr = <T extends Record<string, unknown>>(
 
 const AbbrElement = stylinAbbr();
 
-export const Abbr = forwardRef<PropsWithChildren<AbbrProps>>((props, ref) => (
+export const Abbr = forwardRef<AbbrElementProps, PropsWithChildren<AbbrProps>>((props, ref) => (
   <AbbrElement {...props} ref={ref} />
 ));
 

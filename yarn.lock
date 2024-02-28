@@ -3569,6 +3569,15 @@
   dependencies:
     "@emotion/react" "^11.10.5"
 
+"@stylin.js/react@latest":
+  version "1.0.8-alpha.0"
+  resolved "https://registry.yarnpkg.com/@stylin.js/react/-/react-1.0.8-alpha.0.tgz#ab84728bf34fcb3cb48dcfbf02659ca486d62d65"
+  integrity sha512-OlFy1qV5LsyH40rJQfMAzVyG2PI0BK6WCr+rlf7QTWZtBQVWaBMRwNWQOq6ZCsuVGc9sAD8phKQnbBrOef3EyQ==
+  dependencies:
+    "@emotion/react" "^11.10.5"
+    "@emotion/styled" "^11.10.5"
+    "@stylin.js/core" latest
+
 "@testing-library/dom@^8.3.0":
   version "8.20.0"
   resolved "https://registry.yarnpkg.com/@testing-library/dom/-/dom-8.20.0.tgz#914aa862cef0f5e89b98cc48e3445c4c921010f6"

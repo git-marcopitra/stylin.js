@@ -12,7 +12,7 @@ export const stylinSamp = <T extends Record<string, unknown>>(
 
 const SampElement = stylinSamp();
 
-export const Samp = forwardRef<PropsWithChildren<SampProps>>((props, ref) => (
+export const Samp = forwardRef<SampElementProps, PropsWithChildren<SampProps>>((props, ref) => (
   <SampElement {...props} ref={ref} />
 ));
 

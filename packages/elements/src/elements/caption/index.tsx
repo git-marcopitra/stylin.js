@@ -12,7 +12,7 @@ export const stylinCaption = <T extends Record<string, unknown>>(
 
 const CaptionElement = stylinCaption();
 
-export const Caption = forwardRef<PropsWithChildren<CaptionProps>>(
+export const Caption = forwardRef<CaptionElementProps, PropsWithChildren<CaptionProps>>(
   (props, ref) => <CaptionElement {...props} ref={ref} />
 );
 

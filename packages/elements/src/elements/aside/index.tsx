@@ -12,7 +12,7 @@ export const stylinAside = <T extends Record<string, unknown>>(
 
 const AsideElement = stylinAside();
 
-export const Aside = forwardRef<PropsWithChildren<AsideProps>>((props, ref) => (
+export const Aside = forwardRef<AsideElementProps, PropsWithChildren<AsideProps>>((props, ref) => (
   <AsideElement {...props} ref={ref} />
 ));
 

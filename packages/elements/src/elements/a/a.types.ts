@@ -1,9 +1,9 @@
 import { StylinComponentProps } from '@stylin.js/react';
-import { AnchorHTMLAttributes } from 'react';
+import { AnchorHTMLAttributes, PropsWithChildren, ReactNode } from 'react';
 
 export type AElementProps = Omit<
   AnchorHTMLAttributes<HTMLAnchorElement>,
   'color' | 'translate' | 'content'
 >;
 
-export interface AProps extends StylinComponentProps, AElementProps {}
+export type AProps = StylinComponentProps & AElementProps;

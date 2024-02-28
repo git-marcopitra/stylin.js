@@ -12,7 +12,7 @@ export const stylinMap = <T extends Record<string, unknown>>(
 
 const MapElement = stylinMap();
 
-export const Map = forwardRef<PropsWithChildren<MapProps>>((props, ref) => (
+export const Map = forwardRef<MapElementProps, PropsWithChildren<MapProps>>((props, ref) => (
   <MapElement {...props} ref={ref} />
 ));
 

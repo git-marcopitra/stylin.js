@@ -12,7 +12,7 @@ export const stylinTfoot = <T extends Record<string, unknown>>(
 
 const TfootElement = stylinTfoot();
 
-export const Tfoot = forwardRef<PropsWithChildren<TfootProps>>((props, ref) => (
+export const Tfoot = forwardRef<TfootElementProps, PropsWithChildren<TfootProps>>((props, ref) => (
   <TfootElement {...props} ref={ref} />
 ));
 

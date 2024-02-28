@@ -10,7 +10,7 @@ export const stylinLi = <T extends Record<string, unknown>>(
 
 const LiElement = stylinLi();
 
-export const Li = forwardRef<PropsWithChildren<LiProps>>((props, ref) => (
+export const Li = forwardRef<LiElementProps, PropsWithChildren<LiProps>>((props, ref) => (
   <LiElement {...props} ref={ref} />
 ));
 

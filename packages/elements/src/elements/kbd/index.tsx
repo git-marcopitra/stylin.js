@@ -12,7 +12,7 @@ export const stylinKbd = <T extends Record<string, unknown>>(
 
 const KbdElement = stylinKbd();
 
-export const Kbd = forwardRef<PropsWithChildren<KbdProps>>((props, ref) => (
+export const Kbd = forwardRef<KbdElementProps, PropsWithChildren<KbdProps>>((props, ref) => (
   <KbdElement {...props} ref={ref} />
 ));
 

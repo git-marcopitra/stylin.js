@@ -12,7 +12,7 @@ export const stylinNav = <T extends Record<string, unknown>>(
 
 const NavElement = stylinNav();
 
-export const Nav = forwardRef<PropsWithChildren<NavProps>>((props, ref) => (
+export const Nav = forwardRef<NavElementProps, PropsWithChildren<NavProps>>((props, ref) => (
   <NavElement {...props} ref={ref} />
 ));
 

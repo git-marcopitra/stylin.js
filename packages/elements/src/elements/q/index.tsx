@@ -9,7 +9,7 @@ export const stylinQ = <T extends Record<string, unknown>>(
 
 const QElement = stylinQ();
 
-export const Q = forwardRef<PropsWithChildren<QProps>>((props, ref) => (
+export const Q = forwardRef<QElementProps, PropsWithChildren<QProps>>((props, ref) => (
   <QElement {...props} ref={ref} />
 ));
 

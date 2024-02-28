@@ -10,7 +10,7 @@ export const stylinH1 = <T extends Record<string, unknown>>(
 
 const H1Element = stylinH1();
 
-export const H1 = forwardRef<PropsWithChildren<H1Props>>((props, ref) => (
+export const H1 = forwardRef<H1ElementProps, PropsWithChildren<H1Props>>((props, ref) => (
   <H1Element {...props} ref={ref} />
 ));
 

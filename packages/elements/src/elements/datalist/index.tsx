@@ -12,7 +12,7 @@ export const stylinDatalist = <T extends Record<string, unknown>>(
 
 const DatalistElement = stylinDatalist();
 
-export const Datalist = forwardRef<PropsWithChildren<DatalistProps>>(
+export const Datalist = forwardRef<DatalistElementProps, PropsWithChildren<DatalistProps>>(
   (props, ref) => <DatalistElement {...props} ref={ref} />
 );
 

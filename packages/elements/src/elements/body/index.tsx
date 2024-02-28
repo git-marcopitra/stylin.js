@@ -12,7 +12,7 @@ export const stylinBody = <T extends Record<string, unknown>>(
 
 const BodyElement = stylinBody();
 
-export const Body = forwardRef<PropsWithChildren<BodyProps>>((props, ref) => (
+export const Body = forwardRef<BodyElementProps, PropsWithChildren<BodyProps>>((props, ref) => (
   <BodyElement {...props} ref={ref} />
 ));
 

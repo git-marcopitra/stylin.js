@@ -12,7 +12,7 @@ export const stylinTime = <T extends Record<string, unknown>>(
 
 const TimeElement = stylinTime();
 
-export const Time = forwardRef<PropsWithChildren<TimeProps>>((props, ref) => (
+export const Time = forwardRef<TimeElementProps, PropsWithChildren<TimeProps>>((props, ref) => (
   <TimeElement {...props} ref={ref} />
 ));
 

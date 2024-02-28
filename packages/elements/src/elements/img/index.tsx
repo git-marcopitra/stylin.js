@@ -1,5 +1,5 @@
 import stylin, { CreateStylinArguments } from '@stylin.js/react';
-import { forwardRef, PropsWithChildren, RefAttributes } from 'react';
+import { forwardRef, RefAttributes } from 'react';
 
 import { ImgElementProps, ImgProps } from './img.types';
 
@@ -12,7 +12,7 @@ export const stylinImg = <T extends Record<string, unknown>>(
 
 const ImgElement = stylinImg();
 
-export const Img = forwardRef<PropsWithChildren<ImgProps>>((props, ref) => (
+export const Img = forwardRef<ImgElementProps, ImgProps>((props, ref) => (
   <ImgElement {...props} ref={ref} />
 ));
 

@@ -12,7 +12,7 @@ export const stylinSummary = <T extends Record<string, unknown>>(
 
 const SummaryElement = stylinSummary();
 
-export const Summary = forwardRef<PropsWithChildren<SummaryProps>>(
+export const Summary = forwardRef<SummaryElementProps, PropsWithChildren<SummaryProps>>(
   (props, ref) => <SummaryElement {...props} ref={ref} />
 );
 

@@ -12,7 +12,7 @@ export const stylinSection = <T extends Record<string, unknown>>(
 
 const SectionElement = stylinSection();
 
-export const Section = forwardRef<PropsWithChildren<SectionProps>>(
+export const Section = forwardRef<SectionElementProps, PropsWithChildren<SectionProps>>(
   (props, ref) => <SectionElement {...props} ref={ref} />
 );
 

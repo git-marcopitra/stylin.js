@@ -12,7 +12,7 @@ export const stylinThead = <T extends Record<string, unknown>>(
 
 const TheadElement = stylinThead();
 
-export const Thead = forwardRef<PropsWithChildren<TheadProps>>((props, ref) => (
+export const Thead = forwardRef<TheadElementProps, PropsWithChildren<TheadProps>>((props, ref) => (
   <TheadElement {...props} ref={ref} />
 ));
 

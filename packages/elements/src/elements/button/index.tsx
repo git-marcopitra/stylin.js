@@ -12,7 +12,7 @@ export const stylinButton = <T extends Record<string, unknown>>(
 
 const ButtonElement = stylinButton();
 
-export const Button = forwardRef<PropsWithChildren<ButtonProps>>(
+export const Button = forwardRef<ButtonElementProps, PropsWithChildren<ButtonProps>>(
   (props, ref) => <ButtonElement {...props} ref={ref} />
 );
 

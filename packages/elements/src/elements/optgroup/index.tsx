@@ -12,7 +12,7 @@ export const stylinOptgroup = <T extends Record<string, unknown>>(
 
 const OptgroupElement = stylinOptgroup();
 
-export const Optgroup = forwardRef<PropsWithChildren<OptgroupProps>>(
+export const Optgroup = forwardRef<OptgroupElementProps, PropsWithChildren<OptgroupProps>>(
   (props, ref) => <OptgroupElement {...props} ref={ref} />
 );
 

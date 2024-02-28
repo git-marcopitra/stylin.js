@@ -12,7 +12,7 @@ export const stylinStrong = <T extends Record<string, unknown>>(
 
 const StrongElement = stylinStrong();
 
-export const Strong = forwardRef<PropsWithChildren<StrongProps>>(
+export const Strong = forwardRef<StrongElementProps, PropsWithChildren<StrongProps>>(
   (props, ref) => <StrongElement {...props} ref={ref} />
 );
 

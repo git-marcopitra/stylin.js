@@ -1,5 +1,5 @@
 import stylin, { CreateStylinArguments } from '@stylin.js/react';
-import { forwardRef, PropsWithChildren, RefAttributes } from 'react';
+import { forwardRef, RefAttributes } from 'react';
 
 import { AreaElementProps, AreaProps } from './area.types';
 
@@ -12,7 +12,7 @@ export const stylinArea = <T extends Record<string, unknown>>(
 
 const AreaElement = stylinArea();
 
-export const Area = forwardRef<PropsWithChildren<AreaProps>>((props, ref) => (
+export const Area = forwardRef<AreaElementProps, AreaProps>((props, ref) => (
   <AreaElement {...props} ref={ref} />
 ));
 

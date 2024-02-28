@@ -12,7 +12,7 @@ export const stylinDiv = <T extends Record<string, unknown>>(
 
 const DivElement = stylinDiv();
 
-export const Div = forwardRef<PropsWithChildren<DivProps>>((props, ref) => (
+export const Div = forwardRef<DivElementProps, PropsWithChildren<DivProps>>((props, ref) => (
   <DivElement {...props} ref={ref} />
 ));
 

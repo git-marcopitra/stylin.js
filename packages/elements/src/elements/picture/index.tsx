@@ -12,7 +12,7 @@ export const stylinPicture = <T extends Record<string, unknown>>(
 
 const PictureElement = stylinPicture();
 
-export const Picture = forwardRef<PropsWithChildren<PictureProps>>(
+export const Picture = forwardRef<PictureElementProps, PropsWithChildren<PictureProps>>(
   (props, ref) => <PictureElement {...props} ref={ref} />
 );
 

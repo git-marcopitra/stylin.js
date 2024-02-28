@@ -12,7 +12,7 @@ export const stylinTemplate = <T extends Record<string, unknown>>(
 
 const TemplateElement = stylinTemplate();
 
-export const Template = forwardRef<PropsWithChildren<TemplateProps>>(
+export const Template = forwardRef<TemplateElementProps, PropsWithChildren<TemplateProps>>(
   (props, ref) => <TemplateElement {...props} ref={ref} />
 );
 

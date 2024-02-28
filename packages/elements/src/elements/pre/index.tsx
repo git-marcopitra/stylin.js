@@ -12,7 +12,7 @@ export const stylinPre = <T extends Record<string, unknown>>(
 
 const PreElement = stylinPre();
 
-export const Pre = forwardRef<PropsWithChildren<PreProps>>((props, ref) => (
+export const Pre = forwardRef<PreElementProps, PropsWithChildren<PreProps>>((props, ref) => (
   <PreElement {...props} ref={ref} />
 ));
 

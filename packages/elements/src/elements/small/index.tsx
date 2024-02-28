@@ -12,7 +12,7 @@ export const stylinSmall = <T extends Record<string, unknown>>(
 
 const SmallElement = stylinSmall();
 
-export const Small = forwardRef<PropsWithChildren<SmallProps>>((props, ref) => (
+export const Small = forwardRef<SmallElementProps, PropsWithChildren<SmallProps>>((props, ref) => (
   <SmallElement {...props} ref={ref} />
 ));
 

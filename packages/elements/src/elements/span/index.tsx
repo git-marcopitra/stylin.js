@@ -12,7 +12,7 @@ export const stylinSpan = <T extends Record<string, unknown>>(
 
 const SpanElement = stylinSpan();
 
-export const Span = forwardRef<PropsWithChildren<SpanProps>>((props, ref) => (
+export const Span = forwardRef<SpanElementProps, PropsWithChildren<SpanProps>>((props, ref) => (
   <SpanElement {...props} ref={ref} />
 ));
 

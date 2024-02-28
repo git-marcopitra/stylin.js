@@ -12,7 +12,7 @@ export const stylinLegend = <T extends Record<string, unknown>>(
 
 const LegendElement = stylinLegend();
 
-export const Legend = forwardRef<PropsWithChildren<LegendProps>>(
+export const Legend = forwardRef<LegendElementProps, PropsWithChildren<LegendProps>>(
   (props, ref) => <LegendElement {...props} ref={ref} />
 );
 

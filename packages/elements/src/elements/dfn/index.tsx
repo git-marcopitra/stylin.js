@@ -12,7 +12,7 @@ export const stylinDfn = <T extends Record<string, unknown>>(
 
 const DfnElement = stylinDfn();
 
-export const Dfn = forwardRef<PropsWithChildren<DfnProps>>((props, ref) => (
+export const Dfn = forwardRef<DfnElementProps, PropsWithChildren<DfnProps>>((props, ref) => (
   <DfnElement {...props} ref={ref} />
 ));
 

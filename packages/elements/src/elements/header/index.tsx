@@ -12,7 +12,7 @@ export const stylinHeader = <T extends Record<string, unknown>>(
 
 const HeaderElement = stylinHeader();
 
-export const Header = forwardRef<PropsWithChildren<HeaderProps>>(
+export const Header = forwardRef<HeaderElementProps, PropsWithChildren<HeaderProps>>(
   (props, ref) => <HeaderElement {...props} ref={ref} />
 );
 

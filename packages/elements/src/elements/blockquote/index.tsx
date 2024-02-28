@@ -12,7 +12,7 @@ export const stylinBlockquote = <T extends Record<string, unknown>>(
 
 const BlockquoteElement = stylinBlockquote();
 
-export const Blockquote = forwardRef<PropsWithChildren<BlockquoteProps>>(
+export const Blockquote = forwardRef<BlockquoteElementProps, PropsWithChildren<BlockquoteProps>>(
   (props, ref) => <BlockquoteElement {...props} ref={ref} />
 );
 

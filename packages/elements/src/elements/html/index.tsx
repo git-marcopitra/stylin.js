@@ -12,7 +12,7 @@ export const stylinHtml = <T extends Record<string, unknown>>(
 
 const HtmlElement = stylinHtml();
 
-export const Html = forwardRef<PropsWithChildren<HtmlProps>>((props, ref) => (
+export const Html = forwardRef<HtmlElementProps, PropsWithChildren<HtmlProps>>((props, ref) => (
   <HtmlElement {...props} ref={ref} />
 ));
 

@@ -12,7 +12,7 @@ export const stylinBdo = <T extends Record<string, unknown>>(
 
 const BdoElement = stylinBdo();
 
-export const Bdo = forwardRef<PropsWithChildren<BdoProps>>((props, ref) => (
+export const Bdo = forwardRef<BdoElementProps, PropsWithChildren<BdoProps>>((props, ref) => (
   <BdoElement {...props} ref={ref} />
 ));
 

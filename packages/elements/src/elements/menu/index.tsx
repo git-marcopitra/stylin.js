@@ -12,7 +12,7 @@ export const stylinMenu = <T extends Record<string, unknown>>(
 
 const MenuElement = stylinMenu();
 
-export const Menu = forwardRef<PropsWithChildren<MenuProps>>((props, ref) => (
+export const Menu = forwardRef<MenuElementProps, PropsWithChildren<MenuProps>>((props, ref) => (
   <MenuElement {...props} ref={ref} />
 ));
 

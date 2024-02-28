@@ -12,7 +12,7 @@ export const stylinSelect = <T extends Record<string, unknown>>(
 
 const SelectElement = stylinSelect();
 
-export const Select = forwardRef<PropsWithChildren<SelectProps>>(
+export const Select = forwardRef<SelectElementProps, PropsWithChildren<SelectProps>>(
   (props, ref) => <SelectElement {...props} ref={ref} />
 );
 

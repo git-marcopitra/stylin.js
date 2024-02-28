@@ -12,7 +12,7 @@ export const stylinDialog = <T extends Record<string, unknown>>(
 
 const DialogElement = stylinDialog();
 
-export const Dialog = forwardRef<PropsWithChildren<DialogProps>>(
+export const Dialog = forwardRef<DialogElementProps, PropsWithChildren<DialogProps>>(
   (props, ref) => <DialogElement {...props} ref={ref} />
 );
 

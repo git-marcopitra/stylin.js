@@ -12,7 +12,7 @@ export const stylinDel = <T extends Record<string, unknown>>(
 
 const DelElement = stylinDel();
 
-export const Del = forwardRef<PropsWithChildren<DelProps>>((props, ref) => (
+export const Del = forwardRef<DelElementProps, PropsWithChildren<DelProps>>((props, ref) => (
   <DelElement {...props} ref={ref} />
 ));
 

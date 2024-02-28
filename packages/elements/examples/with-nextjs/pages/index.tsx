@@ -1,17 +1,12 @@
+import { A, Code, Div, Main, P, Span, Strong } from '@stylin.js/elements';
 import Head from 'next/head';
 import Image from 'next/image';
 import { FC, PropsWithChildren } from 'react';
 
 const DescriptionText: FC<PropsWithChildren> = ({ children }) => (
-  <Typography
-    m="0"
-    p="L"
-    borderRadius="L"
-    border="1px solid"
-    position="relative"
-  >
+  <P m="0" p="L" borderRadius="L" border="1px solid" position="relative">
     {children}
-  </Typography>
+  </P>
 );
 
 export default function Home() {
@@ -31,7 +26,7 @@ export default function Home() {
         flexDirection="column"
         justifyContent="space-between"
       >
-        <Box
+        <Div
           zIndex={2}
           width="100%"
           display="inherit"
@@ -43,22 +38,21 @@ export default function Home() {
         >
           <DescriptionText>
             Get started by editing&nbsp;
-            <Typography
-              as="code"
+            <Code
               fontWeight="700"
               fontFamily="ui-monospace, Menlo, Monaco, 'Cascadia Mono', 'Segoe UI Mono', 'Roboto Mono', 'Oxygen Mono', 'Ubuntu Monospace', 'Source Code Pro', 'Fira Mono', 'Droid Sans Mono', 'Courier New', monospace"
             >
               pages/index.tsx
-            </Typography>
+            </Code>
           </DescriptionText>
-          <Box>
-            <Anchor
+          <Div>
+            <A
               href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
               rel="noopener noreferrer"
               target="_blank"
             >
               By{' '}
-              <Box as="span" filter="invert(1)">
+              <Span filter="invert(1)">
                 <Image
                   src="/vercel.svg"
                   alt="Vercel Logo"
@@ -66,12 +60,12 @@ export default function Home() {
                   height={24}
                   priority
                 />
-              </Box>
-            </Anchor>
-          </Box>
-        </Box>
-        <Box>
-          <Box width="20rem">
+              </Span>
+            </A>
+          </Div>
+        </Div>
+        <Div>
+          <Div width="20rem">
             <svg viewBox="0 0 295 214" width="100%" height="100%" fill="none">
               <path
                 fillRule="evenodd"
@@ -102,14 +96,11 @@ export default function Home() {
                 fill="#7CEECC"
               />
             </svg>
-          </Box>
-        </Box>
-        <Typography fontFamily="ui-monospace, Menlo, Monaco, 'Cascadia Mono', 'Segoe UI Mono', 'Roboto Mono', 'Oxygen Mono', 'Ubuntu Monospace', 'Source Code Pro', 'Fira Mono', 'Droid Sans Mono', 'Courier New', monospace">
-          <Typography as="strong" nHover={{ color: '#7CEECC' }}>
-            Stylin
-          </Typography>{' '}
-          NextJS example
-        </Typography>
+          </Div>
+        </Div>
+        <P fontFamily="ui-monospace, Menlo, Monaco, 'Cascadia Mono', 'Segoe UI Mono', 'Roboto Mono', 'Oxygen Mono', 'Ubuntu Monospace', 'Source Code Pro', 'Fira Mono', 'Droid Sans Mono', 'Courier New', monospace">
+          <Strong nHover={{ color: '#7CEECC' }}>Stylin</Strong> NextJS example
+        </P>
       </Main>
     </>
   );

@@ -12,7 +12,7 @@ export const stylinInput = <T extends Record<string, unknown>>(
 
 const InputElement = stylinInput();
 
-export const Input = forwardRef<PropsWithChildren<InputProps>>((props, ref) => (
+export const Input = forwardRef<InputElementProps, PropsWithChildren<InputProps>>((props, ref) => (
   <InputElement {...props} ref={ref} />
 ));
 

@@ -1,5 +1,5 @@
 import stylin, { CreateStylinArguments } from '@stylin.js/react';
-import { forwardRef, PropsWithChildren, RefAttributes } from 'react';
+import { forwardRef, RefAttributes } from 'react';
 
 import { TrackElementProps, TrackProps } from './track.types';
 
@@ -12,7 +12,7 @@ export const stylinTrack = <T extends Record<string, unknown>>(
 
 const TrackElement = stylinTrack();
 
-export const Track = forwardRef<PropsWithChildren<TrackProps>>((props, ref) => (
+export const Track = forwardRef<TrackElementProps, TrackProps>((props, ref) => (
   <TrackElement {...props} ref={ref} />
 ));
 

@@ -9,7 +9,7 @@ export const stylinB = <T extends Record<string, unknown>>(
 
 const BElement = stylinB();
 
-export const B = forwardRef<PropsWithChildren<BProps>>((props, ref) => (
+export const B = forwardRef<BElementProps, PropsWithChildren<BProps>>((props, ref) => (
   <BElement {...props} ref={ref} />
 ));
 

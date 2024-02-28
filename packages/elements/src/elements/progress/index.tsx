@@ -12,7 +12,7 @@ export const stylinProgress = <T extends Record<string, unknown>>(
 
 const ProgressElement = stylinProgress();
 
-export const Progress = forwardRef<PropsWithChildren<ProgressProps>>(
+export const Progress = forwardRef<ProgressElementProps, PropsWithChildren<ProgressProps>>(
   (props, ref) => <ProgressElement {...props} ref={ref} />
 );
 

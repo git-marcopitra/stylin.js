@@ -12,7 +12,7 @@ export const stylinRuby = <T extends Record<string, unknown>>(
 
 const RubyElement = stylinRuby();
 
-export const Ruby = forwardRef<PropsWithChildren<RubyProps>>((props, ref) => (
+export const Ruby = forwardRef<RubyElementProps, PropsWithChildren<RubyProps>>((props, ref) => (
   <RubyElement {...props} ref={ref} />
 ));
 

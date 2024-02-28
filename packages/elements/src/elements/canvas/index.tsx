@@ -12,7 +12,7 @@ export const stylinCanvas = <T extends Record<string, unknown>>(
 
 const CanvasElement = stylinCanvas();
 
-export const Canvas = forwardRef<PropsWithChildren<CanvasProps>>(
+export const Canvas = forwardRef<CanvasElementProps, PropsWithChildren<CanvasProps>>(
   (props, ref) => <CanvasElement {...props} ref={ref} />
 );
 

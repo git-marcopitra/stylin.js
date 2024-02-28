@@ -12,7 +12,7 @@ export const stylinAudio = <T extends Record<string, unknown>>(
 
 const AudioElement = stylinAudio();
 
-export const Audio = forwardRef<PropsWithChildren<AudioProps>>((props, ref) => (
+export const Audio = forwardRef<AudioElementProps, PropsWithChildren<AudioProps>>((props, ref) => (
   <AudioElement {...props} ref={ref} />
 ));
 

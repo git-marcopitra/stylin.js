@@ -12,7 +12,7 @@ export const stylinOption = <T extends Record<string, unknown>>(
 
 const OptionElement = stylinOption();
 
-export const Option = forwardRef<PropsWithChildren<OptionProps>>(
+export const Option = forwardRef<OptionElementProps, PropsWithChildren<OptionProps>>(
   (props, ref) => <OptionElement {...props} ref={ref} />
 );
 

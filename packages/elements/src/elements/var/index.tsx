@@ -12,7 +12,7 @@ export const stylinVar = <T extends Record<string, unknown>>(
 
 const VarElement = stylinVar();
 
-export const Var = forwardRef<PropsWithChildren<VarProps>>((props, ref) => (
+export const Var = forwardRef<VarElementProps, PropsWithChildren<VarProps>>((props, ref) => (
   <VarElement {...props} ref={ref} />
 ));
 

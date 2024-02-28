@@ -12,7 +12,7 @@ export const stylinArticle = <T extends Record<string, unknown>>(
 
 const ArticleElement = stylinArticle();
 
-export const Article = forwardRef<PropsWithChildren<ArticleProps>>(
+export const Article = forwardRef<ArticleElementProps, PropsWithChildren<ArticleProps>>(
   (props, ref) => <ArticleElement {...props} ref={ref} />
 );
 

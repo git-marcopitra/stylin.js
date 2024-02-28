@@ -12,7 +12,7 @@ export const stylinWbr = <T extends Record<string, unknown>>(
 
 const WbrElement = stylinWbr();
 
-export const Wbr = forwardRef<PropsWithChildren<WbrProps>>((props, ref) => (
+export const Wbr = forwardRef<WbrElementProps, WbrProps>((props, ref) => (
   <WbrElement {...props} ref={ref} />
 ));
 

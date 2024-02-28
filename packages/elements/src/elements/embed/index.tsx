@@ -1,5 +1,5 @@
 import stylin, { CreateStylinArguments } from '@stylin.js/react';
-import { forwardRef, PropsWithChildren, RefAttributes } from 'react';
+import { forwardRef, RefAttributes } from 'react';
 
 import { EmbedElementProps, EmbedProps } from './embed.types';
 
@@ -12,7 +12,7 @@ export const stylinEmbed = <T extends Record<string, unknown>>(
 
 const EmbedElement = stylinEmbed();
 
-export const Embed = forwardRef<PropsWithChildren<EmbedProps>>((props, ref) => (
+export const Embed = forwardRef<EmbedElementProps, EmbedProps>((props, ref) => (
   <EmbedElement {...props} ref={ref} />
 ));
 

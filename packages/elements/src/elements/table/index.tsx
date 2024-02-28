@@ -12,7 +12,7 @@ export const stylinTable = <T extends Record<string, unknown>>(
 
 const TableElement = stylinTable();
 
-export const Table = forwardRef<PropsWithChildren<TableProps>>((props, ref) => (
+export const Table = forwardRef<TableElementProps, PropsWithChildren<TableProps>>((props, ref) => (
   <TableElement {...props} ref={ref} />
 ));
 
