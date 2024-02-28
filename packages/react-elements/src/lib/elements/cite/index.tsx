@@ -3,9 +3,11 @@ import { forwardRef, PropsWithChildren, RefAttributes } from 'react';
 
 import { CiteElementProps, CiteProps } from './cite.types';
 
-const CiteElement = stylin<CiteElementProps & RefAttributes<CiteElementProps>>(
-  'cite'
-)();
+export const stylinCite = stylin<
+  CiteElementProps & RefAttributes<CiteElementProps>
+>('cite');
+
+const CiteElement = stylinCite();
 
 export const Cite = forwardRef<PropsWithChildren<CiteProps>>((props, ref) => (
   <CiteElement {...props} ref={ref} />

@@ -3,9 +3,11 @@ import { forwardRef, PropsWithChildren, RefAttributes } from 'react';
 
 import { EmElementProps, EmProps } from './em.types';
 
-const EmElement = stylin<EmElementProps & RefAttributes<EmElementProps>>(
+export const stylinEm = stylin<EmElementProps & RefAttributes<EmElementProps>>(
   'em'
-)();
+);
+
+const EmElement = stylinEm();
 
 export const Em = forwardRef<PropsWithChildren<EmProps>>((props, ref) => (
   <EmElement {...props} ref={ref} />

@@ -3,9 +3,11 @@ import { forwardRef, PropsWithChildren, RefAttributes } from 'react';
 
 import { TitleElementProps, TitleProps } from './title.types';
 
-const TitleElement = stylin<
+export const stylinTitle = stylin<
   TitleElementProps & RefAttributes<TitleElementProps>
->('title')();
+>('title');
+
+const TitleElement = stylinTitle();
 
 export const Title = forwardRef<PropsWithChildren<TitleProps>>((props, ref) => (
   <TitleElement {...props} ref={ref} />

@@ -3,9 +3,11 @@ import { forwardRef, PropsWithChildren, RefAttributes } from 'react';
 
 import { TimeElementProps, TimeProps } from './time.types';
 
-const TimeElement = stylin<TimeElementProps & RefAttributes<TimeElementProps>>(
-  'time'
-)();
+export const stylinTime = stylin<
+  TimeElementProps & RefAttributes<TimeElementProps>
+>('time');
+
+const TimeElement = stylinTime();
 
 export const Time = forwardRef<PropsWithChildren<TimeProps>>((props, ref) => (
   <TimeElement {...props} ref={ref} />

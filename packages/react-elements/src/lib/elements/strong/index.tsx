@@ -3,9 +3,11 @@ import { forwardRef, PropsWithChildren, RefAttributes } from 'react';
 
 import { StrongElementProps, StrongProps } from './strong.types';
 
-const StrongElement = stylin<
+export const stylinStrong = stylin<
   StrongElementProps & RefAttributes<StrongElementProps>
->('strong')();
+>('strong');
+
+const StrongElement = stylinStrong();
 
 export const Strong = forwardRef<PropsWithChildren<StrongProps>>(
   (props, ref) => <StrongElement {...props} ref={ref} />

@@ -3,9 +3,11 @@ import { forwardRef, PropsWithChildren, RefAttributes } from 'react';
 
 import { OutputElementProps, OutputProps } from './output.types';
 
-const OutputElement = stylin<
+export const stylinOutput = stylin<
   OutputElementProps & RefAttributes<OutputElementProps>
->('option')();
+>('option');
+
+const OutputElement = stylinOutput();
 
 export const Output = forwardRef<PropsWithChildren<OutputProps>>(
   (props, ref) => <OutputElement {...props} ref={ref} />

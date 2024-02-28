@@ -3,9 +3,11 @@ import { forwardRef, PropsWithChildren, RefAttributes } from 'react';
 
 import { TrackElementProps, TrackProps } from './track.types';
 
-const TrackElement = stylin<
+export const stylinTrack = stylin<
   TrackElementProps & RefAttributes<TrackElementProps>
->('track')();
+>('track');
+
+const TrackElement = stylinTrack();
 
 export const Track = forwardRef<PropsWithChildren<TrackProps>>((props, ref) => (
   <TrackElement {...props} ref={ref} />

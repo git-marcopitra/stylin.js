@@ -3,9 +3,11 @@ import { forwardRef, PropsWithChildren, RefAttributes } from 'react';
 
 import { TableElementProps, TableProps } from './table.types';
 
-const TableElement = stylin<
+export const stylinTable = stylin<
   TableElementProps & RefAttributes<TableElementProps>
->('table')();
+>('table');
+
+const TableElement = stylinTable();
 
 export const Table = forwardRef<PropsWithChildren<TableProps>>((props, ref) => (
   <TableElement {...props} ref={ref} />

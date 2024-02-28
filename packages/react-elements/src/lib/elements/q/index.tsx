@@ -3,7 +3,11 @@ import { forwardRef, PropsWithChildren, RefAttributes } from 'react';
 
 import { QElementProps, QProps } from './q.types';
 
-const QElement = stylin<QElementProps & RefAttributes<QElementProps>>('q')();
+export const stylinQ = stylin<QElementProps & RefAttributes<QElementProps>>(
+  'q'
+);
+
+const QElement = stylinQ();
 
 export const Q = forwardRef<PropsWithChildren<QProps>>((props, ref) => (
   <QElement {...props} ref={ref} />

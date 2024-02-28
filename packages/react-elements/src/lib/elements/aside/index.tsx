@@ -3,9 +3,11 @@ import { forwardRef, PropsWithChildren, RefAttributes } from 'react';
 
 import { AsideElementProps, AsideProps } from './aside.types';
 
-const AsideElement = stylin<
+export const stylinAside = stylin<
   AsideElementProps & RefAttributes<AsideElementProps>
->('aside')();
+>('aside');
+
+const AsideElement = stylinAside();
 
 export const Aside = forwardRef<PropsWithChildren<AsideProps>>((props, ref) => (
   <AsideElement {...props} ref={ref} />

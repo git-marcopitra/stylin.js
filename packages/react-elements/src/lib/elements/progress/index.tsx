@@ -3,9 +3,11 @@ import { forwardRef, PropsWithChildren, RefAttributes } from 'react';
 
 import { ProgressElementProps, ProgressProps } from './progress.types';
 
-const ProgressElement = stylin<
+export const stylinProgress = stylin<
   ProgressElementProps & RefAttributes<ProgressElementProps>
->('progress')();
+>('progress');
+
+const ProgressElement = stylinProgress();
 
 export const Progress = forwardRef<PropsWithChildren<ProgressProps>>(
   (props, ref) => <ProgressElement {...props} ref={ref} />

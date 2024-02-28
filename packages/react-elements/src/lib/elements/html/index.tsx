@@ -3,9 +3,11 @@ import { forwardRef, PropsWithChildren, RefAttributes } from 'react';
 
 import { HtmlElementProps, HtmlProps } from './html.types';
 
-const HtmlElement = stylin<HtmlElementProps & RefAttributes<HtmlElementProps>>(
-  'html'
-)();
+export const stylinHtml = stylin<
+  HtmlElementProps & RefAttributes<HtmlElementProps>
+>('html');
+
+const HtmlElement = stylinHtml();
 
 export const Html = forwardRef<PropsWithChildren<HtmlProps>>((props, ref) => (
   <HtmlElement {...props} ref={ref} />

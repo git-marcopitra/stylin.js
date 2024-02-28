@@ -3,9 +3,11 @@ import { forwardRef, PropsWithChildren, RefAttributes } from 'react';
 
 import { AbbrElementProps, AbbrProps } from './abbr.types';
 
-const AbbrElement = stylin<AbbrElementProps & RefAttributes<AbbrElementProps>>(
-  'abbr'
-)();
+export const stylinAbbr = stylin<
+  AbbrElementProps & RefAttributes<AbbrElementProps>
+>('abbr');
+
+const AbbrElement = stylinAbbr();
 
 export const Abbr = forwardRef<PropsWithChildren<AbbrProps>>((props, ref) => (
   <AbbrElement {...props} ref={ref} />

@@ -3,7 +3,11 @@ import { forwardRef, PropsWithChildren, RefAttributes } from 'react';
 
 import { IElementProps, IProps } from './i.types';
 
-const IElement = stylin<IElementProps & RefAttributes<IElementProps>>('i')();
+export const stylinI = stylin<IElementProps & RefAttributes<IElementProps>>(
+  'i'
+);
+
+const IElement = stylinI();
 
 export const I = forwardRef<PropsWithChildren<IProps>>((props, ref) => (
   <IElement {...props} ref={ref} />

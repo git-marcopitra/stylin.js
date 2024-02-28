@@ -3,9 +3,11 @@ import { forwardRef, PropsWithChildren, RefAttributes } from 'react';
 
 import { LegendElementProps, LegendProps } from './legend.types';
 
-const LegendElement = stylin<
+export const stylinLegend = stylin<
   LegendElementProps & RefAttributes<LegendElementProps>
->('legend')();
+>('legend');
+
+const LegendElement = stylinLegend();
 
 export const Legend = forwardRef<PropsWithChildren<LegendProps>>(
   (props, ref) => <LegendElement {...props} ref={ref} />

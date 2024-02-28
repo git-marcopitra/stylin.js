@@ -3,9 +3,11 @@ import { forwardRef, PropsWithChildren, RefAttributes } from 'react';
 
 import { BlockquoteElementProps, BlockquoteProps } from './blockquote.types';
 
-const BlockquoteElement = stylin<
+export const stylinBlockquote = stylin<
   BlockquoteElementProps & RefAttributes<BlockquoteElementProps>
->('blockquote')();
+>('blockquote');
+
+const BlockquoteElement = stylinBlockquote();
 
 export const Blockquote = forwardRef<PropsWithChildren<BlockquoteProps>>(
   (props, ref) => <BlockquoteElement {...props} ref={ref} />

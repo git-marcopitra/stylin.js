@@ -3,9 +3,11 @@ import { forwardRef, PropsWithChildren, RefAttributes } from 'react';
 
 import { SelectElementProps, SelectProps } from './select.types';
 
-const SelectElement = stylin<
+export const stylinSelect = stylin<
   SelectElementProps & RefAttributes<SelectElementProps>
->('select')();
+>('select');
+
+const SelectElement = stylinSelect();
 
 export const Select = forwardRef<PropsWithChildren<SelectProps>>(
   (props, ref) => <SelectElement {...props} ref={ref} />

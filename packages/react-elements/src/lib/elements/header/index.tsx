@@ -3,9 +3,11 @@ import { forwardRef, PropsWithChildren, RefAttributes } from 'react';
 
 import { HeaderElementProps, HeaderProps } from './header.types';
 
-const HeaderElement = stylin<
+export const stylinHeader = stylin<
   HeaderElementProps & RefAttributes<HeaderElementProps>
->('header')();
+>('header');
+
+const HeaderElement = stylinHeader();
 
 export const Header = forwardRef<PropsWithChildren<HeaderProps>>(
   (props, ref) => <HeaderElement {...props} ref={ref} />

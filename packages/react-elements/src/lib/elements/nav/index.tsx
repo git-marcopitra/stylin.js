@@ -3,9 +3,11 @@ import { forwardRef, PropsWithChildren, RefAttributes } from 'react';
 
 import { NavElementProps, NavProps } from './nav.types';
 
-const NavElement = stylin<NavElementProps & RefAttributes<NavElementProps>>(
-  'nav'
-)();
+export const stylinNav = stylin<
+  NavElementProps & RefAttributes<NavElementProps>
+>('nav');
+
+const NavElement = stylinNav();
 
 export const Nav = forwardRef<PropsWithChildren<NavProps>>((props, ref) => (
   <NavElement {...props} ref={ref} />

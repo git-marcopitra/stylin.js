@@ -3,7 +3,11 @@ import { forwardRef, PropsWithChildren, RefAttributes } from 'react';
 
 import { UElementProps, UProps } from './u.types';
 
-const UElement = stylin<UElementProps & RefAttributes<UElementProps>>('u')();
+export const stylinU = stylin<UElementProps & RefAttributes<UElementProps>>(
+  'u'
+);
+
+const UElement = stylinU();
 
 export const U = forwardRef<PropsWithChildren<UProps>>((props, ref) => (
   <UElement {...props} ref={ref} />

@@ -3,9 +3,11 @@ import { forwardRef, PropsWithChildren, RefAttributes } from 'react';
 
 import { ButtonElementProps, ButtonProps } from './button.types';
 
-const ButtonElement = stylin<
+export const stylinButton = stylin<
   ButtonElementProps & RefAttributes<ButtonElementProps>
->('button')();
+>('button');
+
+const ButtonElement = stylinButton();
 
 export const Button = forwardRef<PropsWithChildren<ButtonProps>>(
   (props, ref) => <ButtonElement {...props} ref={ref} />

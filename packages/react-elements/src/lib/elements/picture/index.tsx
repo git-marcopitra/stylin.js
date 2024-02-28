@@ -3,9 +3,11 @@ import { forwardRef, PropsWithChildren, RefAttributes } from 'react';
 
 import { PictureElementProps, PictureProps } from './picture.types';
 
-const PictureElement = stylin<
+export const stylinPicture = stylin<
   PictureElementProps & RefAttributes<PictureElementProps>
->('picture')();
+>('picture');
+
+const PictureElement = stylinPicture();
 
 export const Picture = forwardRef<PropsWithChildren<PictureProps>>(
   (props, ref) => <PictureElement {...props} ref={ref} />

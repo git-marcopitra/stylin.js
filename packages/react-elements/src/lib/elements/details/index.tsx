@@ -3,9 +3,11 @@ import { forwardRef, PropsWithChildren, RefAttributes } from 'react';
 
 import { DetailsElementProps, DetailsProps } from './details.types';
 
-const DetailsElement = stylin<
+export const stylinDetails = stylin<
   DetailsElementProps & RefAttributes<DetailsElementProps>
->('details')();
+>('details');
+
+const DetailsElement = stylinDetails();
 
 export const Details = forwardRef<PropsWithChildren<DetailsProps>>(
   (props, ref) => <DetailsElement {...props} ref={ref} />

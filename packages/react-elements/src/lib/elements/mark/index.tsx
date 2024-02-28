@@ -3,9 +3,11 @@ import { forwardRef, PropsWithChildren, RefAttributes } from 'react';
 
 import { MarkElementProps, MarkProps } from './mark.types';
 
-const MarkElement = stylin<MarkElementProps & RefAttributes<MarkElementProps>>(
-  'mark'
-)();
+export const stylinMark = stylin<
+  MarkElementProps & RefAttributes<MarkElementProps>
+>('mark');
+
+const MarkElement = stylinMark();
 
 export const Mark = forwardRef<PropsWithChildren<MarkProps>>((props, ref) => (
   <MarkElement {...props} ref={ref} />

@@ -3,9 +3,11 @@ import { forwardRef, PropsWithChildren, RefAttributes } from 'react';
 
 import { LabelElementProps, LabelProps } from './label.types';
 
-const LabelElement = stylin<
+export const stylinLabel = stylin<
   LabelElementProps & RefAttributes<LabelElementProps>
->('label')();
+>('label');
+
+const LabelElement = stylinLabel();
 
 export const Label = forwardRef<PropsWithChildren<LabelProps>>((props, ref) => (
   <LabelElement {...props} ref={ref} />

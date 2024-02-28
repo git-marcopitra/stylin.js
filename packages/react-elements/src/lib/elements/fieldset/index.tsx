@@ -3,9 +3,11 @@ import { forwardRef, PropsWithChildren, RefAttributes } from 'react';
 
 import { FieldsetElementProps, FieldsetProps } from './fieldset.types';
 
-const FieldsetElement = stylin<
+export const stylinFieldset = stylin<
   FieldsetElementProps & RefAttributes<FieldsetElementProps>
->('fieldset')();
+>('fieldset');
+
+const FieldsetElement = stylinFieldset();
 
 export const Fieldset = forwardRef<PropsWithChildren<FieldsetProps>>(
   (props, ref) => <FieldsetElement {...props} ref={ref} />

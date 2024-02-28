@@ -3,9 +3,11 @@ import { forwardRef, PropsWithChildren, RefAttributes } from 'react';
 
 import { CodeElementProps, CodeProps } from './code.types';
 
-const CodeElement = stylin<CodeElementProps & RefAttributes<CodeElementProps>>(
-  'code'
-)();
+export const stylinCode = stylin<
+  CodeElementProps & RefAttributes<CodeElementProps>
+>('code');
+
+const CodeElement = stylinCode();
 
 export const Code = forwardRef<PropsWithChildren<CodeProps>>((props, ref) => (
   <CodeElement {...props} ref={ref} />

@@ -3,9 +3,11 @@ import { forwardRef, PropsWithChildren, RefAttributes } from 'react';
 
 import { OptionElementProps, OptionProps } from './option.types';
 
-const OptionElement = stylin<
+export const stylinOption = stylin<
   OptionElementProps & RefAttributes<OptionElementProps>
->('option')();
+>('option');
+
+const OptionElement = stylinOption();
 
 export const Option = forwardRef<PropsWithChildren<OptionProps>>(
   (props, ref) => <OptionElement {...props} ref={ref} />

@@ -3,7 +3,11 @@ import { forwardRef, PropsWithChildren, RefAttributes } from 'react';
 
 import { BElementProps, BProps } from './b.types';
 
-const BElement = stylin<BElementProps & RefAttributes<BElementProps>>('b')();
+export const stylinB = stylin<BElementProps & RefAttributes<BElementProps>>(
+  'b'
+);
+
+const BElement = stylinB();
 
 export const B = forwardRef<PropsWithChildren<BProps>>((props, ref) => (
   <BElement {...props} ref={ref} />

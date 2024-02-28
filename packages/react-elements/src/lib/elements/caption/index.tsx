@@ -3,9 +3,11 @@ import { forwardRef, PropsWithChildren, RefAttributes } from 'react';
 
 import { CaptionElementProps, CaptionProps } from './caption.types';
 
-const CaptionElement = stylin<
+export const stylinCaption = stylin<
   CaptionElementProps & RefAttributes<CaptionElementProps>
->('caption')();
+>('caption');
+
+const CaptionElement = stylinCaption();
 
 export const Caption = forwardRef<PropsWithChildren<CaptionProps>>(
   (props, ref) => <CaptionElement {...props} ref={ref} />

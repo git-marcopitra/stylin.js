@@ -3,9 +3,11 @@ import { forwardRef, PropsWithChildren, RefAttributes } from 'react';
 
 import { DialogElementProps, DialogProps } from './dialog.types';
 
-const DialogElement = stylin<
+export const stylinDialog = stylin<
   DialogElementProps & RefAttributes<DialogElementProps>
->('dialog')();
+>('dialog');
+
+const DialogElement = stylinDialog();
 
 export const Dialog = forwardRef<PropsWithChildren<DialogProps>>(
   (props, ref) => <DialogElement {...props} ref={ref} />

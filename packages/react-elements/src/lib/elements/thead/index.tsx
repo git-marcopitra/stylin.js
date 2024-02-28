@@ -3,9 +3,11 @@ import { forwardRef, PropsWithChildren, RefAttributes } from 'react';
 
 import { TheadElementProps, TheadProps } from './thead.types';
 
-const TheadElement = stylin<
+export const stylinThead = stylin<
   TheadElementProps & RefAttributes<TheadElementProps>
->('thead')();
+>('thead');
+
+const TheadElement = stylinThead();
 
 export const Thead = forwardRef<PropsWithChildren<TheadProps>>((props, ref) => (
   <TheadElement {...props} ref={ref} />

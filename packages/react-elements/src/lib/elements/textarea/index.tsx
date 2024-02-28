@@ -3,9 +3,11 @@ import { forwardRef, PropsWithChildren, RefAttributes } from 'react';
 
 import { TextareaElementProps, TextareaProps } from './textarea.types';
 
-const TextareaElement = stylin<
+export const stylinTextarea = stylin<
   TextareaElementProps & RefAttributes<TextareaElementProps>
->('textarea')();
+>('textarea');
+
+const TextareaElement = stylinTextarea();
 
 export const Textarea = forwardRef<PropsWithChildren<TextareaProps>>(
   (props, ref) => <TextareaElement {...props} ref={ref} />

@@ -3,9 +3,11 @@ import { forwardRef, PropsWithChildren, RefAttributes } from 'react';
 
 import { VarElementProps, VarProps } from './var.types';
 
-const VarElement = stylin<VarElementProps & RefAttributes<VarElementProps>>(
-  'var'
-)();
+export const stylinVar = stylin<
+  VarElementProps & RefAttributes<VarElementProps>
+>('var');
+
+const VarElement = stylinVar();
 
 export const Var = forwardRef<PropsWithChildren<VarProps>>((props, ref) => (
   <VarElement {...props} ref={ref} />

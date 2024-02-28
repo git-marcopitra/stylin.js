@@ -3,9 +3,11 @@ import { forwardRef, PropsWithChildren, RefAttributes } from 'react';
 
 import { EmbedElementProps, EmbedProps } from './embed.types';
 
-const EmbedElement = stylin<
+export const stylinEmbed = stylin<
   EmbedElementProps & RefAttributes<EmbedElementProps>
->('embed')();
+>('embed');
+
+const EmbedElement = stylinEmbed();
 
 export const Embed = forwardRef<PropsWithChildren<EmbedProps>>((props, ref) => (
   <EmbedElement {...props} ref={ref} />

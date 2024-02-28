@@ -3,9 +3,11 @@ import { forwardRef, PropsWithChildren, RefAttributes } from 'react';
 
 import { SmallElementProps, SmallProps } from './small.types';
 
-const SmallElement = stylin<
+export const stylinSmall = stylin<
   SmallElementProps & RefAttributes<SmallElementProps>
->('small')();
+>('small');
+
+const SmallElement = stylinSmall();
 
 export const Small = forwardRef<PropsWithChildren<SmallProps>>((props, ref) => (
   <SmallElement {...props} ref={ref} />

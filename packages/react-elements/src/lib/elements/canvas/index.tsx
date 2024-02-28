@@ -3,9 +3,11 @@ import { forwardRef, PropsWithChildren, RefAttributes } from 'react';
 
 import { CanvasElementProps, CanvasProps } from './canvas.types';
 
-const CanvasElement = stylin<
+export const stylinCanvas = stylin<
   CanvasElementProps & RefAttributes<CanvasElementProps>
->('canvas')();
+>('canvas');
+
+const CanvasElement = stylinCanvas();
 
 export const Canvas = forwardRef<PropsWithChildren<CanvasProps>>(
   (props, ref) => <CanvasElement {...props} ref={ref} />

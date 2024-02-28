@@ -3,7 +3,11 @@ import { forwardRef, PropsWithChildren, RefAttributes } from 'react';
 
 import { PElementProps, PProps } from './p.types';
 
-const PElement = stylin<PElementProps & RefAttributes<PElementProps>>('p')();
+export const stylinP = stylin<PElementProps & RefAttributes<PElementProps>>(
+  'p'
+);
+
+const PElement = stylinP();
 
 export const P = forwardRef<PropsWithChildren<PProps>>((props, ref) => (
   <PElement {...props} ref={ref} />

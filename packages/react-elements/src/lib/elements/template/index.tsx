@@ -3,9 +3,11 @@ import { forwardRef, PropsWithChildren, RefAttributes } from 'react';
 
 import { TemplateElementProps, TemplateProps } from './template.types';
 
-const TemplateElement = stylin<
+export const stylinTemplate = stylin<
   TemplateElementProps & RefAttributes<TemplateElementProps>
->('template')();
+>('template');
+
+const TemplateElement = stylinTemplate();
 
 export const Template = forwardRef<PropsWithChildren<TemplateProps>>(
   (props, ref) => <TemplateElement {...props} ref={ref} />

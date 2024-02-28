@@ -1,16 +1,18 @@
 import stylin from '@stylin.js/react';
 import { forwardRef, PropsWithChildren, RefAttributes } from 'react';
 
-import { DataListElementProps, DataListProps } from './data-list.types';
+import { DatalistElementProps, DatalistProps } from './data-list.types';
 
-const DataListElement = stylin<
-  DataListElementProps & RefAttributes<DataListElementProps>
->('data')();
+export const stylinDatalist = stylin<
+  DatalistElementProps & RefAttributes<DatalistElementProps>
+>('data');
 
-export const DataList = forwardRef<PropsWithChildren<DataListProps>>(
-  (props, ref) => <DataListElement {...props} ref={ref} />
+const DatalistElement = stylinDatalist();
+
+export const Datalist = forwardRef<PropsWithChildren<DatalistProps>>(
+  (props, ref) => <DatalistElement {...props} ref={ref} />
 );
 
-DataList.displayName = 'DataList';
+Datalist.displayName = 'Datalist';
 
 export * from './data-list.types';

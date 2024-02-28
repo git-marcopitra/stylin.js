@@ -3,9 +3,11 @@ import { forwardRef, PropsWithChildren, RefAttributes } from 'react';
 
 import { BodyElementProps, BodyProps } from './body.types';
 
-const BodyElement = stylin<BodyElementProps & RefAttributes<BodyElementProps>>(
-  'body'
-)();
+export const stylinBody = stylin<
+  BodyElementProps & RefAttributes<BodyElementProps>
+>('body');
+
+const BodyElement = stylinBody();
 
 export const Body = forwardRef<PropsWithChildren<BodyProps>>((props, ref) => (
   <BodyElement {...props} ref={ref} />

@@ -3,9 +3,11 @@ import { forwardRef, PropsWithChildren, RefAttributes } from 'react';
 
 import { WbrElementProps, WbrProps } from './wbr.types';
 
-const WbrElement = stylin<WbrElementProps & RefAttributes<WbrElementProps>>(
-  'wbr'
-)();
+export const stylinWbr = stylin<
+  WbrElementProps & RefAttributes<WbrElementProps>
+>('wbr');
+
+const WbrElement = stylinWbr();
 
 export const Wbr = forwardRef<PropsWithChildren<WbrProps>>((props, ref) => (
   <WbrElement {...props} ref={ref} />

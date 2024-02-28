@@ -3,9 +3,11 @@ import { forwardRef, PropsWithChildren, RefAttributes } from 'react';
 
 import { HgroupElementProps, HgroupProps } from './hgroup.types';
 
-const HgroupElement = stylin<
+export const stylinHgroup = stylin<
   HgroupElementProps & RefAttributes<HgroupElementProps>
->('hgroup')();
+>('hgroup');
+
+const HgroupElement = stylinHgroup();
 
 export const Hgroup = forwardRef<PropsWithChildren<HgroupProps>>(
   (props, ref) => <HgroupElement {...props} ref={ref} />

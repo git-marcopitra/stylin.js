@@ -1,11 +1,11 @@
 import { StylinComponentProps } from '@stylin.js/react';
 import { HTMLAttributes } from 'react';
 
-export type DataListElementProps = Omit<
+export type DatalistElementProps = Omit<
   HTMLAttributes<HTMLDataListElement>,
   'color' | 'translate'
 >;
 
-export interface DataListProps
+export interface DatalistProps
   extends StylinComponentProps,
-    DataListElementProps {}
+    DatalistElementProps {}

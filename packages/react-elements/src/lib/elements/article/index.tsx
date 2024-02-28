@@ -3,9 +3,11 @@ import { forwardRef, PropsWithChildren, RefAttributes } from 'react';
 
 import { ArticleElementProps, ArticleProps } from './article.types';
 
-const ArticleElement = stylin<
+export const stylinArticle = stylin<
   ArticleElementProps & RefAttributes<ArticleElementProps>
->('article')();
+>('article');
+
+const ArticleElement = stylinArticle();
 
 export const Article = forwardRef<PropsWithChildren<ArticleProps>>(
   (props, ref) => <ArticleElement {...props} ref={ref} />

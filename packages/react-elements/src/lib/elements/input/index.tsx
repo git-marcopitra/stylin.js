@@ -3,9 +3,11 @@ import { forwardRef, PropsWithChildren, RefAttributes } from 'react';
 
 import { InputElementProps, InputProps } from './input.types';
 
-const InputElement = stylin<
+export const stylinInput = stylin<
   InputElementProps & RefAttributes<InputElementProps>
->('input')();
+>('input');
+
+const InputElement = stylinInput();
 
 export const Input = forwardRef<PropsWithChildren<InputProps>>((props, ref) => (
   <InputElement {...props} ref={ref} />

@@ -3,9 +3,11 @@ import { forwardRef, PropsWithChildren, RefAttributes } from 'react';
 
 import { ObjectElementProps, ObjectProps } from './object.types';
 
-const ObjectElement = stylin<
+export const stylinObject = stylin<
   ObjectElementProps & RefAttributes<ObjectElementProps>
->('object')();
+>('object');
+
+const ObjectElement = stylinObject();
 
 export const Object = forwardRef<PropsWithChildren<ObjectProps>>(
   (props, ref) => <ObjectElement {...props} ref={ref} />

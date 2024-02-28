@@ -3,9 +3,11 @@ import { forwardRef, PropsWithChildren, RefAttributes } from 'react';
 
 import { OlElementProps, OlProps } from './ol.types';
 
-const OlElement = stylin<OlElementProps & RefAttributes<OlElementProps>>(
+export const stylinOl = stylin<OlElementProps & RefAttributes<OlElementProps>>(
   'ol'
-)();
+);
+
+const OlElement = stylinOl();
 
 export const Ol = forwardRef<PropsWithChildren<OlProps>>((props, ref) => (
   <OlElement {...props} ref={ref} />

@@ -3,9 +3,11 @@ import { forwardRef, PropsWithChildren, RefAttributes } from 'react';
 
 import { H1ElementProps, H1Props } from './h1.types';
 
-const H1Element = stylin<H1ElementProps & RefAttributes<H1ElementProps>>(
+export const stylinH1 = stylin<H1ElementProps & RefAttributes<H1ElementProps>>(
   'h1'
-)();
+);
+
+const H1Element = stylinH1();
 
 export const H1 = forwardRef<PropsWithChildren<H1Props>>((props, ref) => (
   <H1Element {...props} ref={ref} />

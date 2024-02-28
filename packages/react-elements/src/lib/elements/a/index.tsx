@@ -3,7 +3,11 @@ import { forwardRef, PropsWithChildren, RefAttributes } from 'react';
 
 import { AElementProps, AProps } from './a.types';
 
-const AElement = stylin<AElementProps & RefAttributes<AElementProps>>('a')();
+export const stylinA = stylin<AElementProps & RefAttributes<AElementProps>>(
+  'a'
+);
+
+const AElement = stylinA();
 
 export const A = forwardRef<PropsWithChildren<AProps>>((props, ref) => (
   <AElement {...props} ref={ref} />

@@ -3,9 +3,11 @@ import { forwardRef, PropsWithChildren, RefAttributes } from 'react';
 
 import { AddressElementProps, AddressProps } from './address.types';
 
-const AddressElement = stylin<
+export const stylinAddress = stylin<
   AddressElementProps & RefAttributes<AddressElementProps>
->('address')();
+>('address');
+
+const AddressElement = stylinAddress();
 
 export const Address = forwardRef<PropsWithChildren<AddressProps>>(
   (props, ref) => <AddressElement {...props} ref={ref} />

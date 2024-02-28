@@ -3,9 +3,11 @@ import { forwardRef, PropsWithChildren, RefAttributes } from 'react';
 
 import { DfnElementProps, DfnProps } from './dfn.types';
 
-const DfnElement = stylin<DfnElementProps & RefAttributes<DfnElementProps>>(
-  'dfn'
-)();
+export const stylinDfn = stylin<
+  DfnElementProps & RefAttributes<DfnElementProps>
+>('dfn');
+
+const DfnElement = stylinDfn();
 
 export const Dfn = forwardRef<PropsWithChildren<DfnProps>>((props, ref) => (
   <DfnElement {...props} ref={ref} />

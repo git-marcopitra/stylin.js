@@ -3,9 +3,11 @@ import { forwardRef, PropsWithChildren, RefAttributes } from 'react';
 
 import { SupElementProps, SupProps } from './sup.types';
 
-const SupElement = stylin<SupElementProps & RefAttributes<SupElementProps>>(
-  'sup'
-)();
+export const stylinSup = stylin<
+  SupElementProps & RefAttributes<SupElementProps>
+>('sup');
+
+const SupElement = stylinSup();
 
 export const Sup = forwardRef<PropsWithChildren<SupProps>>((props, ref) => (
   <SupElement {...props} ref={ref} />

@@ -3,9 +3,11 @@ import { forwardRef, PropsWithChildren, RefAttributes } from 'react';
 
 import { DelElementProps, DelProps } from './del.types';
 
-const DelElement = stylin<DelElementProps & RefAttributes<DelElementProps>>(
-  'del'
-)();
+export const stylinDel = stylin<
+  DelElementProps & RefAttributes<DelElementProps>
+>('del');
+
+const DelElement = stylinDel();
 
 export const Del = forwardRef<PropsWithChildren<DelProps>>((props, ref) => (
   <DelElement {...props} ref={ref} />

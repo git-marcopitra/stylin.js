@@ -3,9 +3,11 @@ import { forwardRef, PropsWithChildren, RefAttributes } from 'react';
 
 import { SlotElementProps, SlotProps } from './slot.types';
 
-const SlotElement = stylin<SlotElementProps & RefAttributes<SlotElementProps>>(
-  'slot'
-)();
+export const stylinSlot = stylin<
+  SlotElementProps & RefAttributes<SlotElementProps>
+>('slot');
+
+const SlotElement = stylinSlot();
 
 export const Slot = forwardRef<PropsWithChildren<SlotProps>>((props, ref) => (
   <SlotElement {...props} ref={ref} />

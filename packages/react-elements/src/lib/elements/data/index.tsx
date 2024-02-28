@@ -3,9 +3,11 @@ import { forwardRef, PropsWithChildren, RefAttributes } from 'react';
 
 import { DataElementProps, DataProps } from './data.types';
 
-const DataElement = stylin<DataElementProps & RefAttributes<DataElementProps>>(
-  'data'
-)();
+export const stylinData = stylin<
+  DataElementProps & RefAttributes<DataElementProps>
+>('data');
+
+const DataElement = stylinData();
 
 export const Data = forwardRef<PropsWithChildren<DataProps>>((props, ref) => (
   <DataElement {...props} ref={ref} />

@@ -3,9 +3,11 @@ import { forwardRef, PropsWithChildren, RefAttributes } from 'react';
 
 import { TbodyElementProps, TbodyProps } from './tbody.types';
 
-const TbodyElement = stylin<
+export const stylinTbody = stylin<
   TbodyElementProps & RefAttributes<TbodyElementProps>
->('tbody')();
+>('tbody');
+
+const TbodyElement = stylinTbody();
 
 export const Tbody = forwardRef<PropsWithChildren<TbodyProps>>((props, ref) => (
   <TbodyElement {...props} ref={ref} />

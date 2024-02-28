@@ -1,11 +1,11 @@
 import { StylinComponentProps } from '@stylin.js/react';
 import { ColHTMLAttributes } from 'react';
 
-export type ColGroupElementProps = Omit<
+export type ColgroupElementProps = Omit<
   ColHTMLAttributes<HTMLTableColElement>,
   'color' | 'translate' | 'width'
 >;
 
-export interface ColGroupProps
+export interface ColgroupProps
   extends StylinComponentProps,
-    ColGroupElementProps {}
+    ColgroupElementProps {}

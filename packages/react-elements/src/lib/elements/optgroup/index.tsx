@@ -3,9 +3,11 @@ import { forwardRef, PropsWithChildren, RefAttributes } from 'react';
 
 import { OptgroupElementProps, OptgroupProps } from './optgroup.types';
 
-const OptgroupElement = stylin<
+export const stylinOptgroup = stylin<
   OptgroupElementProps & RefAttributes<OptgroupElementProps>
->('optgroup')();
+>('optgroup');
+
+const OptgroupElement = stylinOptgroup();
 
 export const Optgroup = forwardRef<PropsWithChildren<OptgroupProps>>(
   (props, ref) => <OptgroupElement {...props} ref={ref} />

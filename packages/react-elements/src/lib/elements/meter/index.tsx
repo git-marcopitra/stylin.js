@@ -3,9 +3,11 @@ import { forwardRef, PropsWithChildren, RefAttributes } from 'react';
 
 import { MeterElementProps, MeterProps } from './meter.types';
 
-const MeterElement = stylin<
+export const stylinMeter = stylin<
   MeterElementProps & RefAttributes<MeterElementProps>
->('meter')();
+>('meter');
+
+const MeterElement = stylinMeter();
 
 export const Meter = forwardRef<PropsWithChildren<MeterProps>>((props, ref) => (
   <MeterElement {...props} ref={ref} />

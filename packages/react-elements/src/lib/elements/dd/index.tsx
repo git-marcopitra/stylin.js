@@ -3,9 +3,11 @@ import { forwardRef, PropsWithChildren, RefAttributes } from 'react';
 
 import { DdElementProps, DdProps } from './dd.types';
 
-const DdElement = stylin<DdElementProps & RefAttributes<DdElementProps>>(
+export const stylinDd = stylin<DdElementProps & RefAttributes<DdElementProps>>(
   'dd'
-)();
+);
+
+const DdElement = stylinDd();
 
 export const Dd = forwardRef<PropsWithChildren<DdProps>>((props, ref) => (
   <DdElement {...props} ref={ref} />

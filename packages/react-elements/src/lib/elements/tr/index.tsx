@@ -3,9 +3,11 @@ import { forwardRef, PropsWithChildren, RefAttributes } from 'react';
 
 import { TrElementProps, TrProps } from './tr.types';
 
-const TrElement = stylin<TrElementProps & RefAttributes<TrElementProps>>(
+export const stylinTr = stylin<TrElementProps & RefAttributes<TrElementProps>>(
   'tr'
-)();
+);
+
+const TrElement = stylinTr();
 
 export const Tr = forwardRef<PropsWithChildren<TrProps>>((props, ref) => (
   <TrElement {...props} ref={ref} />

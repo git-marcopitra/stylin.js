@@ -3,9 +3,11 @@ import { forwardRef, PropsWithChildren, RefAttributes } from 'react';
 
 import { FormElementProps, FormProps } from './form.types';
 
-const FormElement = stylin<FormElementProps & RefAttributes<FormElementProps>>(
-  'form'
-)();
+export const stylinForm = stylin<
+  FormElementProps & RefAttributes<FormElementProps>
+>('form');
+
+const FormElement = stylinForm();
 
 export const Form = forwardRef<PropsWithChildren<FormProps>>((props, ref) => (
   <FormElement {...props} ref={ref} />

@@ -3,9 +3,11 @@ import { forwardRef, PropsWithChildren, RefAttributes } from 'react';
 
 import { VideoElementProps, VideoProps } from './video.types';
 
-const VideoElement = stylin<
+export const stylinVideo = stylin<
   VideoElementProps & RefAttributes<VideoElementProps>
->('video')();
+>('video');
+
+const VideoElement = stylinVideo();
 
 export const Video = forwardRef<PropsWithChildren<VideoProps>>((props, ref) => (
   <VideoElement {...props} ref={ref} />

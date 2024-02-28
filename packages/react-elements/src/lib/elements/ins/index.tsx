@@ -3,9 +3,11 @@ import { forwardRef, PropsWithChildren, RefAttributes } from 'react';
 
 import { InsElementProps, InsProps } from './ins.types';
 
-const InsElement = stylin<InsElementProps & RefAttributes<InsElementProps>>(
-  'ins'
-)();
+export const stylinIns = stylin<
+  InsElementProps & RefAttributes<InsElementProps>
+>('ins');
+
+const InsElement = stylinIns();
 
 export const Ins = forwardRef<PropsWithChildren<InsProps>>((props, ref) => (
   <InsElement {...props} ref={ref} />

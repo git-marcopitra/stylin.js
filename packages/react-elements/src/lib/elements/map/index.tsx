@@ -3,9 +3,11 @@ import { forwardRef, PropsWithChildren, RefAttributes } from 'react';
 
 import { MapElementProps, MapProps } from './map.types';
 
-const MapElement = stylin<MapElementProps & RefAttributes<MapElementProps>>(
-  'map'
-)();
+export const stylinMap = stylin<
+  MapElementProps & RefAttributes<MapElementProps>
+>('map');
+
+const MapElement = stylinMap();
 
 export const Map = forwardRef<PropsWithChildren<MapProps>>((props, ref) => (
   <MapElement {...props} ref={ref} />

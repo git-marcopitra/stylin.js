@@ -3,9 +3,11 @@ import { forwardRef, PropsWithChildren, RefAttributes } from 'react';
 
 import { SpanElementProps, SpanProps } from './span.types';
 
-const SpanElement = stylin<SpanElementProps & RefAttributes<SpanElementProps>>(
-  'span'
-)();
+export const stylinSpan = stylin<
+  SpanElementProps & RefAttributes<SpanElementProps>
+>('span');
+
+const SpanElement = stylinSpan();
 
 export const Span = forwardRef<PropsWithChildren<SpanProps>>((props, ref) => (
   <SpanElement {...props} ref={ref} />

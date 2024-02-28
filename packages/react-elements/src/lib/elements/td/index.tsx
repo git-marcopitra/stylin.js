@@ -3,9 +3,11 @@ import { forwardRef, PropsWithChildren, RefAttributes } from 'react';
 
 import { TdElementProps, TdProps } from './td.types';
 
-const TdElement = stylin<TdElementProps & RefAttributes<TdElementProps>>(
+export const stylinTd = stylin<TdElementProps & RefAttributes<TdElementProps>>(
   'td'
-)();
+);
+
+const TdElement = stylinTd();
 
 export const Td = forwardRef<PropsWithChildren<TdProps>>((props, ref) => (
   <TdElement {...props} ref={ref} />

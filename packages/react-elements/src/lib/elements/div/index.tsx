@@ -3,9 +3,11 @@ import { forwardRef, PropsWithChildren, RefAttributes } from 'react';
 
 import { DivElementProps, DivProps } from './div.types';
 
-const DivElement = stylin<DivElementProps & RefAttributes<DivElementProps>>(
-  'div'
-)();
+export const stylinDiv = stylin<
+  DivElementProps & RefAttributes<DivElementProps>
+>('div');
+
+const DivElement = stylinDiv();
 
 export const Div = forwardRef<PropsWithChildren<DivProps>>((props, ref) => (
   <DivElement {...props} ref={ref} />

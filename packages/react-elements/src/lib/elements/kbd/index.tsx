@@ -3,9 +3,11 @@ import { forwardRef, PropsWithChildren, RefAttributes } from 'react';
 
 import { KbdElementProps, KbdProps } from './kbd.types';
 
-const KbdElement = stylin<KbdElementProps & RefAttributes<KbdElementProps>>(
-  'kbd'
-)();
+export const stylinKbd = stylin<
+  KbdElementProps & RefAttributes<KbdElementProps>
+>('kbd');
+
+const KbdElement = stylinKbd();
 
 export const Kbd = forwardRef<PropsWithChildren<KbdProps>>((props, ref) => (
   <KbdElement {...props} ref={ref} />

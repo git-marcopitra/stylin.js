@@ -3,9 +3,11 @@ import { forwardRef, PropsWithChildren, RefAttributes } from 'react';
 
 import { FooterElementProps, FooterProps } from './footer.types';
 
-const FooterElement = stylin<
+export const stylinFooter = stylin<
   FooterElementProps & RefAttributes<FooterElementProps>
->('form')();
+>('footer');
+
+const FooterElement = stylinFooter();
 
 export const Footer = forwardRef<PropsWithChildren<FooterProps>>(
   (props, ref) => <FooterElement {...props} ref={ref} />

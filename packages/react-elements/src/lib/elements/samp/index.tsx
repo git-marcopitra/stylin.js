@@ -3,9 +3,11 @@ import { forwardRef, PropsWithChildren, RefAttributes } from 'react';
 
 import { SampElementProps, SampProps } from './samp.types';
 
-const SampElement = stylin<SampElementProps & RefAttributes<SampElementProps>>(
-  'samp'
-)();
+export const stylinSamp = stylin<
+  SampElementProps & RefAttributes<SampElementProps>
+>('samp');
+
+const SampElement = stylinSamp();
 
 export const Samp = forwardRef<PropsWithChildren<SampProps>>((props, ref) => (
   <SampElement {...props} ref={ref} />

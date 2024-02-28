@@ -3,9 +3,11 @@ import { forwardRef, PropsWithChildren, RefAttributes } from 'react';
 
 import { SourceElementProps, SourceProps } from './source.types';
 
-const SourceElement = stylin<
+export const stylinSource = stylin<
   SourceElementProps & RefAttributes<SourceElementProps>
->('source')();
+>('source');
+
+const SourceElement = stylinSource();
 
 export const Source = forwardRef<PropsWithChildren<SourceProps>>(
   (props, ref) => <SourceElement {...props} ref={ref} />

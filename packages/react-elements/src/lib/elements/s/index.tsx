@@ -3,7 +3,11 @@ import { forwardRef, PropsWithChildren, RefAttributes } from 'react';
 
 import { SElementProps, SProps } from './s.types';
 
-const SElement = stylin<SElementProps & RefAttributes<SElementProps>>('s')();
+export const stylinS = stylin<SElementProps & RefAttributes<SElementProps>>(
+  's'
+);
+
+const SElement = stylinS();
 
 export const S = forwardRef<PropsWithChildren<SProps>>((props, ref) => (
   <SElement {...props} ref={ref} />
