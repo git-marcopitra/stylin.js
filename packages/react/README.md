@@ -33,7 +33,7 @@ const Home = () => (
     padding="2rem"
     background="#f55"
     borderRadius="1rem"
-    on-hover={{
+    nHover={{
       textAlign: 'right',
     }}
   >
@@ -62,7 +62,7 @@ const Home: FC = () => (
     padding="2rem" // p="2rem" in alternative
     background="#f55" // bg="#f55" in alternative
     borderRadius="1rem"
-    on-hover={{
+    nHover={{
       textAlign: 'right',
     }}
   >
@@ -265,7 +265,7 @@ const theme = {
 
 ```jsx
 import React from 'react';
-import stylin, { variant } from 'stylin.js';
+import stylin, { variant } from '@stylin.js/react';
 
 const StylinButton = stylin('button')(
   variant({
@@ -287,7 +287,7 @@ const Component = () => (
 
 ```tsx
 import React, { FC, ButtonHTMLAttributes } from 'react';
-import stylin, { variant } from 'stylin.js';
+import stylin, { variant } from '@stylin.js/react';
 
 interface StylinDivProps extends Omit<ButtonHTMLAttributes<HTMLButtonElement>, 'color' | 'translate'> {
   variant: 'primary' | 'secondary'; // component attribute well typed
