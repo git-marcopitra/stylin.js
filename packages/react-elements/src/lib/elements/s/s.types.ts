@@ -1,9 +1,9 @@
 import { StylinComponentProps } from '@stylin.js/react';
 import { HTMLAttributes } from 'react';
 
-export type RubyElementProps = Omit<
+export type SElementProps = Omit<
   HTMLAttributes<HTMLElement>,
   'color' | 'translate'
 >;
 
-export interface RubyProps extends StylinComponentProps, RubyElementProps {}
+export interface SProps extends StylinComponentProps, SElementProps {}
