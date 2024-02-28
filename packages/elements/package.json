@@ -19,6 +19,12 @@
     "type": "git",
     "url": "git+https://github.com/git-marcopitra/stylin.git"
   },
+  "files": [
+    "dist",
+    "package.json",
+    "CHANGELOG.md",
+    "README.md"
+  ],
   "keywords": [
     "css",
     "css-in-jsx",
