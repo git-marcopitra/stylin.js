@@ -1,9 +1,9 @@
 import { StylinComponentProps } from '@stylin.js/react';
-import { MenuHTMLAttributes } from 'react';
+import { MeterHTMLAttributes } from 'react';
 
-export type MenuElementProps = Omit<
-  MenuHTMLAttributes<HTMLMenuElement>,
+export type MeterElementProps = Omit<
+  MeterHTMLAttributes<HTMLMeterElement>,
   'color' | 'translate'
 >;
 
-export interface MenuProps extends StylinComponentProps, MenuElementProps {}
+export interface MeterProps extends StylinComponentProps, MeterElementProps {}
