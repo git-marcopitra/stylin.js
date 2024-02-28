@@ -66,7 +66,7 @@ const Home = () => (
     padding="2rem"
     background="#f55"
     borderRadius="1rem"
-    on-hover={{
+    nHover={{
       textAlign: 'right',
     }}
   >
@@ -76,6 +76,45 @@ const Home = () => (
 ```
 
 [See more here](/packages/react)
+
+## STYLIN Elements
+
+### Installing: @stylin.js/elements
+
+To install the package you must have installed [node](https://nodejs.org/en/) and npm/yarn
+
+```sh
+# npm
+npm install @stylin.js/elements
+
+# yarn
+yarn add @stylin.js/elements
+```
+
+### Usage: @stylin.js/elements
+
+It's too simple to use React _StylinComponents_, see what I mean:
+
+```jsx
+import { Div } from '@stylin.js/elements';
+import React from 'react';
+
+const Home = () => (
+  <Div
+    // all your JSX Styles here
+    padding="2rem"
+    background="#f55"
+    borderRadius="1rem"
+    nHover={{
+      textAlign: 'right',
+    }}
+  >
+    Hello World
+  </Div>
+);
+```
+
+[See more here](/packages/elements)
 
 ## Contributing
 

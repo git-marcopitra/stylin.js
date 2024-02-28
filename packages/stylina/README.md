@@ -6,7 +6,7 @@ A **stylin.js** lightweight library for vanilla, to style builtin element using 
 
 ## Get Started
 
-You just need to add the cdn (`https://unpkg.com/@stylin.js/stylina@<version>`) to your `script` tag with `type="module"`, make sure that you add the correct version as you want, [see our versions](https://www.npmjs.com/package/@stylin.js@stylina?activeTab=versions).
+You just need to add the cdn (`https://unpkg.com/@stylin.js/stylina@<version>`) to your `script` tag with `type="module"`, make sure that you add the correct version as you want, [see our versions](https://www.npmjs.com/package/@stylin.js/stylina?activeTab=versions).
 
 ```html
 <html lang="en">
