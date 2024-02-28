@@ -1,13 +1,14 @@
-import stylin from '@stylin.js/react';
+import stylin, { CreateStylinArguments } from '@stylin.js/react';
 import { forwardRef, PropsWithChildren, RefAttributes } from 'react';
 
 import { BdiElementProps, BdiProps } from './bdi.types';
 
 export const stylinBdi = <T extends Record<string, unknown>>(
   ...styles: CreateStylinArguments
-) => stylin<T & 
-  BdiElementProps & RefAttributes<BdiElementProps>
->('bdi');
+) =>
+  stylin<T & BdiElementProps & RefAttributes<BdiElementProps>>('bdi')(
+    ...styles
+  );
 
 const BdiElement = stylinBdi();
 
