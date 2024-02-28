@@ -2,8 +2,6 @@ import Head from 'next/head';
 import Image from 'next/image';
 import { FC, PropsWithChildren } from 'react';
 
-import { Anchor, Box, Typography } from '@/elements';
-
 const DescriptionText: FC<PropsWithChildren> = ({ children }) => (
   <Typography
     m="0"
@@ -25,8 +23,7 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <Box
-        as="main"
+      <Main
         display="flex"
         padding="6rem"
         minHeight="100vh"
@@ -113,7 +110,7 @@ export default function Home() {
           </Typography>{' '}
           NextJS example
         </Typography>
-      </Box>
+      </Main>
     </>
   );
 }
