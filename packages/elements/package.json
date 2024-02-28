@@ -1,6 +1,6 @@
 {
   "name": "@stylin.js/elements",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "A set of stylin elements based on HTML elements",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
