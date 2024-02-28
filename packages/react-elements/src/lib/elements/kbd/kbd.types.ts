@@ -3,7 +3,7 @@ import { HTMLAttributes } from 'react';
 
 export type KbdElementProps = Omit<
   HTMLAttributes<HTMLElement>,
-  'color' | 'translate' | 'height' | 'width'
+  'color' | 'translate'
 >;
 
 export interface KbdProps extends StylinComponentProps, KbdElementProps {}
