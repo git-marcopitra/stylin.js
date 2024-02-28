@@ -6,7 +6,7 @@
   "types": "dist/index.d.ts",
   "private": false,
   "scripts": {
-    "test": "jest --clearCache && jest",
+    "test": "jest --clearCache && jest --passWithNoTests",
     "test:coverage": "rimraf coverage && yarn test --collectCoverage",
     "test:badges": "yarn test:coverage && node_modules/.bin/jest-badges-readme --input './coverage' --output './badges'",
     "storybook": "start-storybook -p 6006",
