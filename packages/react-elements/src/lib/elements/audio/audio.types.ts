@@ -1,8 +1,8 @@
 import { StylinComponentProps } from '@stylin.js/react';
-import { HTMLAttributes } from 'react';
+import { AudioHTMLAttributes } from 'react';
 
 export type AudioElementProps = Omit<
-  HTMLAttributes<HTMLAudioElement>,
+  AudioHTMLAttributes<HTMLAudioElement>,
   'color' | 'translate'
 >;
 

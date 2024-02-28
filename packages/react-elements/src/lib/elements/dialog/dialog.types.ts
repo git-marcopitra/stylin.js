@@ -1,8 +1,8 @@
 import { StylinComponentProps } from '@stylin.js/react';
-import { HTMLAttributes } from 'react';
+import { DialogHTMLAttributes } from 'react';
 
 export type DialogElementProps = Omit<
-  HTMLAttributes<HTMLDialogElement>,
+  DialogHTMLAttributes<HTMLDialogElement>,
   'color' | 'translate'
 >;
 

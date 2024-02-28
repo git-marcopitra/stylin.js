@@ -1,9 +1,9 @@
 import { StylinComponentProps } from '@stylin.js/react';
-import { HTMLAttributes } from 'react';
+import { CanvasHTMLAttributes } from 'react';
 
 export type CanvasElementProps = Omit<
-  HTMLAttributes<HTMLCanvasElement>,
-  'color' | 'translate'
+  CanvasHTMLAttributes<HTMLCanvasElement>,
+  'color' | 'translate' | 'width' | 'height'
 >;
 
 export interface CanvasProps extends StylinComponentProps, CanvasElementProps {}

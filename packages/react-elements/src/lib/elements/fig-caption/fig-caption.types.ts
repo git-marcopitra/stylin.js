@@ -1,11 +1,11 @@
 import { StylinComponentProps } from '@stylin.js/react';
 import { HTMLAttributes } from 'react';
 
-export type ArticleElementProps = Omit<
+export type FigCaptionElementProps = Omit<
   HTMLAttributes<HTMLElement>,
   'color' | 'translate'
 >;
 
-export interface ArticleProps
+export interface FigCaptionProps
   extends StylinComponentProps,
-    ArticleElementProps {}
+    FigCaptionElementProps {}

@@ -1,8 +1,8 @@
 import { StylinComponentProps } from '@stylin.js/react';
-import { HTMLAttributes } from 'react';
+import { ButtonHTMLAttributes } from 'react';
 
 export type ButtonElementProps = Omit<
-  HTMLAttributes<HTMLButtonElement>,
+  ButtonHTMLAttributes<HTMLButtonElement>,
   'color' | 'translate'
 >;
 

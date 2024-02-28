@@ -1,8 +1,8 @@
 import { StylinComponentProps } from '@stylin.js/react';
-import { HTMLAttributes } from 'react';
+import { DataHTMLAttributes } from 'react';
 
 export type DataElementProps = Omit<
-  HTMLAttributes<HTMLDataElement>,
+  DataHTMLAttributes<HTMLDataElement>,
   'color' | 'translate'
 >;
 

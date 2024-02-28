@@ -3,13 +3,13 @@ import { forwardRef, PropsWithChildren, RefAttributes } from 'react';
 
 import { AreaElementProps, AreaProps } from './area.types';
 
-export const Area = forwardRef<PropsWithChildren<AreaProps>>((props, ref) => {
-  const AreaElement = stylin<
-    AreaElementProps & RefAttributes<AreaElementProps>
-  >('area')();
+const AreaElement = stylin<AreaElementProps & RefAttributes<AreaElementProps>>(
+  'area'
+)();
 
-  return <AreaElement {...props} ref={ref} />;
-});
+export const Area = forwardRef<PropsWithChildren<AreaProps>>((props, ref) => (
+  <AreaElement {...props} ref={ref} />
+));
 
 Area.displayName = 'Area';
 

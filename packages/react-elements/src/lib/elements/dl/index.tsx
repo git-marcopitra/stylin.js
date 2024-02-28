@@ -3,13 +3,13 @@ import { forwardRef, PropsWithChildren, RefAttributes } from 'react';
 
 import { DlElementProps, DlProps } from './dl.types';
 
-export const Dl = forwardRef<PropsWithChildren<DlProps>>((props, ref) => {
-  const DlElement = stylin<DlElementProps & RefAttributes<DlElementProps>>(
-    'dl'
-  )();
+const DlElement = stylin<DlElementProps & RefAttributes<DlElementProps>>(
+  'dl'
+)();
 
-  return <DlElement {...props} ref={ref} />;
-});
+export const Dl = forwardRef<PropsWithChildren<DlProps>>((props, ref) => (
+  <DlElement {...props} ref={ref} />
+));
 
 Dl.displayName = 'Dl';
 

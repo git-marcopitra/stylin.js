@@ -1,8 +1,8 @@
 import { StylinComponentProps } from '@stylin.js/react';
-import { HTMLAttributes } from 'react';
+import { BlockquoteHTMLAttributes } from 'react';
 
 export type BlockquoteElementProps = Omit<
-  HTMLAttributes<HTMLQuoteElement>,
+  BlockquoteHTMLAttributes<HTMLQuoteElement>,
   'color' | 'translate'
 >;
 

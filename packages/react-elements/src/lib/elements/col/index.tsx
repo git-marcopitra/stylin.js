@@ -3,13 +3,13 @@ import { forwardRef, PropsWithChildren, RefAttributes } from 'react';
 
 import { ColElementProps, ColProps } from './col.types';
 
-export const Col = forwardRef<PropsWithChildren<ColProps>>((props, ref) => {
-  const ColElement = stylin<ColElementProps & RefAttributes<ColElementProps>>(
-    'col'
-  )();
+const ColElement = stylin<ColElementProps & RefAttributes<ColElementProps>>(
+  'col'
+)();
 
-  return <ColElement {...props} ref={ref} />;
-});
+export const Col = forwardRef<PropsWithChildren<ColProps>>((props, ref) => (
+  <ColElement {...props} ref={ref} />
+));
 
 Col.displayName = 'Col';
 

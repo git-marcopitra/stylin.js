@@ -1,9 +1,9 @@
 import { StylinComponentProps } from '@stylin.js/react';
-import { HTMLAttributes } from 'react';
+import { EmbedHTMLAttributes } from 'react';
 
 export type EmbedElementProps = Omit<
-  HTMLAttributes<HTMLEmbedElement>,
-  'color' | 'translate'
+  EmbedHTMLAttributes<HTMLEmbedElement>,
+  'color' | 'translate' | 'width' | 'height'
 >;
 
 export interface EmbedProps extends StylinComponentProps, EmbedElementProps {}

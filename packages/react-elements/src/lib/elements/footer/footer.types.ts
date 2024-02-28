@@ -1,9 +1,9 @@
 import { StylinComponentProps } from '@stylin.js/react';
 import { HTMLAttributes } from 'react';
 
-export type BdiElementProps = Omit<
+export type FooterElementProps = Omit<
   HTMLAttributes<HTMLElement>,
   'color' | 'translate'
 >;
 
-export interface BdiProps extends StylinComponentProps, BdiElementProps {}
+export interface FooterProps extends StylinComponentProps, FooterElementProps {}

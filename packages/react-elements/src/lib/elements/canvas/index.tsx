@@ -3,14 +3,12 @@ import { forwardRef, PropsWithChildren, RefAttributes } from 'react';
 
 import { CanvasElementProps, CanvasProps } from './canvas.types';
 
-export const Canvas = forwardRef<PropsWithChildren<CanvasProps>>(
-  (props, ref) => {
-    const CanvasElement = stylin<
-      CanvasElementProps & RefAttributes<CanvasElementProps>
-    >('canvas')();
+const CanvasElement = stylin<
+  CanvasElementProps & RefAttributes<CanvasElementProps>
+>('canvas')();
 
-    return <CanvasElement {...props} ref={ref} />;
-  }
+export const Canvas = forwardRef<PropsWithChildren<CanvasProps>>(
+  (props, ref) => <CanvasElement {...props} ref={ref} />
 );
 
 Canvas.displayName = 'Canvas';

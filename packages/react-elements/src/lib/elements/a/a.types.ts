@@ -1,8 +1,8 @@
 import { StylinComponentProps } from '@stylin.js/react';
-import { HTMLAttributes } from 'react';
+import { AnchorHTMLAttributes } from 'react';
 
 export type AElementProps = Omit<
-  HTMLAttributes<HTMLAnchorElement>,
+  AnchorHTMLAttributes<HTMLAnchorElement>,
   'color' | 'translate' | 'content'
 >;
 

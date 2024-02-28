@@ -1,8 +1,8 @@
 import { StylinComponentProps } from '@stylin.js/react';
-import { HTMLAttributes } from 'react';
+import { DelHTMLAttributes } from 'react';
 
 export type DelElementProps = Omit<
-  HTMLAttributes<HTMLModElement>,
+  DelHTMLAttributes<HTMLModElement>,
   'color' | 'translate'
 >;
 

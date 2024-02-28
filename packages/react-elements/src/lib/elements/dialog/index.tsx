@@ -3,14 +3,12 @@ import { forwardRef, PropsWithChildren, RefAttributes } from 'react';
 
 import { DialogElementProps, DialogProps } from './dialog.types';
 
-export const Dialog = forwardRef<PropsWithChildren<DialogProps>>(
-  (props, ref) => {
-    const DialogElement = stylin<
-      DialogElementProps & RefAttributes<DialogElementProps>
-    >('dialog')();
+const DialogElement = stylin<
+  DialogElementProps & RefAttributes<DialogElementProps>
+>('dialog')();
 
-    return <DialogElement {...props} ref={ref} />;
-  }
+export const Dialog = forwardRef<PropsWithChildren<DialogProps>>(
+  (props, ref) => <DialogElement {...props} ref={ref} />
 );
 
 Dialog.displayName = 'Dialog';

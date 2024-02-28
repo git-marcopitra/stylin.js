@@ -1,16 +1,16 @@
 import stylin from '@stylin.js/react';
 import { forwardRef, PropsWithChildren, RefAttributes } from 'react';
 
-import { AreaElementProps, AreaProps } from './article.types';
+import { ArticleElementProps, ArticleProps } from './article.types';
 
-export const Area = forwardRef<PropsWithChildren<AreaProps>>((props, ref) => {
-  const AreaElement = stylin<
-    AreaElementProps & RefAttributes<AreaElementProps>
-  >('area')();
+const ArticleElement = stylin<
+  ArticleElementProps & RefAttributes<ArticleElementProps>
+>('article')();
 
-  return <AreaElement {...props} ref={ref} />;
-});
+export const Article = forwardRef<PropsWithChildren<ArticleProps>>(
+  (props, ref) => <ArticleElement {...props} ref={ref} />
+);
 
-Area.displayName = 'Area';
+Article.displayName = 'Article';
 
 export * from './article.types';

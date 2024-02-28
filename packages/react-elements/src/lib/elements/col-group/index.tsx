@@ -3,14 +3,12 @@ import { forwardRef, PropsWithChildren, RefAttributes } from 'react';
 
 import { ColGroupElementProps, ColGroupProps } from './col-group.types';
 
-export const ColGroup = forwardRef<PropsWithChildren<ColGroupProps>>(
-  (props, ref) => {
-    const ColGroupElement = stylin<
-      ColGroupElementProps & RefAttributes<ColGroupElementProps>
-    >('colgroup')();
+const ColGroupElement = stylin<
+  ColGroupElementProps & RefAttributes<ColGroupElementProps>
+>('colgroup')();
 
-    return <ColGroupElement {...props} ref={ref} />;
-  }
+export const ColGroup = forwardRef<PropsWithChildren<ColGroupProps>>(
+  (props, ref) => <ColGroupElement {...props} ref={ref} />
 );
 
 ColGroup.displayName = 'ColGroup';
