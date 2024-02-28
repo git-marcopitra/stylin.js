@@ -1,9 +1,9 @@
 import { StylinComponentProps } from '@stylin.js/react';
 import { HTMLAttributes } from 'react';
 
-export type DtElementProps = Omit<
+export type EmElementProps = Omit<
   HTMLAttributes<HTMLElement>,
   'color' | 'translate'
 >;
 
-export interface DtProps extends StylinComponentProps, DtElementProps {}
+export interface EmProps extends StylinComponentProps, EmElementProps {}
