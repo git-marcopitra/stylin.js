@@ -330,10 +330,10 @@
   resolved "https://registry.yarnpkg.com/@stylin.js/core/-/core-1.0.1.tgz#b9c6a1f0cd3d601f793ed3753745afec07b411c0"
   integrity sha512-863ADeuvAbzLFrish0gJX2qEwDyx6NV4Raf2/EHerd5/2FYX4LUxX4AAKaM2UIVmlsi5gbsdimf0ad3oxhCcCQ==
 
-"@stylin.js/elements@^0.0.3-alpha.3":
-  version "0.0.3-alpha.3"
-  resolved "https://registry.yarnpkg.com/@stylin.js/elements/-/elements-0.0.3-alpha.3.tgz#b62984cbaf1df60affe65a6172e7f5181dd5ce3f"
-  integrity sha512-Utu9cZrLqMUHuyOAXbgizr4XH1T3AiFveuWZCenuBgfKLnvn9Z5dQE8ZxOPmXW/lFIV62AaB8JLjK2qitS4adQ==
+"@stylin.js/elements@^0.0.3-alpha.4":
+  version "0.0.3-alpha.4"
+  resolved "https://registry.yarnpkg.com/@stylin.js/elements/-/elements-0.0.3-alpha.4.tgz#3059e3d6df9145457d8bb571f1884cc807853e04"
+  integrity sha512-M701l205/GmekS5GkHIi/L6tXveLFCMiAs1uid8bdxEP0/J8YkwVcVVwUmhbLYVEmFtgWRsqmglRhoAXOD+xkQ==
   dependencies:
     "@stylin.js/react" latest
 
