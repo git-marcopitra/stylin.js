@@ -1,5 +1,5 @@
 import stylin, { CreateStylinArguments } from '@stylin.js/react';
-import { forwardRef, RefAttributes } from 'react';
+import React, { forwardRef, RefAttributes } from 'react';
 
 import { ImgElementProps, ImgProps } from './img.types';
 

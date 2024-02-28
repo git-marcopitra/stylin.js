@@ -1,5 +1,5 @@
 import stylin, { CreateStylinArguments } from '@stylin.js/react';
-import { forwardRef, PropsWithChildren, RefAttributes } from 'react';
+import React, { forwardRef, PropsWithChildren, RefAttributes } from 'react';
 
 import { InputElementProps, InputProps } from './input.types';
 
