@@ -9,10 +9,8 @@
     "test": "jest --clearCache && jest --passWithNoTests",
     "test:coverage": "rimraf coverage && yarn test --collectCoverage",
     "test:badges": "yarn test:coverage && node_modules/.bin/jest-badges-readme --input './coverage' --output './badges'",
-    "storybook": "start-storybook -p 6006",
     "dev": "tsc -w",
-    "build": "rimraf dist && tsc",
-    "build:storybook": "rimraf storybook-static && build-storybook"
+    "build": "rimraf dist && tsc"
   },
   "repository": {
     "type": "git",
@@ -41,5 +39,5 @@
   "dependencies": {
     "@stylin.js/react": "latest"
   },
-  "gitHead": "5fe2f399f74f2649325eb5460e58e577a82f2089"
+  "gitHead": "ff347e2ed380c0d6ba1a21353eaabf34b8834cdf"
 }
