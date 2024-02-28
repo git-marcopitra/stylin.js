@@ -2,15 +2,18 @@
   "name": "@stylin.js/elements",
   "version": "0.0.3-alpha.3",
   "description": "A set of stylin elements based on HTML elements",
-  "main": "dist/index.js",
+  "main": "dist/index.cjs.js",
+  "src": "src/index.ts",
+  "module": "dist/index.esm.js",
   "types": "dist/index.d.ts",
+  "declarationTypes": "types/index.d.ts",
   "private": false,
   "scripts": {
     "test": "jest --clearCache && jest --passWithNoTests",
     "test:coverage": "rimraf coverage && yarn test --collectCoverage",
     "test:badges": "yarn test:coverage && node_modules/.bin/jest-badges-readme --input './coverage' --output './badges'",
     "dev": "tsc -w",
-    "build": "rimraf dist && tsc"
+    "build": "tsc && rollup -c"
   },
   "repository": {
     "type": "git",
@@ -38,6 +41,19 @@
   "homepage": "https://git-marcopitra.github.io/stylin.js/",
   "dependencies": {
     "@stylin.js/react": "latest"
+  },
+  "devDependencies": {
+    "@rollup/plugin-babel": "^6.0.3",
+    "@rollup/plugin-commonjs": "^24.1.0",
+    "@rollup/plugin-json": "^6.0.0",
+    "@rollup/plugin-node-resolve": "^15.0.2",
+    "rollup": "^3.20.2",
+    "rollup-plugin-delete": "^2.0.0",
+    "rollup-plugin-dts-bundle": "^1.0.0",
+    "rollup-plugin-peer-deps-external": "^2.2.4",
+    "rollup-plugin-terser": "^7.0.2",
+    "rollup-plugin-typescript-paths": "^1.4.0",
+    "rollup-plugin-typescript2": "^0.34.1"
   },
   "gitHead": "914bbe818f9b26bb6a0e35ae8bb7df6fde2ff04a"
 }
