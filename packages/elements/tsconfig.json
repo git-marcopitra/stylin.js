@@ -1,5 +1,4 @@
 {
-  "extends": "../../tsconfig.json",
   "compilerOptions": {
     "target": "es6",
     "lib": ["dom", "dom.iterable", "esnext"],
@@ -17,6 +16,6 @@
     "isolatedModules": true,
     "jsx": "react",
     "outDir": "dist",
-    "sourceMap": false
+    "sourceMap": true
   },
   "include": ["./src/**/*"],}

@@ -4,3 +4,11 @@
 
 - Support for all stylable tags;
 - Support for customize your component.
+
+## 1.0.1 - Optimizing the package weight
+
+- Push only desired files to npm
+
+## 1.0.2 - Improve performance
+
+- Remove sorce map files

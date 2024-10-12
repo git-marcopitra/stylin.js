@@ -19,11 +19,11 @@ const rollupProcesses = [
   {
     input: src,
     output: [
-      { file: pkg.main, format: 'cjs', sourcemap: true, exports },
+      { file: pkg.main, format: 'cjs', sourcemap: false, exports },
       {
         file: pkg.module,
         format: 'esm',
-        sourcemap: true,
+        sourcemap: false,
         exports,
       },
     ],
@@ -33,6 +33,7 @@ const rollupProcesses = [
       resolve(),
       commonjs(),
       typescript({
+        sourceMap: false,
         tsconfig: './tsconfig.json',
       }),
       dtsBundle({

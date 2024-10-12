@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/ban-types */
 import styled from '@emotion/styled';
+import { utils } from '@stylin.js/core';
 
-import { utils } from '../../../core/dist';
 import renderStyles from './render-styles';
 import {
   CreateStylinArguments,
