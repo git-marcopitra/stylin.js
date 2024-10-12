@@ -1,2 +1,7 @@
 export * from './elements';
-export { ThemeProvider as ElementsThemeProvider } from '@stylin.js/react';
+export {
+  ThemeContext,
+  ThemeProvider,
+  type ThemeProviderProps,
+  useTheme,
+} from '@stylin.js/react';

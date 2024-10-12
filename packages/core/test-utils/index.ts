@@ -2,7 +2,7 @@ import makeRenderProperty from '../src/lib/make-render-property';
 import makeRenderPseudoSelector from '../src/lib/make-render-pseudo-selector';
 import makeRenderResponsiveStyle from '../src/lib/make-render-responsive-style';
 import makeRenderThemedStyle from '../src/lib/make-render-themed-style';
-import { Theme } from '../src/lib/stylin.types';
+import { Theme } from '../src/lib/types';
 import {
   CSS_PSEUDO_SELECTORS,
   CUSTOM_PROPERTY_MAP,
