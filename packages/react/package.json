@@ -1,6 +1,6 @@
 {
   "name": "@stylin.js/react",
-  "version": "1.0.8",
+  "version": "1.1.0",
   "description": "A react component inline styles statement lib",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
